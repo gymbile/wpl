@@ -1,0 +1,806 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "title": "WPL Wellness Plan",
+  "description": "JSON Schema for compiled WPL (Wellness Plan Language) output.",
+  "type": "object",
+  "required": ["$schema", "version", "plan"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "const": "https://wpl.dev/schemas/wpl/v1.schema.json"
+    },
+    "version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "plan": { "$ref": "#/$defs/Plan" }
+  },
+
+  "$defs": {
+    "Plan": {
+      "type": "object",
+      "required": ["id", "name", "type", "visibility", "metadata", "goals", "phases"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9_-]*$",
+          "description": "Slug or UUID identifier for the plan."
+        },
+        "name": { "type": "string", "minLength": 1 },
+        "description": { "type": "string" },
+        "type": { "$ref": "#/$defs/PlanType" },
+        "visibility": { "$ref": "#/$defs/Visibility" },
+        "metadata": { "$ref": "#/$defs/Metadata" },
+        "goals": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/Goal" }
+        },
+        "requirements": { "$ref": "#/$defs/Requirements" },
+        "personalization": { "$ref": "#/$defs/Personalization" },
+        "phases": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/Phase" }
+        },
+        "progress": { "$ref": "#/$defs/Progress" },
+        "notifications": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/Notification" }
+        }
+      }
+    },
+
+    "PlanType": {
+      "type": "string",
+      "enum": ["workout", "nutrition", "meditation", "recovery", "hybrid"]
+    },
+
+    "Visibility": {
+      "type": "string",
+      "enum": ["private", "public", "template"]
+    },
+
+    "Difficulty": {
+      "type": "string",
+      "enum": ["beginner", "intermediate", "advanced", "adaptive"]
+    },
+
+    "TimeUnit": {
+      "type": "string",
+      "enum": ["seconds", "minutes", "hours", "days", "weeks"]
+    },
+
+    "Duration": {
+      "type": "object",
+      "required": ["value", "unit"],
+      "additionalProperties": false,
+      "properties": {
+        "value": { "type": "number" },
+        "unit": { "$ref": "#/$defs/TimeUnit" }
+      }
+    },
+
+    "Metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "created_at": { "type": "string", "format": "date-time" },
+        "updated_at": { "type": "string", "format": "date-time" },
+        "created_by": { "type": "string" },
+        "tags": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "difficulty": { "$ref": "#/$defs/Difficulty" },
+        "language": { "type": "string" },
+        "estimated_duration_days": { "type": "integer", "minimum": 0 }
+      }
+    },
+
+    "Goal": {
+      "type": "object",
+      "required": ["id", "type", "category"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9_-]*$" },
+        "type": {
+          "type": "string",
+          "enum": ["primary", "secondary"]
+        },
+        "category": { "type": "string" },
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "target": { "$ref": "#/$defs/GoalTarget" },
+        "deadline": { "type": "string" },
+        "milestones": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/Milestone" },
+          "minItems": 1
+        }
+      }
+    },
+
+    "GoalTarget": {
+      "type": "object",
+      "required": ["metric", "target_value", "unit", "measurement_type"],
+      "additionalProperties": false,
+      "properties": {
+        "metric": { "type": "string" },
+        "target_value": { "type": "number" },
+        "unit": { "type": "string" },
+        "measurement_type": {
+          "type": "string",
+          "enum": ["absolute", "relative", "percentage"]
+        }
+      }
+    },
+
+    "Milestone": {
+      "type": "object",
+      "required": ["id", "name"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9_-]*$" },
+        "name": { "type": "string" },
+        "target_value": { "type": "number" },
+        "reward_points": { "type": "number" }
+      }
+    },
+
+    "Requirements": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "min_age": { "type": "integer", "minimum": 0 },
+        "max_age": { "type": "integer", "minimum": 0 },
+        "fitness_level": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "equipment": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/Equipment" }
+        },
+        "contraindications": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/Contraindication" }
+        },
+        "time_commitment": { "$ref": "#/$defs/TimeCommitment" }
+      }
+    },
+
+    "Equipment": {
+      "type": "object",
+      "required": ["id", "name", "required"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "required": { "type": "boolean" },
+        "alternatives": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+
+    "Contraindication": {
+      "type": "object",
+      "required": ["condition", "action"],
+      "additionalProperties": false,
+      "properties": {
+        "condition": { "type": "string" },
+        "action": {
+          "type": "string",
+          "enum": ["exclude", "modify"]
+        },
+        "affected_activities": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+
+    "TimeCommitment": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "min_days_per_week": { "type": "integer", "minimum": 1, "maximum": 7 },
+        "max_days_per_week": { "type": "integer", "minimum": 1, "maximum": 7 },
+        "min_minutes_per_day": { "type": "integer", "minimum": 0 },
+        "max_minutes_per_day": { "type": "integer", "minimum": 0 }
+      }
+    },
+
+    "Personalization": {
+      "type": "object",
+      "required": ["inputs", "rules"],
+      "additionalProperties": false,
+      "properties": {
+        "inputs": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/PersonalizationInput" }
+        },
+        "rules": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/PersonalizationRule" }
+        }
+      }
+    },
+
+    "PersonalizationInput": {
+      "type": "object",
+      "required": ["id", "type", "source"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "type": {
+          "type": "string",
+          "enum": ["number", "string", "array", "enum", "boolean"]
+        },
+        "source": { "type": "string" },
+        "label": { "type": "string" },
+        "options": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+
+    "PersonalizationRule": {
+      "type": "object",
+      "required": ["id", "condition", "actions"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9_-]*$" },
+        "condition": { "$ref": "#/$defs/Condition" },
+        "actions": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/Action" },
+          "minItems": 1
+        }
+      }
+    },
+
+    "Condition": {
+      "oneOf": [
+        { "$ref": "#/$defs/SimpleCondition" },
+        { "$ref": "#/$defs/CompoundCondition" }
+      ]
+    },
+
+    "SimpleCondition": {
+      "type": "object",
+      "required": ["field", "op", "value"],
+      "additionalProperties": false,
+      "properties": {
+        "field": { "type": "string" },
+        "op": {
+          "type": "string",
+          "enum": ["eq", "neq", "gt", "gte", "lt", "lte", "contains", "not_contains"]
+        },
+        "value": {}
+      }
+    },
+
+    "CompoundCondition": {
+      "type": "object",
+      "required": ["operator", "conditions"],
+      "additionalProperties": false,
+      "properties": {
+        "operator": {
+          "type": "string",
+          "enum": ["and", "or"]
+        },
+        "conditions": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/SimpleCondition" },
+          "minItems": 1
+        }
+      }
+    },
+
+    "Action": {
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "modify_intensity",
+            "add_warmup_time",
+            "add_activity",
+            "replace_exercise",
+            "exclude_exercise",
+            "modify_exercise",
+            "use_schedule",
+            "reduce_sets",
+            "reduce_reps",
+            "increase_rest"
+          ]
+        },
+        "scope": {
+          "type": "string",
+          "enum": ["activity", "block", "day", "week", "phase", "plan"]
+        }
+      },
+      "additionalProperties": true
+    },
+
+    "Phase": {
+      "type": "object",
+      "required": ["id", "name", "order"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9_-]*$" },
+        "name": { "type": "string" },
+        "order": { "type": "integer", "minimum": 1 },
+        "description": { "type": "string" },
+        "duration": { "$ref": "#/$defs/Duration" },
+        "weeks": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/Week" }
+        }
+      }
+    },
+
+    "Week": {
+      "type": "object",
+      "required": ["id", "name", "order"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9_-]*$" },
+        "name": { "type": "string" },
+        "order": { "type": "integer", "minimum": 1 },
+        "days": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/Day" }
+        }
+      }
+    },
+
+    "Day": {
+      "type": "object",
+      "required": ["id", "day_of_week", "type"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9_-]*$" },
+        "day_of_week": { "type": "integer", "minimum": 1, "maximum": 7 },
+        "type": {
+          "type": "string",
+          "enum": ["training", "rest", "active_recovery", "assessment"]
+        },
+        "name": { "type": "string" },
+        "estimated_duration_minutes": { "type": "integer", "minimum": 0 },
+        "blocks": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/Block" }
+        }
+      }
+    },
+
+    "Block": {
+      "type": "object",
+      "required": ["id", "type", "order"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "type": {
+          "type": "string",
+          "enum": ["warmup", "main", "cooldown", "nutrition", "meditation", "education", "assessment"]
+        },
+        "order": { "type": "integer", "minimum": 1 },
+        "structure": {
+          "type": "string",
+          "enum": ["circuit", "straight_sets", "superset", "emom", "amrap", "tabata"]
+        },
+        "rounds": { "type": "integer", "minimum": 1 },
+        "rest_between_rounds": { "$ref": "#/$defs/Duration" },
+        "activities": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/Activity" }
+        }
+      }
+    },
+
+    "Activity": {
+      "oneOf": [
+        { "$ref": "#/$defs/ExerciseActivity" },
+        { "$ref": "#/$defs/CardioActivity" },
+        { "$ref": "#/$defs/NutritionActivity" },
+        { "$ref": "#/$defs/MeditationActivity" },
+        { "$ref": "#/$defs/RecoveryActivity" },
+        { "$ref": "#/$defs/HabitActivity" },
+        { "$ref": "#/$defs/SimpleActivityOutput" }
+      ]
+    },
+
+    "ExerciseActivity": {
+      "type": "object",
+      "required": ["id", "type", "exercise_ref"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9_-]*$" },
+        "type": { "const": "exercise" },
+        "exercise_ref": { "type": "string" },
+        "name": { "type": "string" },
+        "prescription": { "$ref": "#/$defs/ExercisePrescription" },
+        "target_rpe": { "type": "number", "minimum": 1, "maximum": 10 },
+        "target_rir": { "type": "number", "minimum": 0 }
+      }
+    },
+
+    "ExercisePrescription": {
+      "type": "object",
+      "required": ["type"],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["sets_reps", "time", "distance", "amrap", "continuous", "intervals"]
+        },
+        "sets": { "type": "integer", "minimum": 1 },
+        "reps": { "$ref": "#/$defs/Reps" },
+        "rest": { "$ref": "#/$defs/Duration" },
+        "tempo": { "type": "string" },
+        "weight": { "$ref": "#/$defs/Weight" },
+        "duration": { "$ref": "#/$defs/Duration" }
+      }
+    },
+
+    "Reps": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "target": { "type": "integer", "minimum": 1 },
+        "min": { "type": "integer", "minimum": 1 },
+        "max": { "type": "integer", "minimum": 1 }
+      }
+    },
+
+    "Weight": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": ["type"],
+          "additionalProperties": false,
+          "properties": {
+            "type": { "const": "bodyweight" }
+          }
+        },
+        {
+          "type": "object",
+          "required": ["type"],
+          "additionalProperties": false,
+          "properties": {
+            "type": { "enum": ["absolute", "percentage_1rm"] },
+            "value": { "type": "number" },
+            "unit": { "type": "string" }
+          }
+        }
+      ]
+    },
+
+    "CardioActivity": {
+      "type": "object",
+      "required": ["id", "type", "name", "modality", "prescription"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9_-]*$" },
+        "type": { "const": "cardio" },
+        "name": { "type": "string" },
+        "modality": { "type": "string" },
+        "prescription": { "$ref": "#/$defs/CardioPrescription" }
+      }
+    },
+
+    "CardioPrescription": {
+      "type": "object",
+      "required": ["type"],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["continuous", "intervals", "fartlek"]
+        },
+        "duration": { "$ref": "#/$defs/Duration" },
+        "intensity": {
+          "type": "object",
+          "required": ["type"],
+          "additionalProperties": true,
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": ["heart_rate_zone", "rpe", "pace"]
+            },
+            "target": { "type": "object", "additionalProperties": true }
+          }
+        },
+        "intervals": {
+          "type": "object",
+          "required": ["work", "rest", "repeat"],
+          "additionalProperties": false,
+          "properties": {
+            "work": {
+              "type": "object",
+              "required": ["duration"],
+              "additionalProperties": false,
+              "properties": {
+                "duration": { "type": "number" }
+              }
+            },
+            "rest": {
+              "type": "object",
+              "required": ["duration"],
+              "additionalProperties": false,
+              "properties": {
+                "duration": { "type": "number" }
+              }
+            },
+            "repeat": { "type": "integer", "minimum": 1 }
+          }
+        }
+      }
+    },
+
+    "NutritionActivity": {
+      "type": "object",
+      "required": ["id", "type", "name", "category"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9_-]*$" },
+        "type": { "const": "nutrition" },
+        "name": { "type": "string" },
+        "category": { "type": "string" },
+        "prescription": { "$ref": "#/$defs/NutritionPrescription" },
+        "timing": { "$ref": "#/$defs/NutritionTiming" }
+      }
+    },
+
+    "NutritionPrescription": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "macros": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "protein": { "$ref": "#/$defs/MacroRange" },
+            "carbs": { "$ref": "#/$defs/MacroRange" },
+            "fat": { "$ref": "#/$defs/MacroRange" }
+          }
+        },
+        "calories": {
+          "type": "object",
+          "required": ["min", "max"],
+          "additionalProperties": false,
+          "properties": {
+            "min": { "type": "number" },
+            "max": { "type": "number" }
+          }
+        },
+        "suggestions": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+
+    "MacroRange": {
+      "type": "object",
+      "required": ["min", "max", "unit"],
+      "additionalProperties": false,
+      "properties": {
+        "min": { "type": "number" },
+        "max": { "type": "number" },
+        "unit": { "const": "g" }
+      }
+    },
+
+    "NutritionTiming": {
+      "type": "object",
+      "required": ["type"],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["relative", "absolute"]
+        },
+        "reference": { "type": "string" },
+        "offset": { "$ref": "#/$defs/Duration" },
+        "time": { "type": "string", "pattern": "^\\d{2}:\\d{2}$" }
+      }
+    },
+
+    "MeditationActivity": {
+      "type": "object",
+      "required": ["id", "type", "name", "category"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9_-]*$" },
+        "type": { "const": "meditation" },
+        "name": { "type": "string" },
+        "category": { "type": "string" },
+        "prescription": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "duration": { "$ref": "#/$defs/Duration" },
+            "guided": { "type": "boolean" }
+          }
+        }
+      }
+    },
+
+    "RecoveryActivity": {
+      "type": "object",
+      "required": ["id", "type", "name", "category"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9_-]*$" },
+        "type": { "const": "recovery" },
+        "name": { "type": "string" },
+        "category": { "type": "string" },
+        "prescription": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "duration": { "$ref": "#/$defs/Duration" },
+            "exercises": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/RecoveryExercise" }
+            }
+          }
+        }
+      }
+    },
+
+    "RecoveryExercise": {
+      "type": "object",
+      "required": ["id", "type", "name"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9_-]*$" },
+        "type": { "const": "recovery_exercise" },
+        "name": { "type": "string" },
+        "hold_seconds": { "type": "number", "minimum": 0 },
+        "reps": { "type": "integer", "minimum": 1 },
+        "sides": {
+          "type": "string",
+          "enum": ["both", "left", "right"]
+        }
+      }
+    },
+
+    "HabitActivity": {
+      "type": "object",
+      "required": ["id", "type", "name", "category"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9_-]*$" },
+        "type": { "const": "habit" },
+        "name": { "type": "string" },
+        "category": { "type": "string" },
+        "prescription": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "target": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "value": { "type": "number" },
+                "unit": { "type": "string" }
+              }
+            },
+            "frequency": { "type": "string" },
+            "reminders": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "reminder_times": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          }
+        },
+        "tracking": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      }
+    },
+
+    "SimpleActivityOutput": {
+      "type": "object",
+      "required": ["id", "type", "name"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9_-]*$" },
+        "type": { "const": "simple" },
+        "name": { "type": "string" },
+        "duration": { "$ref": "#/$defs/Duration" }
+      }
+    },
+
+    "Progress": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "checkpoints": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/Checkpoint" }
+        },
+        "points_system": { "$ref": "#/$defs/PointsConfig" },
+        "streaks": {
+          "type": "object",
+          "description": "Streak tracking config; shape TBD in v1.x.",
+          "additionalProperties": true
+        }
+      }
+    },
+
+    "Checkpoint": {
+      "type": "object",
+      "required": ["id", "name"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9_-]*$" },
+        "name": { "type": "string" },
+        "at": {
+          "type": "object",
+          "required": ["value", "unit"],
+          "additionalProperties": false,
+          "properties": {
+            "value": { "type": "number" },
+            "unit": { "type": "string" }
+          }
+        },
+        "measurements": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "questions": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+
+    "PointsConfig": {
+      "type": "object",
+      "required": ["enabled"],
+      "additionalProperties": false,
+      "properties": {
+        "enabled": { "type": "boolean" },
+        "rules": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["action", "points"],
+            "additionalProperties": false,
+            "properties": {
+              "action": { "type": "string" },
+              "points": { "type": "number" }
+            }
+          }
+        }
+      }
+    },
+
+    "Notification": {
+      "type": "object",
+      "required": ["id", "enabled", "message"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "enabled": { "type": "boolean" },
+        "message": { "type": "string" },
+        "timing_offset": { "$ref": "#/$defs/Duration" },
+        "timing_reference": { "type": "string" }
+      }
+    }
+  }
+}
