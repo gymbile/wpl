@@ -1,0 +1,57 @@
+name: Release — mirror to wpl.dev
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  mirror-to-wpl-dev:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout wpl
+        uses: actions/checkout@v4
+        with:
+          path: wpl
+
+      - name: Checkout wpl.dev
+        uses: actions/checkout@v4
+        with:
+          repository: gymbile/wpl.dev
+          token: ${{ secrets.WPL_DEV_PAT }}
+          path: wpl-dev
+
+      - name: Sync schema
+        run: |
+          mkdir -p wpl-dev/public/schemas/wpl
+          cp wpl/schema/v1.schema.json wpl-dev/public/schemas/wpl/v1.schema.json
+
+      - name: Sync spec
+        run: |
+          mkdir -p wpl-dev/WPL
+          cp wpl/spec/SPECIFICATION.md wpl-dev/WPL/WPL_SPECIFICATION.md
+
+      - name: Open PR to wpl.dev
+        env:
+          GH_TOKEN: ${{ secrets.WPL_DEV_PAT }}
+          TAG: ${{ github.ref_name }}
+        run: |
+          set -euo pipefail
+          cd wpl-dev
+          BRANCH="sync/wpl-${TAG}"
+          git config user.name "wpl-release-bot"
+          git config user.email "release-bot@wpl.dev"
+          git checkout -b "$BRANCH"
+          if git diff --quiet; then
+            echo "No changes to mirror — skipping PR"
+            exit 0
+          fi
+          git add public/schemas/wpl/v1.schema.json WPL/WPL_SPECIFICATION.md
+          git commit -m "chore: sync WPL schema + spec from gymbile/wpl@${TAG}"
+          git push origin "$BRANCH"
+          gh pr create \
+            --title "Sync WPL schema + spec from ${TAG}" \
+            --body "Automated mirror from [gymbile/wpl@${TAG}](https://github.com/gymbile/wpl/releases/tag/${TAG})." \
+            --base master
