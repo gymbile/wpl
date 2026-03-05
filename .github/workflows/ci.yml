@@ -1,0 +1,53 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install ajv-cli
+        run: npm install -g ajv-cli@5 ajv-formats@3
+
+      - name: Verify all JSON files parse
+        run: |
+          set -euo pipefail
+          fail=0
+          while IFS= read -r f; do
+            if ! node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))" 2>/dev/null; then
+              echo "::error file=$f::Invalid JSON"
+              fail=1
+            fi
+          done < <(find schema examples conformance -name '*.json' -type f)
+          exit $fail
+
+      - name: Compile schema
+        run: |
+          ajv compile -s schema/v1.schema.json --spec=draft2020 --strict=false
+
+      - name: Validate examples against schema
+        run: |
+          ajv validate \
+            -s schema/v1.schema.json \
+            -d "examples/*.json" \
+            --spec=draft2020 --strict=false --all-errors
+
+      - name: Validate conformance/valid against schema
+        run: |
+          if compgen -G "conformance/valid/*.json" > /dev/null; then
+            ajv validate \
+              -s schema/v1.schema.json \
+              -d "conformance/valid/*.json" \
+              --spec=draft2020 --strict=false --all-errors
+          else
+            echo "No conformance/valid fixtures yet — skipping"
+          fi
