@@ -1,0 +1,129 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "version": "1.0.0",
+  "plan": {
+    "id": "plan_simple_upper",
+    "name": "Simple Upper Body Workout",
+    "description": "A beginner-friendly upper body session with basic equipment",
+    "type": "workout",
+    "visibility": "public",
+    "metadata": {
+      "tags": ["beginner", "upper_body", "strength"],
+      "difficulty": "beginner",
+      "estimated_duration_days": 1,
+      "language": "en"
+    },
+    "goals": [
+      {
+        "id": "goal_1",
+        "type": "primary",
+        "category": "strength",
+        "name": "Build upper body strength"
+      }
+    ],
+    "phases": [
+      {
+        "id": "phase_1",
+        "name": "Single Session",
+        "order": 1,
+        "weeks": [
+          {
+            "id": "week_1",
+            "name": "Week 1",
+            "order": 1,
+            "days": [
+              {
+                "id": "day_1",
+                "day_of_week": 1,
+                "name": "Upper Body Focus",
+                "type": "training",
+                "estimated_duration_minutes": 35,
+                "blocks": [
+                  {
+                    "id": "warmup",
+                    "type": "warmup",
+                    "order": 1,
+                    "activities": [
+                      {
+                        "id": "warmup_1",
+                        "type": "exercise",
+                        "exercise_ref": "arm_circles",
+                        "name": "Arm Circles",
+                        "prescription": {
+                          "type": "time",
+                          "duration": { "value": 30, "unit": "seconds" }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "main",
+                    "type": "main",
+                    "order": 2,
+                    "structure": "straight_sets",
+                    "activities": [
+                      {
+                        "id": "ex_1",
+                        "type": "exercise",
+                        "exercise_ref": "push_up",
+                        "name": "Push-ups",
+                        "prescription": {
+                          "type": "sets_reps",
+                          "sets": 3,
+                          "reps": { "min": 8, "max": 12 },
+                          "rest": { "value": 60, "unit": "seconds" }
+                        }
+                      },
+                      {
+                        "id": "ex_2",
+                        "type": "exercise",
+                        "exercise_ref": "dumbbell_row",
+                        "name": "Dumbbell Rows",
+                        "prescription": {
+                          "type": "sets_reps",
+                          "sets": 3,
+                          "reps": { "min": 10, "max": 12 },
+                          "weight": { "type": "absolute", "value": 10, "unit": "kg" },
+                          "rest": { "value": 60, "unit": "seconds" }
+                        }
+                      },
+                      {
+                        "id": "ex_3",
+                        "type": "exercise",
+                        "exercise_ref": "overhead_press",
+                        "name": "Dumbbell Overhead Press",
+                        "prescription": {
+                          "type": "sets_reps",
+                          "sets": 3,
+                          "reps": { "min": 8, "max": 10 },
+                          "weight": { "type": "absolute", "value": 8, "unit": "kg" },
+                          "rest": { "value": 90, "unit": "seconds" }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "cooldown",
+                    "type": "cooldown",
+                    "order": 3,
+                    "activities": [
+                      {
+                        "id": "stretch_1",
+                        "type": "recovery",
+                        "category": "stretching",
+                        "name": "Chest & Shoulder Stretch",
+                        "prescription": {
+                          "duration": { "value": 2, "unit": "minutes" }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

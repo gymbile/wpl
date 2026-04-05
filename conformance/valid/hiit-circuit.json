@@ -1,0 +1,169 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "version": "1.0.0",
+  "plan": {
+    "id": "plan_hiit_circuit",
+    "name": "HIIT Circuit with Personalization",
+    "description": "High intensity interval circuit with smart equipment and injury adaptations",
+    "type": "workout",
+    "visibility": "template",
+    "metadata": {
+      "tags": ["hiit", "circuit", "fat_loss", "intermediate"],
+      "difficulty": "intermediate",
+      "estimated_duration_days": 1,
+      "language": "en"
+    },
+    "goals": [
+      {
+        "id": "goal_1",
+        "type": "primary",
+        "category": "endurance",
+        "name": "Improve cardiovascular fitness"
+      },
+      {
+        "id": "goal_2",
+        "type": "secondary",
+        "category": "weight_loss",
+        "name": "Burn calories efficiently"
+      }
+    ],
+    "personalization": {
+      "inputs": [
+        {
+          "id": "client_injuries",
+          "type": "array",
+          "source": "client_profile.injuries",
+          "label": "Current Injuries"
+        },
+        {
+          "id": "available_equipment",
+          "type": "array",
+          "source": "questionnaire",
+          "label": "Available Equipment"
+        }
+      ],
+      "rules": [
+        {
+          "id": "knee_injury_modification",
+          "condition": {
+            "field": "client_injuries",
+            "op": "contains",
+            "value": "knee"
+          },
+          "actions": [
+            { "type": "replace_exercise", "from": "jump_squat", "to": "wall_sit", "scope": "plan" },
+            { "type": "replace_exercise", "from": "burpees", "to": "modified_burpees", "scope": "plan" }
+          ]
+        },
+        {
+          "id": "no_kettlebell_swap",
+          "condition": {
+            "field": "available_equipment",
+            "op": "not_contains",
+            "value": "kettlebell"
+          },
+          "actions": [
+            { "type": "replace_exercise", "from": "kettlebell_swing", "to": "dumbbell_swing", "scope": "plan" }
+          ]
+        }
+      ]
+    },
+    "phases": [
+      {
+        "id": "phase_1",
+        "name": "HIIT Session",
+        "order": 1,
+        "weeks": [
+          {
+            "id": "week_1",
+            "name": "Week 1",
+            "order": 1,
+            "days": [
+              {
+                "id": "day_1",
+                "day_of_week": 1,
+                "name": "Full Body HIIT Circuit",
+                "type": "training",
+                "estimated_duration_minutes": 25,
+                "blocks": [
+                  {
+                    "id": "warmup",
+                    "type": "warmup",
+                    "order": 1,
+                    "activities": [
+                      {
+                        "id": "warmup_1",
+                        "type": "cardio",
+                        "name": "Jump Rope",
+                        "modality": "jump_rope",
+                        "prescription": {
+                          "type": "continuous",
+                          "duration": { "value": 3, "unit": "minutes" },
+                          "intensity": { "type": "rpe", "target": { "zone": 4 } }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "circuit",
+                    "type": "main",
+                    "order": 2,
+                    "structure": "circuit",
+                    "rounds": 4,
+                    "rest_between_rounds": { "value": 90, "unit": "seconds" },
+                    "activities": [
+                      {
+                        "id": "circ_1",
+                        "type": "exercise",
+                        "exercise_ref": "kettlebell_swing",
+                        "name": "Kettlebell Swings",
+                        "prescription": {
+                          "type": "time",
+                          "duration": { "value": 40, "unit": "seconds" },
+                          "rest": { "value": 20, "unit": "seconds" }
+                        }
+                      },
+                      {
+                        "id": "circ_2",
+                        "type": "exercise",
+                        "exercise_ref": "jump_squat",
+                        "name": "Jump Squats",
+                        "prescription": {
+                          "type": "time",
+                          "duration": { "value": 40, "unit": "seconds" },
+                          "rest": { "value": 20, "unit": "seconds" }
+                        }
+                      },
+                      {
+                        "id": "circ_3",
+                        "type": "exercise",
+                        "exercise_ref": "push_up",
+                        "name": "Push-ups",
+                        "prescription": {
+                          "type": "time",
+                          "duration": { "value": 40, "unit": "seconds" },
+                          "rest": { "value": 20, "unit": "seconds" }
+                        }
+                      },
+                      {
+                        "id": "circ_4",
+                        "type": "exercise",
+                        "exercise_ref": "burpees",
+                        "name": "Burpees",
+                        "prescription": {
+                          "type": "time",
+                          "duration": { "value": 40, "unit": "seconds" },
+                          "rest": { "value": 20, "unit": "seconds" }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

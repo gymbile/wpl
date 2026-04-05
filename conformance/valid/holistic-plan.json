@@ -1,0 +1,204 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "version": "1.0.0",
+  "plan": {
+    "id": "plan_holistic_week",
+    "name": "Holistic Wellness Week",
+    "description": "A complete week combining workouts, nutrition, meditation, recovery, and habits",
+    "type": "hybrid",
+    "visibility": "template",
+    "metadata": {
+      "tags": ["holistic", "beginner", "wellness", "full_program"],
+      "difficulty": "beginner",
+      "estimated_duration_days": 7,
+      "language": "en"
+    },
+    "goals": [
+      {
+        "id": "goal_1",
+        "type": "primary",
+        "category": "mental_wellness",
+        "name": "Establish daily wellness routine"
+      },
+      {
+        "id": "goal_2",
+        "type": "secondary",
+        "category": "habit",
+        "name": "Build consistent habits"
+      }
+    ],
+    "phases": [
+      {
+        "id": "phase_1",
+        "name": "Foundation Week",
+        "order": 1,
+        "duration": { "value": 1, "unit": "weeks" },
+        "weeks": [
+          {
+            "id": "week_1",
+            "name": "Week 1",
+            "order": 1,
+            "days": [
+              {
+                "id": "day_1",
+                "day_of_week": 1,
+                "name": "Mindful Monday",
+                "type": "training",
+                "estimated_duration_minutes": 60,
+                "blocks": [
+                  {
+                    "id": "morning_meditation",
+                    "type": "meditation",
+                    "order": 1,
+                    "activities": [
+                      {
+                        "id": "med_1",
+                        "type": "meditation",
+                        "category": "mindfulness",
+                        "name": "Morning Mindfulness",
+                        "prescription": {
+                          "duration": { "value": 10, "unit": "minutes" },
+                          "guided": true
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "workout",
+                    "type": "main",
+                    "order": 2,
+                    "structure": "straight_sets",
+                    "activities": [
+                      {
+                        "id": "ex_1",
+                        "type": "exercise",
+                        "exercise_ref": "bodyweight_squat",
+                        "name": "Bodyweight Squats",
+                        "prescription": {
+                          "type": "sets_reps",
+                          "sets": 3,
+                          "reps": { "target": 15 },
+                          "rest": { "value": 45, "unit": "seconds" }
+                        }
+                      },
+                      {
+                        "id": "ex_2",
+                        "type": "exercise",
+                        "exercise_ref": "push_up",
+                        "name": "Push-ups",
+                        "prescription": {
+                          "type": "sets_reps",
+                          "sets": 3,
+                          "reps": { "min": 5, "max": 10 },
+                          "rest": { "value": 60, "unit": "seconds" }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "nutrition_block",
+                    "type": "nutrition",
+                    "order": 3,
+                    "activities": [
+                      {
+                        "id": "meal_1",
+                        "type": "nutrition",
+                        "category": "meal",
+                        "name": "Post-Workout Protein",
+                        "timing": {
+                          "type": "relative",
+                          "reference": "workout_end",
+                          "offset": { "value": 30, "unit": "minutes" }
+                        },
+                        "prescription": {
+                          "macros": {
+                            "protein": { "min": 20, "max": 30, "unit": "g" }
+                          },
+                          "suggestions": [
+                            "Protein shake with banana",
+                            "Greek yogurt with berries"
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "recovery_block",
+                    "type": "cooldown",
+                    "order": 4,
+                    "activities": [
+                      {
+                        "id": "stretch_1",
+                        "type": "recovery",
+                        "category": "stretching",
+                        "name": "Full Body Stretch",
+                        "prescription": {
+                          "duration": { "value": 10, "unit": "minutes" }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "day_2",
+                "day_of_week": 2,
+                "name": "Recovery Tuesday",
+                "type": "active_recovery",
+                "estimated_duration_minutes": 30,
+                "blocks": [
+                  {
+                    "id": "recovery",
+                    "type": "main",
+                    "order": 1,
+                    "activities": [
+                      {
+                        "id": "yoga_1",
+                        "type": "recovery",
+                        "category": "stretching",
+                        "name": "Gentle Yoga Flow",
+                        "prescription": {
+                          "duration": { "value": 20, "unit": "minutes" }
+                        }
+                      },
+                      {
+                        "id": "habit_1",
+                        "type": "habit",
+                        "category": "hydration",
+                        "name": "Water Intake Goal",
+                        "prescription": {
+                          "target": { "value": 8, "unit": "glasses" },
+                          "frequency": "daily"
+                        },
+                        "tracking": {
+                          "log_count": true,
+                          "streak_enabled": true
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "progress": {
+      "points_system": {
+        "enabled": true,
+        "rules": [
+          { "action": "complete_workout", "points": 10 },
+          { "action": "complete_meditation", "points": 15 },
+          { "action": "log_meal", "points": 5 },
+          { "action": "complete_day", "points": 25 },
+          { "action": "streak_7_days", "points": 200 }
+        ]
+      },
+      "streaks": {
+        "enabled": true,
+        "types": ["daily_workout", "daily_meditation", "daily_nutrition"]
+      }
+    }
+  }
+}
