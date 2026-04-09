@@ -1,0 +1,12 @@
+[
+  {
+    "code": "DUPLICATE_ID",
+    "path": "/plan/phases/0/weeks/1",
+    "severity": "error",
+    "meta": {
+      "duplicate_id": "week_1",
+      "scope": "phase:phase_1",
+      "first_occurrence": "/plan/phases/0/weeks/0"
+    }
+  }
+]
