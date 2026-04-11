@@ -1,0 +1,10 @@
+[
+  {
+    "code": "EMPTY_PHASES_FOR_TYPE",
+    "path": "/plan/phases",
+    "severity": "error",
+    "meta": {
+      "plan_type": "workout"
+    }
+  }
+]
