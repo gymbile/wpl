@@ -1,0 +1,10 @@
+[
+  {
+    "code": "INVALID_PRESCRIPTION",
+    "path": "/plan/phases/0/weeks/0/days/0/blocks/0/activities/0/prescription",
+    "severity": "error",
+    "meta": {
+      "reason": "sets_reps_requires_sets_or_reps"
+    }
+  }
+]
