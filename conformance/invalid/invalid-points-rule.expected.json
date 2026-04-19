@@ -1,0 +1,10 @@
+[
+  {
+    "code": "INVALID_POINTS_RULE",
+    "path": "/plan/progress/points_system/rules/0",
+    "severity": "error",
+    "meta": {
+      "reason": "points_must_be_non_negative_integer"
+    }
+  }
+]
