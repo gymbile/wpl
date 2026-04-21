@@ -1,0 +1,12 @@
+[
+  {
+    "code": "PHASE_DURATION_MISMATCH",
+    "path": "/plan/phases/0",
+    "severity": "warning",
+    "meta": {
+      "declared_value": 3,
+      "declared_unit": "weeks",
+      "weeks_count": 2
+    }
+  }
+]
