@@ -1,0 +1,43 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "version": "1.0.0",
+  "plan": {
+    "id": "99999999-9999-4999-8999-999999999999",
+    "name": "Unknown exercise ref",
+    "type": "workout",
+    "visibility": "private",
+    "metadata": {},
+    "goals": [],
+    "requirements": {},
+    "personalization": { "rules": [] },
+    "phases": [
+      {
+        "id": "phase_1", "name": "P1", "order": 1,
+        "duration": { "value": 1, "unit": "weeks" },
+        "weeks": [
+          {
+            "id": "week_1",
+            "days": [
+              {
+                "id": "day_1", "name": "D1", "type": "workout",
+                "blocks": [
+                  {
+                    "id": "main", "type": "main", "order": 1,
+                    "activities": [
+                      {
+                        "id": "act_1",
+                        "type": "exercise",
+                        "exercise_ref": "dumbbell_curl",
+                        "prescription": { "type": "sets_reps", "sets": 3, "reps": 10 }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

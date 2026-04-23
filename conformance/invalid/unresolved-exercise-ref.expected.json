@@ -1,0 +1,11 @@
+[
+  {
+    "code": "UNRESOLVED_REF",
+    "path": "/plan/phases/0/weeks/0/days/0/blocks/0/activities/0/exercise_ref",
+    "severity": "error",
+    "meta": {
+      "ref_kind": "exercise",
+      "ref_value": "dumbbell_curl"
+    }
+  }
+]

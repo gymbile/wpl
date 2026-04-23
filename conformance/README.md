@@ -49,6 +49,22 @@ For every `invalid/<name>.json`, a sibling `invalid/<name>.expected.json` declar
 - **Severity must match exactly**.
 - **Extra errors fail the test**: the validator must produce *exactly* the expected error set, no more.
 
+## Catalog-dependent fixtures
+
+If a sibling `<name>.catalog.json` exists, the test runner passes its contents as the `catalog` option to `validate()`. Without a catalog file, the runner calls `validate(plan)` with no catalog (and `UNRESOLVED_REF` checks are skipped).
+
+Catalog file shape:
+
+```json
+{
+  "exercises": ["push_up", "squat"],
+  "meals": [],
+  "meditations": []
+}
+```
+
+Each list becomes a Set/MapSet of known IDs in the validator's catalog argument.
+
 ## Adding a Fixture
 
 1. Add `<name>.json` (the input plan) to `valid/` or `invalid/`.
