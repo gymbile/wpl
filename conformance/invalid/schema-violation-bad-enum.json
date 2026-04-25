@@ -1,0 +1,29 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "version": "1.0.0",
+  "plan": {
+    "id": "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa",
+    "name": "Bad plan type AND duplicate day id",
+    "type": "intergalactic_disco_party",
+    "visibility": "private",
+    "metadata": {},
+    "goals": [],
+    "requirements": {},
+    "personalization": { "rules": [] },
+    "phases": [
+      {
+        "id": "phase_1", "name": "P1", "order": 1,
+        "duration": { "value": 1, "unit": "weeks" },
+        "weeks": [
+          {
+            "id": "week_1",
+            "days": [
+              { "id": "day_1", "name": "D1", "type": "rest" },
+              { "id": "day_1", "name": "D1 again", "type": "rest" }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

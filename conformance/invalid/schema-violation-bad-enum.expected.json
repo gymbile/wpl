@@ -1,0 +1,10 @@
+[
+  {
+    "code": "SCHEMA_VIOLATION",
+    "path": "/plan/type",
+    "severity": "error",
+    "meta": {
+      "keyword": "enum"
+    }
+  }
+]
