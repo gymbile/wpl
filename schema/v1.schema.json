@@ -307,23 +307,10 @@
       "required": ["type"],
       "properties": {
         "type": {
-          "type": "string",
-          "enum": [
-            "modify_intensity",
-            "add_warmup_time",
-            "add_activity",
-            "replace_exercise",
-            "exclude_exercise",
-            "modify_exercise",
-            "use_schedule",
-            "reduce_sets",
-            "reduce_reps",
-            "increase_rest"
-          ]
+          "type": "string"
         },
         "scope": {
-          "type": "string",
-          "enum": ["activity", "block", "day", "week", "phase", "plan"]
+          "type": "string"
         }
       },
       "additionalProperties": true

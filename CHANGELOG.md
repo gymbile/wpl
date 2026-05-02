@@ -7,6 +7,15 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [Unreleased]
 
+## [1.1.1] — 2026-05-02
+
+### Changed
+- Loosened `Action.type` and `Action.scope` schema enums (dropped strict enums; both now accept any string). Pass-2 semantic validation in the reference validators owns these checks, surfacing a descriptive `INVALID_PERSONALIZATION_RULE` error instead of a generic schema violation.
+
+### Fixed
+- Conformance fixtures in `conformance/invalid/` updated to satisfy schema requirements (added `Week.name`/`Week.order`, `Day.day_of_week`, `PointsConfig.enabled`, etc.), so Pass-2-only fixtures actually exercise their target rule rather than failing at Pass 1.
+- `invalid-personalization-action.expected.json` updated to expect `INVALID_PERSONALIZATION_RULE` (now reachable after Action enum loosening).
+
 ## [1.1.0] — 2026-05-02
 
 ### Added

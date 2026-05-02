@@ -9,7 +9,6 @@
     "metadata": {},
     "goals": [],
     "requirements": {},
-    "personalization": { "rules": [] },
     "phases": [
       {
         "id": "phase_1",
@@ -17,8 +16,8 @@
         "order": 1,
         "duration": { "value": 3, "unit": "weeks" },
         "weeks": [
-          { "id": "week_1", "days": [{ "id": "d1", "name": "D1", "type": "rest" }] },
-          { "id": "week_2", "days": [{ "id": "d2", "name": "D2", "type": "rest" }] }
+          { "id": "week_1", "name": "Week 1", "order": 1, "days": [{ "id": "d1", "day_of_week": 1, "name": "D1", "type": "rest" }] },
+          { "id": "week_2", "name": "Week 2", "order": 2, "days": [{ "id": "d2", "day_of_week": 1, "name": "D2", "type": "rest" }] }
         ]
       }
     ]
