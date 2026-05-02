@@ -7,8 +7,18 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [Unreleased]
 
+## [1.1.0] — 2026-05-02
+
+### Added
+- Conformance suite (`conformance/`): valid + invalid fixtures, `error-codes.md`, `README.md` explaining matching rules.
+- `.catalog.json` fixture convention for catalog-dependent error rules.
+- 9 fixtures covering: `DUPLICATE_ID` (day, week), `EMPTY_PHASES_FOR_TYPE`, `INVALID_PRESCRIPTION` (sets_reps, time), `INVALID_PERSONALIZATION_RULE`, `INVALID_POINTS_RULE`, `PHASE_DURATION_MISMATCH` (warning), `UNRESOLVED_REF`, `SCHEMA_VIOLATION`.
+
+### Changed
+- Schema reconciled with `WPL_SPECIFICATION.md` and the production gymbile validator: `Plan` no longer requires `requirements`/`personalization`; `description` allowed; permissive id pattern (`^[a-z0-9][a-z0-9_-]*$`) replaces strict per-type patterns; metadata timestamps optional; `ExercisePrescription.type` required with full enum (`sets_reps|time|distance|amrap|continuous|intervals`); non-exercise activities (`cardio`, `nutrition`, `meditation`, `recovery`, `habit`) now carry `name` and the prescription/intensity/timing shapes documented in the spec; `progress.points` renamed to `points_system`; rule field `event` renamed to `action`; `Action.type` enum extended (`modify_exercise`, `use_schedule`); `Action.scope` enum added.
+
 ### Deferred
-- `CYCLIC_SUBPLAN` conformance fixture — blocked on sub-plan reference shape being formalized in the spec.
+- `CYCLIC_SUBPLAN` conformance fixture — blocked on sub-plan reference shape being formalized in the spec ([#1](https://github.com/gymbile/wpl/issues/1)).
 
 ## [1.0.0] — 2026-05-02
 
