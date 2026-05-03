@@ -74,7 +74,7 @@ All changes are additive. No existing v1.x plan becomes invalid.
 ### Deferred
 - `CYCLIC_SUBPLAN` conformance fixture — blocked on sub-plan reference shape being formalized in the spec ([#1](https://github.com/gymbile/wpl/issues/1)).
 
-## [1.0.0] — 2026-05-02
+## [1.0.0] — 2026-03-05
 
 ### Added
 - Initial public release of the WPL specification.
