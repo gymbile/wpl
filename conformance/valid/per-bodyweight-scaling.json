@@ -1,0 +1,88 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "version": "1.0.0",
+  "plan": {
+    "id": "plan_per_bw",
+    "name": "Per-bodyweight scaling",
+    "description": "Macros expressed in g/kg (per Morton 2018 ~1.6 g/kg/day protein), and a goblet squat prescribed as a percentage of bodyweight.",
+    "type": "hybrid",
+    "visibility": "template",
+    "metadata": {
+      "tags": ["scaling", "per_kg", "portable"],
+      "difficulty": "beginner",
+      "estimated_duration_days": 7,
+      "language": "en"
+    },
+    "goals": [
+      { "id": "goal_strength", "type": "primary", "category": "strength", "name": "Get strong" }
+    ],
+    "athlete_thresholds": {
+      "body_weight_kg": 75
+    },
+    "phases": [
+      {
+        "id": "phase_1", "name": "Week 1", "order": 1,
+        "duration": { "value": 1, "unit": "weeks" },
+        "weeks": [
+          {
+            "id": "wk_1", "name": "Week 1", "order": 1,
+            "days": [
+              {
+                "id": "d_1", "day_of_week": 1, "name": "Lift + eat", "type": "training",
+                "blocks": [
+                  {
+                    "id": "main", "type": "main", "order": 1, "structure": "straight_sets",
+                    "activities": [
+                      {
+                        "id": "ex_goblet",
+                        "type": "exercise",
+                        "exercise_ref": "goblet_squat",
+                        "name": "Goblet squat",
+                        "primary_muscles": ["quadriceps", "glutes"],
+                        "movement_pattern": "squat",
+                        "prescription": {
+                          "type": "sets_reps",
+                          "sets": 3,
+                          "reps": { "target": 12 },
+                          "weight": {
+                            "type": "percentage_bodyweight",
+                            "value": 33,
+                            "unit": "percent"
+                          },
+                          "rest": { "value": 60, "unit": "seconds" }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "fuel", "type": "nutrition", "order": 2,
+                    "activities": [
+                      {
+                        "id": "n_protein",
+                        "type": "nutrition",
+                        "category": "daily_target",
+                        "name": "Daily protein target",
+                        "prescription": {
+                          "macros": {
+                            "protein": { "min": 1.6, "max": 2.2, "unit": "g_per_kg" },
+                            "carbs":   { "min": 4.0, "max": 6.0, "unit": "g_per_kg" },
+                            "fat":     { "min": 0.7, "max": 1.0, "unit": "g_per_kg" }
+                          },
+                          "calories": {
+                            "min": 0.95,
+                            "max": 1.05,
+                            "unit": "multiplier_of_tdee"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

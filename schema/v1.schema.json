@@ -271,7 +271,17 @@
       "required": ["condition", "action"],
       "additionalProperties": false,
       "properties": {
-        "condition": { "type": "string" },
+        "condition": {
+          "type": "string",
+          "description": "Free-form condition tag. For clinical use, prefer a recognized prefix so consumers can match deterministically:\n  • 'icd10:<code>' — ICD-10-CM (e.g. 'icd10:O09' = supervision of high-risk pregnancy)\n  • 'snomed:<concept-id>' — SNOMED CT (e.g. 'snomed:248152002' = low back pain)\n  • 'acsm:<category>' — ACSM Guidelines (e.g. 'acsm:cardiac_rehab_phase_2')\n  • 'acog:<id>' — ACOG opinions (e.g. 'acog:pregnancy_t2')\nUnprefixed strings are allowed for non-clinical content (e.g. 'lower_back_injury') but cannot be deterministically matched.",
+          "examples": [
+            "icd10:O09",
+            "snomed:248152002",
+            "acsm:cardiac_rehab_phase_2",
+            "acog:pregnancy_t2",
+            "lower_back_injury"
+          ]
+        },
         "action": {
           "type": "string",
           "enum": ["exclude", "modify"]
@@ -320,7 +330,19 @@
           "type": "string",
           "enum": ["number", "string", "array", "enum", "boolean"]
         },
-        "source": { "type": "string" },
+        "source": {
+          "type": "string",
+          "description": "Where this input value comes from. Recognized prefixes:\n  • user.* — static profile fields (user.age, user.experience_level, user.injuries, user.equipment.barbell)\n  • wellness.* — daily/recent telemetry (wellness.sleep_hours_last_night, wellness.hrv_rmssd_morning, wellness.session_rpe_yesterday, wellness.subjective_readiness, wellness.menstrual_phase)\n  • device.* — wearable-derived metrics (device.steps_today, device.battery_drain_24h)\n  • plan.* — plan-state queries (plan.current_phase_type, plan.day_index_in_phase)\nUnrecognized prefixes are allowed but consumers may ignore them.",
+          "examples": [
+            "user.age",
+            "user.experience_level",
+            "wellness.hrv_rmssd_morning",
+            "wellness.sleep_hours_last_night",
+            "wellness.session_rpe_yesterday",
+            "device.steps_today",
+            "plan.current_phase_type"
+          ]
+        },
         "label": { "type": "string" },
         "options": {
           "type": "array",
@@ -597,7 +619,7 @@
           "required": ["type"],
           "additionalProperties": false,
           "properties": {
-            "type": { "enum": ["absolute", "percentage_1rm"] },
+            "type": { "enum": ["absolute", "percentage_1rm", "percentage_bodyweight"] },
             "value": { "type": "number" },
             "unit": { "type": "string" }
           }
@@ -713,7 +735,12 @@
           "additionalProperties": false,
           "properties": {
             "min": { "type": "number" },
-            "max": { "type": "number" }
+            "max": { "type": "number" },
+            "unit": {
+              "type": "string",
+              "description": "Optional unit qualifier. Defaults to absolute kcal. 'kcal_per_kg' scales by body weight; 'multiplier_of_tdee' lets a plan say 'eat 0.8–1.0× TDEE' independent of athlete-specific TDEE.",
+              "enum": ["kcal", "kcal_per_kg", "multiplier_of_tdee"]
+            }
           }
         },
         "suggestions": {
@@ -725,12 +752,13 @@
 
     "MacroRange": {
       "type": "object",
+      "description": "Macronutrient range. 'g' = absolute grams; 'g_per_kg' = grams per kg of body weight (preferred for evidence-based prescriptions, e.g. 1.6–2.2 g/kg/day protein per Morton 2018).",
       "required": ["min", "max", "unit"],
       "additionalProperties": false,
       "properties": {
         "min": { "type": "number" },
         "max": { "type": "number" },
-        "unit": { "const": "g" }
+        "unit": { "type": "string", "enum": ["g", "g_per_kg"] }
       }
     },
 

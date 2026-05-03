@@ -1,0 +1,63 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "version": "1.0.0",
+  "plan": {
+    "id": "plan_clinical_codes",
+    "name": "Cardiac-Rehab-Aware Plan",
+    "description": "Demonstrates the recommended controlled-prefix system for Contraindication.condition (icd10:, snomed:, acsm:, acog:).",
+    "type": "workout",
+    "visibility": "template",
+    "metadata": {
+      "tags": ["clinical", "contraindications"],
+      "difficulty": "beginner",
+      "language": "en"
+    },
+    "goals": [
+      { "id": "goal_safe", "type": "primary", "category": "strength", "name": "Build strength safely" }
+    ],
+    "requirements": {
+      "min_age": 18,
+      "fitness_level": ["beginner", "intermediate"],
+      "contraindications": [
+        {
+          "condition": "icd10:I25.10",
+          "action": "modify",
+          "affected_activities": ["high_intensity_intervals", "1rm_test"]
+        },
+        {
+          "condition": "acsm:cardiac_rehab_phase_2",
+          "action": "modify",
+          "affected_activities": ["barbell_back_squat", "deadlift"]
+        },
+        {
+          "condition": "acog:pregnancy_t2",
+          "action": "modify",
+          "affected_activities": ["supine_bench_press", "abdominal_crunch"]
+        },
+        {
+          "condition": "snomed:248152002",
+          "action": "exclude",
+          "affected_activities": ["good_morning", "deadlift"]
+        },
+        {
+          "condition": "lower_back_injury",
+          "action": "modify",
+          "affected_activities": ["deadlift"]
+        }
+      ]
+    },
+    "phases": [
+      {
+        "id": "phase_1", "name": "Phase 1", "order": 1,
+        "weeks": [
+          {
+            "id": "wk_1", "name": "Week 1", "order": 1,
+            "days": [
+              { "id": "d_1", "day_of_week": 1, "name": "Day 1", "type": "training" }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

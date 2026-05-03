@@ -7,6 +7,17 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [Unreleased]
 
+## [1.4.0] — 2026-05-03
+
+### Added
+- **Per-bodyweight scaling for macros and load.** `MacroRange.unit` accepts `g_per_kg` alongside `g`. `Calories.unit` accepts `kcal`, `kcal_per_kg`, or `multiplier_of_tdee` (optional; defaults to `kcal`). `Weight.type` accepts `percentage_bodyweight` alongside `absolute` and `percentage_1rm`. Lets plans express e.g. "1.6–2.2 g/kg/day protein" (Morton 2018) without baking in body weight.
+- **Wellness telemetry source vocabulary.** `PersonalizationInput.source` documents recognized prefixes: `user.*`, `wellness.*` (HRV, sleep, session RPE, readiness, menstrual phase), `device.*`, `plan.*`. Closes the loop so adaptive plans can react to athlete state.
+- **Clinical-condition codes for contraindications.** `Contraindication.condition` documents recognized prefixes: `icd10:`, `snomed:`, `acsm:`, `acog:`. Enables deterministic matching for clinical use cases (cardiac rehab, pregnancy, ICD-coded comorbidities) without forcing the prefix.
+- New conformance fixtures: `valid/per-bodyweight-scaling.json`, `valid/wellness-telemetry-driven.json`, `valid/clinical-contraindications.json`.
+
+### Notes
+All changes additive. Existing fixtures and plans validate unchanged. The vocabulary additions for `source` and `condition` are documentation/`examples`-only — the field types remain open strings, so unrecognized values are accepted.
+
 ## [1.3.0] — 2026-05-03
 
 ### Added

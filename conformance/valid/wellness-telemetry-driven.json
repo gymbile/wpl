@@ -1,0 +1,73 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "version": "1.0.0",
+  "plan": {
+    "id": "plan_telemetry_personalized",
+    "name": "HRV-Adaptive Strength",
+    "description": "Personalization rules use the recommended wellness.* and device.* source vocabulary. Validates that the documented controlled-prefix system is accepted as plain strings.",
+    "type": "workout",
+    "visibility": "template",
+    "metadata": {
+      "tags": ["adaptive", "telemetry", "hrv"],
+      "difficulty": "advanced",
+      "language": "en"
+    },
+    "goals": [
+      { "id": "goal_str", "type": "primary", "category": "strength", "name": "Strength with autoregulation" }
+    ],
+    "personalization": {
+      "inputs": [
+        { "id": "hrv_baseline_z", "type": "number", "source": "wellness.hrv_rmssd_morning", "label": "HRV (RMSSD) z-score vs 7d baseline" },
+        { "id": "sleep_hours", "type": "number", "source": "wellness.sleep_hours_last_night", "label": "Sleep last night (hours)" },
+        { "id": "yesterday_rpe", "type": "number", "source": "wellness.session_rpe_yesterday", "label": "Yesterday's session RPE" },
+        { "id": "phase_type", "type": "string", "source": "plan.current_phase_type", "label": "Current phase role" },
+        { "id": "experience", "type": "string", "source": "user.experience_level" }
+      ],
+      "rules": [
+        {
+          "id": "rule_low_hrv",
+          "condition": {
+            "operator": "and",
+            "conditions": [
+              { "field": "hrv_baseline_z", "op": "lt", "value": -1.0 },
+              { "field": "phase_type", "op": "neq", "value": "deload" }
+            ]
+          },
+          "actions": [
+            { "type": "modify_intensity", "scope": "day", "delta_percent": -10 },
+            { "type": "increase_rest", "scope": "day", "extra_seconds": 30 }
+          ]
+        },
+        {
+          "id": "rule_short_sleep",
+          "condition": { "field": "sleep_hours", "op": "lt", "value": 6 },
+          "actions": [
+            { "type": "reduce_sets", "scope": "day", "by": 1 }
+          ]
+        },
+        {
+          "id": "rule_high_yesterday_rpe",
+          "condition": { "field": "yesterday_rpe", "op": "gte", "value": 9 },
+          "actions": [
+            { "type": "reduce_reps", "scope": "day", "by": 2 }
+          ]
+        }
+      ]
+    },
+    "phases": [
+      {
+        "id": "phase_1", "name": "Build", "order": 1,
+        "type": "build",
+        "duration": { "value": 1, "unit": "weeks" },
+        "weeks": [
+          {
+            "id": "wk_1", "name": "Week 1", "order": 1,
+            "days": [
+              { "id": "d_1", "day_of_week": 1, "name": "Squat day", "type": "training" }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
