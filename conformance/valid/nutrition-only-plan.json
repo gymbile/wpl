@@ -1,0 +1,56 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "version": "1.0.0",
+  "plan": {
+    "id": "plan_nutrition_only",
+    "name": "Daily Macro Targets",
+    "description": "Pure nutrition plan — protein/carbs/fat windows for one week.",
+    "type": "nutrition",
+    "visibility": "template",
+    "metadata": {
+      "tags": ["nutrition", "macros"],
+      "language": "en"
+    },
+    "goals": [
+      { "id": "goal_protein", "type": "primary", "category": "nutrition", "name": "Hit daily protein" }
+    ],
+    "phases": [
+      {
+        "id": "phase_1",
+        "name": "Week 1",
+        "order": 1,
+        "duration": { "value": 1, "unit": "weeks" },
+        "weeks": [
+          {
+            "id": "week_1",
+            "name": "Week 1",
+            "order": 1,
+            "days": [
+              {
+                "id": "day_1", "day_of_week": 1, "name": "Mon", "type": "rest",
+                "blocks": [
+                  {
+                    "id": "nutrition", "type": "nutrition", "order": 1,
+                    "activities": [
+                      {
+                        "id": "n_1", "type": "nutrition", "category": "meal",
+                        "name": "Breakfast",
+                        "prescription": {
+                          "macros": {
+                            "protein": { "min": 25, "max": 40, "unit": "g" },
+                            "carbs":   { "min": 40, "max": 70, "unit": "g" },
+                            "fat":     { "min": 10, "max": 20, "unit": "g" }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

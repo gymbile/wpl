@@ -1,0 +1,12 @@
+[
+  {
+    "code": "INVALID_PERSONALIZATION_RULE",
+    "path": "/plan/personalization/rules/0/actions/0",
+    "severity": "error",
+    "meta": {
+      "reason": "invalid_action_scope",
+      "field": "scope",
+      "value": "galaxy"
+    }
+  }
+]

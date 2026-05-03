@@ -1,0 +1,38 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "version": "1.0.0",
+  "plan": {
+    "id": "dddddddd-dddd-4ddd-8ddd-dddddddddddd",
+    "name": "Duplicate Phase ID",
+    "type": "workout",
+    "visibility": "private",
+    "metadata": {},
+    "goals": [],
+    "phases": [
+      {
+        "id": "phase_1", "name": "Phase 1", "order": 1,
+        "duration": { "value": 1, "unit": "weeks" },
+        "weeks": [
+          {
+            "id": "week_1", "name": "Week 1", "order": 1,
+            "days": [
+              { "id": "day_1", "day_of_week": 1, "name": "D1", "type": "rest" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "phase_1", "name": "Phase 1 again", "order": 2,
+        "duration": { "value": 1, "unit": "weeks" },
+        "weeks": [
+          {
+            "id": "week_1b", "name": "Week 1b", "order": 1,
+            "days": [
+              { "id": "day_1b", "day_of_week": 1, "name": "D1b", "type": "rest" }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

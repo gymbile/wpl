@@ -1,0 +1,29 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "version": "1.0.0",
+  "plan": {
+    "id": "plan_minimal",
+    "name": "Minimal Workout",
+    "type": "workout",
+    "visibility": "private",
+    "metadata": {},
+    "goals": [],
+    "phases": [
+      {
+        "id": "phase_1",
+        "name": "P1",
+        "order": 1,
+        "weeks": [
+          {
+            "id": "week_1",
+            "name": "Week 1",
+            "order": 1,
+            "days": [
+              { "id": "day_1", "day_of_week": 1, "name": "D1", "type": "rest" }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

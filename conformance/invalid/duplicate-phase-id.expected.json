@@ -1,0 +1,12 @@
+[
+  {
+    "code": "DUPLICATE_ID",
+    "path": "/plan/phases/1",
+    "severity": "error",
+    "meta": {
+      "duplicate_id": "phase_1",
+      "scope": "plan",
+      "first_occurrence": "/plan/phases/0"
+    }
+  }
+]

@@ -1,0 +1,43 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "version": "1.0.0",
+  "plan": {
+    "id": "ffffffff-ffff-4fff-8fff-ffffffffffff",
+    "name": "Duplicate Activity ID",
+    "type": "workout",
+    "visibility": "private",
+    "metadata": {},
+    "goals": [],
+    "phases": [
+      {
+        "id": "phase_1", "name": "P1", "order": 1,
+        "duration": { "value": 1, "unit": "weeks" },
+        "weeks": [
+          {
+            "id": "week_1", "name": "Week 1", "order": 1,
+            "days": [
+              {
+                "id": "day_1", "day_of_week": 1, "name": "D1", "type": "training",
+                "blocks": [
+                  {
+                    "id": "main", "type": "main", "order": 1,
+                    "activities": [
+                      {
+                        "id": "act_1", "type": "exercise", "exercise_ref": "push_up",
+                        "prescription": { "type": "sets_reps", "sets": 3, "reps": { "target": 10 } }
+                      },
+                      {
+                        "id": "act_1", "type": "exercise", "exercise_ref": "squat",
+                        "prescription": { "type": "sets_reps", "sets": 3, "reps": { "target": 10 } }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

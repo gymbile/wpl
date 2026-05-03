@@ -1,0 +1,10 @@
+[
+  {
+    "code": "SCHEMA_VIOLATION",
+    "path": "/plan/metadata",
+    "severity": "error",
+    "meta": {
+      "keyword": "type"
+    }
+  }
+]

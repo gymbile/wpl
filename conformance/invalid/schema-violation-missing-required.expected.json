@@ -1,0 +1,10 @@
+[
+  {
+    "code": "SCHEMA_VIOLATION",
+    "path": "/plan",
+    "severity": "error",
+    "meta": {
+      "keyword": "required"
+    }
+  }
+]

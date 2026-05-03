@@ -1,0 +1,190 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "version": "1.0.0",
+  "plan": {
+    "id": "plan_progression",
+    "name": "3-Phase Strength Progression",
+    "description": "Hypertrophy → Strength → Peak, two weeks each.",
+    "type": "workout",
+    "visibility": "template",
+    "metadata": {
+      "tags": ["progression", "strength", "intermediate"],
+      "difficulty": "intermediate",
+      "estimated_duration_days": 42,
+      "language": "en"
+    },
+    "goals": [
+      { "id": "goal_1", "type": "primary", "category": "strength", "name": "Increase squat 1RM" }
+    ],
+    "phases": [
+      {
+        "id": "phase_hypertrophy",
+        "name": "Hypertrophy",
+        "order": 1,
+        "duration": { "value": 2, "unit": "weeks" },
+        "weeks": [
+          {
+            "id": "wk_h1", "name": "Hypertrophy W1", "order": 1,
+            "days": [
+              {
+                "id": "d_h1_1", "day_of_week": 1, "name": "Squat", "type": "training",
+                "blocks": [
+                  {
+                    "id": "main", "type": "main", "order": 1, "structure": "straight_sets",
+                    "activities": [
+                      {
+                        "id": "ex_1", "type": "exercise", "exercise_ref": "back_squat",
+                        "prescription": {
+                          "type": "sets_reps",
+                          "sets": 4, "reps": { "min": 8, "max": 12 },
+                          "weight": { "type": "percentage_1rm", "value": 70, "unit": "percent" },
+                          "rest": { "value": 90, "unit": "seconds" }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "wk_h2", "name": "Hypertrophy W2", "order": 2,
+            "days": [
+              {
+                "id": "d_h2_1", "day_of_week": 1, "name": "Squat", "type": "training",
+                "blocks": [
+                  {
+                    "id": "main", "type": "main", "order": 1, "structure": "straight_sets",
+                    "activities": [
+                      {
+                        "id": "ex_1", "type": "exercise", "exercise_ref": "back_squat",
+                        "prescription": {
+                          "type": "sets_reps",
+                          "sets": 4, "reps": { "min": 8, "max": 12 },
+                          "weight": { "type": "percentage_1rm", "value": 72, "unit": "percent" },
+                          "rest": { "value": 90, "unit": "seconds" }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "phase_strength",
+        "name": "Strength",
+        "order": 2,
+        "duration": { "value": 2, "unit": "weeks" },
+        "weeks": [
+          {
+            "id": "wk_s1", "name": "Strength W1", "order": 1,
+            "days": [
+              {
+                "id": "d_s1_1", "day_of_week": 1, "name": "Squat", "type": "training",
+                "blocks": [
+                  {
+                    "id": "main", "type": "main", "order": 1, "structure": "straight_sets",
+                    "activities": [
+                      {
+                        "id": "ex_1", "type": "exercise", "exercise_ref": "back_squat",
+                        "prescription": {
+                          "type": "sets_reps",
+                          "sets": 5, "reps": { "target": 5 },
+                          "weight": { "type": "percentage_1rm", "value": 82, "unit": "percent" },
+                          "rest": { "value": 180, "unit": "seconds" }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "wk_s2", "name": "Strength W2", "order": 2,
+            "days": [
+              {
+                "id": "d_s2_1", "day_of_week": 1, "name": "Squat", "type": "training",
+                "blocks": [
+                  {
+                    "id": "main", "type": "main", "order": 1, "structure": "straight_sets",
+                    "activities": [
+                      {
+                        "id": "ex_1", "type": "exercise", "exercise_ref": "back_squat",
+                        "prescription": {
+                          "type": "sets_reps",
+                          "sets": 5, "reps": { "target": 5 },
+                          "weight": { "type": "percentage_1rm", "value": 85, "unit": "percent" },
+                          "rest": { "value": 180, "unit": "seconds" }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "phase_peak",
+        "name": "Peak",
+        "order": 3,
+        "duration": { "value": 2, "unit": "weeks" },
+        "weeks": [
+          {
+            "id": "wk_p1", "name": "Peak W1", "order": 1,
+            "days": [
+              {
+                "id": "d_p1_1", "day_of_week": 1, "name": "Squat", "type": "training",
+                "blocks": [
+                  {
+                    "id": "main", "type": "main", "order": 1, "structure": "straight_sets",
+                    "activities": [
+                      {
+                        "id": "ex_1", "type": "exercise", "exercise_ref": "back_squat",
+                        "prescription": {
+                          "type": "sets_reps",
+                          "sets": 4, "reps": { "target": 3 },
+                          "weight": { "type": "percentage_1rm", "value": 90, "unit": "percent" },
+                          "rest": { "value": 240, "unit": "seconds" }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "wk_p2", "name": "Peak W2 (deload)", "order": 2,
+            "days": [
+              {
+                "id": "d_p2_1", "day_of_week": 1, "name": "Squat (deload)", "type": "training",
+                "blocks": [
+                  {
+                    "id": "main", "type": "main", "order": 1, "structure": "straight_sets",
+                    "activities": [
+                      {
+                        "id": "ex_1", "type": "exercise", "exercise_ref": "back_squat",
+                        "prescription": {
+                          "type": "sets_reps",
+                          "sets": 3, "reps": { "target": 3 },
+                          "weight": { "type": "percentage_1rm", "value": 60, "unit": "percent" },
+                          "rest": { "value": 120, "unit": "seconds" }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

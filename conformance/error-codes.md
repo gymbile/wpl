@@ -23,6 +23,19 @@ Raised by JSON Schema validation (Pass 1). When a `SCHEMA_VIOLATION` occurs, sem
   - `keyword` (string) — the JSON Schema keyword that failed (`required`, `enum`, `type`, `const`, `additionalProperties`, etc.)
   - `params` (object) — keyword-specific params (e.g., `{ missing_property: "id" }` for `required`, `{ allowed_values: ["..."] }` for `enum`)
 
+#### Path conventions for schema violations
+
+The `path` is the RFC 6901 JSON Pointer to the **failing instance node**, following ajv's `instancePath` semantics:
+
+| Keyword                  | `path` points at                          | `meta.params` carries the offender |
+|--------------------------|-------------------------------------------|------------------------------------|
+| `required`               | the parent object missing the property    | `{ missing_property: "<name>" }`   |
+| `additionalProperties`   | the parent object that disallows extras   | `{ additional_property: "<name>" }`|
+| `type`, `const`, `enum`  | the offending value itself                | keyword-specific                   |
+| `pattern`, `minLength`, etc. | the offending value itself            | keyword-specific                   |
+
+Validators built on libraries that report a different convention (e.g. `ex_json_schema` reports `additionalProperties` at the offending property, not the parent) **must normalize** to the table above before emitting the error. The conformance suite is the contract; library idiosyncrasies are not.
+
 ## Pass 2 — Semantic invariants
 
 ### `DUPLICATE_ID`
