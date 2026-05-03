@@ -1,0 +1,124 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "version": "1.0.0",
+  "plan": {
+    "id": "plan_marathon_base",
+    "name": "Marathon Base — Week 1",
+    "description": "First week of an 18-week marathon plan: easy runs, intervals, long run.",
+    "type": "workout",
+    "visibility": "template",
+    "metadata": {
+      "tags": ["running", "marathon", "endurance"],
+      "difficulty": "intermediate",
+      "estimated_duration_days": 7,
+      "language": "en"
+    },
+    "goals": [
+      { "id": "goal_marathon", "type": "primary", "category": "endurance", "name": "Complete marathon distance" }
+    ],
+    "phases": [
+      {
+        "id": "phase_base", "name": "Base", "order": 1,
+        "duration": { "value": 1, "unit": "weeks" },
+        "weeks": [
+          {
+            "id": "wk_1", "name": "Base W1", "order": 1,
+            "days": [
+              {
+                "id": "d_easy_1", "day_of_week": 1, "name": "Easy Run", "type": "training",
+                "blocks": [
+                  {
+                    "id": "main", "type": "main", "order": 1,
+                    "activities": [
+                      {
+                        "id": "run_easy", "type": "cardio", "name": "Easy run", "modality": "running",
+                        "prescription": {
+                          "type": "continuous",
+                          "duration": { "value": 40, "unit": "minutes" },
+                          "intensity": {
+                            "type": "heart_rate_zone",
+                            "target": { "zone": 2 }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "d_intervals", "day_of_week": 3, "name": "Intervals", "type": "training",
+                "blocks": [
+                  {
+                    "id": "warmup", "type": "warmup", "order": 1,
+                    "activities": [
+                      {
+                        "id": "wu_jog", "type": "cardio", "name": "Easy jog", "modality": "running",
+                        "prescription": {
+                          "type": "continuous",
+                          "duration": { "value": 10, "unit": "minutes" },
+                          "intensity": { "type": "rpe", "target": { "value": 4 } }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "main", "type": "main", "order": 2,
+                    "activities": [
+                      {
+                        "id": "run_intervals", "type": "cardio", "name": "6 × 800m", "modality": "running",
+                        "prescription": {
+                          "type": "intervals",
+                          "intensity": { "type": "pace", "target": { "pace_per_km": "4:00" } },
+                          "intervals": {
+                            "work": { "duration": 200 },
+                            "rest": { "duration": 120 },
+                            "repeat": 6
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "cooldown", "type": "cooldown", "order": 3,
+                    "activities": [
+                      {
+                        "id": "cd_jog", "type": "cardio", "name": "Cooldown jog", "modality": "running",
+                        "prescription": {
+                          "type": "continuous",
+                          "duration": { "value": 10, "unit": "minutes" },
+                          "intensity": { "type": "rpe", "target": { "value": 3 } }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              { "id": "d_rest_1", "day_of_week": 5, "name": "Rest", "type": "rest" },
+              {
+                "id": "d_long", "day_of_week": 7, "name": "Long Run", "type": "training",
+                "blocks": [
+                  {
+                    "id": "main", "type": "main", "order": 1,
+                    "activities": [
+                      {
+                        "id": "run_long", "type": "cardio", "name": "Long easy run", "modality": "running",
+                        "prescription": {
+                          "type": "continuous",
+                          "duration": { "value": 90, "unit": "minutes" },
+                          "intensity": {
+                            "type": "heart_rate_zone",
+                            "target": { "zone": 2 }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "version": "1.0.0",
+  "plan": {
+    "id": "20202020-2020-4202-8202-202020202020",
+    "name": "Duration says 21 days, array has 1 week",
+    "type": "workout",
+    "visibility": "private",
+    "metadata": {},
+    "goals": [],
+    "phases": [
+      {
+        "id": "phase_1",
+        "name": "P1",
+        "order": 1,
+        "duration": { "value": 21, "unit": "days" },
+        "weeks": [
+          {
+            "id": "week_1", "name": "Week 1", "order": 1,
+            "days": [
+              { "id": "d1", "day_of_week": 1, "name": "D1", "type": "rest" }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

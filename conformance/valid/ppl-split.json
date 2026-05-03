@@ -1,0 +1,136 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "version": "1.0.0",
+  "plan": {
+    "id": "plan_ppl_split",
+    "name": "Push / Pull / Legs (6-day)",
+    "description": "Classic 6-day PPL split, two-week microcycle.",
+    "type": "workout",
+    "visibility": "template",
+    "metadata": {
+      "tags": ["ppl", "hypertrophy", "intermediate", "6_day"],
+      "difficulty": "intermediate",
+      "estimated_duration_days": 14,
+      "language": "en"
+    },
+    "goals": [
+      { "id": "goal_hyp", "type": "primary", "category": "hypertrophy", "name": "Build muscle mass" }
+    ],
+    "phases": [
+      {
+        "id": "phase_1", "name": "Microcycle", "order": 1,
+        "duration": { "value": 2, "unit": "weeks" },
+        "weeks": [
+          {
+            "id": "wk_1", "name": "Week 1", "order": 1,
+            "days": [
+              {
+                "id": "d_push_a", "day_of_week": 1, "name": "Push A", "type": "training",
+                "blocks": [
+                  {
+                    "id": "main", "type": "main", "order": 1, "structure": "straight_sets",
+                    "activities": [
+                      { "id": "ex_bench", "type": "exercise", "exercise_ref": "barbell_bench_press",
+                        "prescription": { "type": "sets_reps", "sets": 4, "reps": { "min": 6, "max": 8 }, "rest": { "value": 150, "unit": "seconds" } } },
+                      { "id": "ex_ohp", "type": "exercise", "exercise_ref": "overhead_press",
+                        "prescription": { "type": "sets_reps", "sets": 3, "reps": { "min": 8, "max": 10 }, "rest": { "value": 120, "unit": "seconds" } } },
+                      { "id": "ex_dip", "type": "exercise", "exercise_ref": "dip",
+                        "prescription": { "type": "sets_reps", "sets": 3, "reps": { "min": 8, "max": 12 }, "rest": { "value": 90, "unit": "seconds" } } }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "d_pull_a", "day_of_week": 2, "name": "Pull A", "type": "training",
+                "blocks": [
+                  {
+                    "id": "main", "type": "main", "order": 1, "structure": "straight_sets",
+                    "activities": [
+                      { "id": "ex_dl", "type": "exercise", "exercise_ref": "deadlift",
+                        "prescription": { "type": "sets_reps", "sets": 3, "reps": { "target": 5 }, "rest": { "value": 180, "unit": "seconds" } } },
+                      { "id": "ex_pullup", "type": "exercise", "exercise_ref": "pull_up",
+                        "prescription": { "type": "sets_reps", "sets": 4, "reps": { "min": 5, "max": 10 }, "rest": { "value": 120, "unit": "seconds" } } },
+                      { "id": "ex_row", "type": "exercise", "exercise_ref": "barbell_row",
+                        "prescription": { "type": "sets_reps", "sets": 3, "reps": { "min": 8, "max": 10 }, "rest": { "value": 90, "unit": "seconds" } } }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "d_legs_a", "day_of_week": 3, "name": "Legs A", "type": "training",
+                "blocks": [
+                  {
+                    "id": "main", "type": "main", "order": 1, "structure": "straight_sets",
+                    "activities": [
+                      { "id": "ex_squat", "type": "exercise", "exercise_ref": "back_squat",
+                        "prescription": { "type": "sets_reps", "sets": 4, "reps": { "min": 6, "max": 8 }, "rest": { "value": 180, "unit": "seconds" } } },
+                      { "id": "ex_rdl", "type": "exercise", "exercise_ref": "romanian_deadlift",
+                        "prescription": { "type": "sets_reps", "sets": 3, "reps": { "min": 8, "max": 10 }, "rest": { "value": 120, "unit": "seconds" } } },
+                      { "id": "ex_calf", "type": "exercise", "exercise_ref": "standing_calf_raise",
+                        "prescription": { "type": "sets_reps", "sets": 4, "reps": { "min": 12, "max": 15 }, "rest": { "value": 60, "unit": "seconds" } } }
+                    ]
+                  }
+                ]
+              },
+              { "id": "d_rest_1", "day_of_week": 4, "name": "Rest", "type": "rest" },
+              {
+                "id": "d_push_b", "day_of_week": 5, "name": "Push B", "type": "training",
+                "blocks": [
+                  {
+                    "id": "main", "type": "main", "order": 1, "structure": "straight_sets",
+                    "activities": [
+                      { "id": "ex_incline", "type": "exercise", "exercise_ref": "incline_dumbbell_press",
+                        "prescription": { "type": "sets_reps", "sets": 4, "reps": { "min": 8, "max": 12 }, "rest": { "value": 90, "unit": "seconds" } } },
+                      { "id": "ex_lat_raise", "type": "exercise", "exercise_ref": "lateral_raise",
+                        "prescription": { "type": "sets_reps", "sets": 4, "reps": { "min": 12, "max": 15 }, "rest": { "value": 60, "unit": "seconds" } } }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "d_pull_b", "day_of_week": 6, "name": "Pull B", "type": "training",
+                "blocks": [
+                  {
+                    "id": "main", "type": "main", "order": 1, "structure": "straight_sets",
+                    "activities": [
+                      { "id": "ex_chinup", "type": "exercise", "exercise_ref": "chin_up",
+                        "prescription": { "type": "sets_reps", "sets": 4, "reps": { "min": 6, "max": 10 }, "rest": { "value": 120, "unit": "seconds" } } },
+                      { "id": "ex_curl", "type": "exercise", "exercise_ref": "barbell_curl",
+                        "prescription": { "type": "sets_reps", "sets": 3, "reps": { "min": 8, "max": 12 }, "rest": { "value": 60, "unit": "seconds" } } }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "d_legs_b", "day_of_week": 7, "name": "Legs B", "type": "training",
+                "blocks": [
+                  {
+                    "id": "main", "type": "main", "order": 1, "structure": "straight_sets",
+                    "activities": [
+                      { "id": "ex_front_squat", "type": "exercise", "exercise_ref": "front_squat",
+                        "prescription": { "type": "sets_reps", "sets": 4, "reps": { "min": 6, "max": 8 }, "rest": { "value": 150, "unit": "seconds" } } },
+                      { "id": "ex_lunge", "type": "exercise", "exercise_ref": "walking_lunge",
+                        "prescription": { "type": "sets_reps", "sets": 3, "reps": { "min": 10, "max": 12 }, "rest": { "value": 90, "unit": "seconds" } } }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "wk_2", "name": "Week 2", "order": 2,
+            "days": [
+              { "id": "d_push_a2", "day_of_week": 1, "name": "Push A", "type": "training" },
+              { "id": "d_pull_a2", "day_of_week": 2, "name": "Pull A", "type": "training" },
+              { "id": "d_legs_a2", "day_of_week": 3, "name": "Legs A", "type": "training" },
+              { "id": "d_rest_2",  "day_of_week": 4, "name": "Rest",   "type": "rest" },
+              { "id": "d_push_b2", "day_of_week": 5, "name": "Push B", "type": "training" },
+              { "id": "d_pull_b2", "day_of_week": 6, "name": "Pull B", "type": "training" },
+              { "id": "d_legs_b2", "day_of_week": 7, "name": "Legs B", "type": "training" }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

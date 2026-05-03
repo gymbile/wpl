@@ -1,0 +1,36 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "version": "1.0.0",
+  "plan": {
+    "id": "30303030-3030-4303-8303-303030303030",
+    "name": "Two genuine pass-2 errors",
+    "type": "workout",
+    "visibility": "private",
+    "metadata": {},
+    "goals": [],
+    "personalization": {
+      "inputs": [
+        { "id": "age", "type": "number", "source": "user.age" }
+      ],
+      "rules": [
+        {
+          "id": "rule_1",
+          "condition": { "field": "age", "op": "gt", "value": 60 },
+          "actions": [
+            { "type": "modify_intensity", "scope": "supercluster" }
+          ]
+        }
+      ]
+    },
+    "phases": [
+      {
+        "id": "phase_1", "name": "P1", "order": 1,
+        "duration": { "value": 2, "unit": "weeks" },
+        "weeks": [
+          { "id": "week_1", "name": "Week 1", "order": 1, "days": [{ "id": "d1", "day_of_week": 1, "name": "D1", "type": "rest" }] },
+          { "id": "week_1", "name": "Week 1 (dup)", "order": 2, "days": [{ "id": "d2", "day_of_week": 1, "name": "D2", "type": "rest" }] }
+        ]
+      }
+    ]
+  }
+}

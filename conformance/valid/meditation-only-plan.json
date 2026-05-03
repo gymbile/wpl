@@ -1,0 +1,87 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "version": "1.0.0",
+  "plan": {
+    "id": "plan_meditation_only",
+    "name": "21-Day Mindfulness Foundations",
+    "description": "Daily guided meditation sessions building from 5 to 20 minutes.",
+    "type": "meditation",
+    "visibility": "template",
+    "metadata": {
+      "tags": ["meditation", "mindfulness", "beginner"],
+      "difficulty": "beginner",
+      "estimated_duration_days": 21,
+      "language": "en"
+    },
+    "goals": [
+      { "id": "goal_consistency", "type": "primary", "category": "mental_wellness", "name": "Establish daily meditation habit" }
+    ],
+    "phases": [
+      {
+        "id": "phase_foundations", "name": "Foundations", "order": 1,
+        "duration": { "value": 1, "unit": "weeks" },
+        "weeks": [
+          {
+            "id": "wk_1", "name": "Week 1 (5 min)", "order": 1,
+            "days": [
+              {
+                "id": "d_1", "day_of_week": 1, "name": "Day 1 — Breath", "type": "training",
+                "blocks": [
+                  {
+                    "id": "main", "type": "meditation", "order": 1,
+                    "activities": [
+                      {
+                        "id": "med_breath", "type": "meditation", "category": "mindfulness",
+                        "name": "Breath awareness",
+                        "prescription": {
+                          "duration": { "value": 5, "unit": "minutes" },
+                          "guided": true
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "d_2", "day_of_week": 2, "name": "Day 2 — Body Scan", "type": "training",
+                "blocks": [
+                  {
+                    "id": "main", "type": "meditation", "order": 1,
+                    "activities": [
+                      {
+                        "id": "med_scan", "type": "meditation", "category": "body_scan",
+                        "name": "Body scan",
+                        "prescription": {
+                          "duration": { "value": 5, "unit": "minutes" },
+                          "guided": true
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "d_3", "day_of_week": 3, "name": "Day 3 — Loving-Kindness", "type": "training",
+                "blocks": [
+                  {
+                    "id": "main", "type": "meditation", "order": 1,
+                    "activities": [
+                      {
+                        "id": "med_metta", "type": "meditation", "category": "loving_kindness",
+                        "name": "Metta practice",
+                        "prescription": {
+                          "duration": { "value": 5, "unit": "minutes" },
+                          "guided": true
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

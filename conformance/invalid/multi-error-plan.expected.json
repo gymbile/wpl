@@ -1,0 +1,22 @@
+[
+  {
+    "code": "DUPLICATE_ID",
+    "path": "/plan/phases/0/weeks/1",
+    "severity": "error",
+    "meta": {
+      "duplicate_id": "week_1",
+      "scope": "phase:phase_1",
+      "first_occurrence": "/plan/phases/0/weeks/0"
+    }
+  },
+  {
+    "code": "INVALID_PERSONALIZATION_RULE",
+    "path": "/plan/personalization/rules/0/actions/0",
+    "severity": "error",
+    "meta": {
+      "reason": "invalid_action_scope",
+      "field": "scope",
+      "value": "supercluster"
+    }
+  }
+]
