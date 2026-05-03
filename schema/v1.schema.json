@@ -324,6 +324,7 @@
         "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9_-]*$" },
         "name": { "type": "string" },
         "order": { "type": "integer", "minimum": 1 },
+        "type": { "$ref": "#/$defs/PhaseType" },
         "description": { "type": "string" },
         "duration": { "$ref": "#/$defs/Duration" },
         "weeks": {
@@ -331,6 +332,22 @@
           "items": { "$ref": "#/$defs/Week" }
         }
       }
+    },
+
+    "PhaseType": {
+      "type": "string",
+      "description": "Optional periodization role of a phase. Lets consuming tools surface where in a cycle the user is (e.g. 'Deload week' badges, fatigue plots).",
+      "enum": [
+        "accumulation",
+        "intensification",
+        "realization",
+        "deload",
+        "base",
+        "build",
+        "peak",
+        "recovery",
+        "transition"
+      ]
     },
 
     "Week": {
@@ -341,6 +358,10 @@
         "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9_-]*$" },
         "name": { "type": "string" },
         "order": { "type": "integer", "minimum": 1 },
+        "is_deload": {
+          "type": "boolean",
+          "description": "Optional flag marking a deload week. Independent of Phase.type so individual deload weeks can be tagged inside any phase."
+        },
         "days": {
           "type": "array",
           "items": { "$ref": "#/$defs/Day" }
@@ -431,7 +452,7 @@
         "sets": { "type": "integer", "minimum": 1 },
         "reps": { "$ref": "#/$defs/Reps" },
         "rest": { "$ref": "#/$defs/Duration" },
-        "tempo": { "type": "string" },
+        "tempo": { "$ref": "#/$defs/Tempo" },
         "weight": { "$ref": "#/$defs/Weight" },
         "duration": { "$ref": "#/$defs/Duration" }
       }
@@ -445,6 +466,28 @@
         "min": { "type": "integer", "minimum": 1 },
         "max": { "type": "integer", "minimum": 1 }
       }
+    },
+
+    "Tempo": {
+      "description": "Lifting tempo. Either the conventional 4-digit string (e.g. \"3-1-1-0\" or \"30X1\" where X = explosive) for human authoring, or a structured object that tools can compute time-under-tension from. Phases are eccentric (lowering), pause at bottom, concentric (lifting), pause at top — all in seconds.",
+      "oneOf": [
+        { "type": "string", "minLength": 1 },
+        {
+          "type": "object",
+          "required": ["eccentric", "concentric"],
+          "additionalProperties": false,
+          "properties": {
+            "eccentric": { "type": "number", "minimum": 0 },
+            "pause_bottom": { "type": "number", "minimum": 0 },
+            "concentric": { "type": "number", "minimum": 0 },
+            "pause_top": { "type": "number", "minimum": 0 },
+            "explosive_concentric": {
+              "type": "boolean",
+              "description": "When true, concentric is intent-maximal regardless of the numeric value (corresponds to the 'X' character in 4-digit notation)."
+            }
+          }
+        }
+      ]
     },
 
     "Weight": {

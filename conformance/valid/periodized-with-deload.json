@@ -1,0 +1,56 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "version": "1.0.0",
+  "plan": {
+    "id": "plan_periodized_deload",
+    "name": "4-Week Block with Deload",
+    "description": "Three accumulation weeks tagged at the phase level plus a flagged deload week.",
+    "type": "workout",
+    "visibility": "template",
+    "metadata": {
+      "tags": ["periodization", "block", "deload"],
+      "difficulty": "intermediate",
+      "estimated_duration_days": 28,
+      "language": "en"
+    },
+    "goals": [
+      { "id": "goal_str", "type": "primary", "category": "strength", "name": "Build base strength" }
+    ],
+    "phases": [
+      {
+        "id": "phase_accumulation",
+        "name": "Accumulation",
+        "type": "accumulation",
+        "order": 1,
+        "duration": { "value": 4, "unit": "weeks" },
+        "weeks": [
+          {
+            "id": "wk_1", "name": "Week 1", "order": 1,
+            "days": [
+              { "id": "d_1", "day_of_week": 1, "name": "D1", "type": "training" }
+            ]
+          },
+          {
+            "id": "wk_2", "name": "Week 2", "order": 2,
+            "days": [
+              { "id": "d_2", "day_of_week": 1, "name": "D1", "type": "training" }
+            ]
+          },
+          {
+            "id": "wk_3", "name": "Week 3", "order": 3,
+            "days": [
+              { "id": "d_3", "day_of_week": 1, "name": "D1", "type": "training" }
+            ]
+          },
+          {
+            "id": "wk_4", "name": "Week 4 (deload)", "order": 4,
+            "is_deload": true,
+            "days": [
+              { "id": "d_4", "day_of_week": 1, "name": "Light day", "type": "training" }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

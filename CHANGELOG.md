@@ -7,6 +7,17 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [Unreleased]
 
+## [1.2.0] — 2026-05-03
+
+### Added
+- `Phase.type` enum (`accumulation | intensification | realization | deload | base | build | peak | recovery | transition`) — optional, lets consuming tools surface periodization role.
+- `Week.is_deload` boolean — independent of `Phase.type` so individual deload weeks can be tagged inside any phase.
+- `Tempo` definition supporting both the conventional 4-digit string ("3-1-1-0", "30X1") and a structured object (`eccentric`, `pause_bottom`, `concentric`, `pause_top`, `explosive_concentric`). `ExercisePrescription.tempo` is now `oneOf: [string, StructuredTempo]` instead of plain string — backwards compatible.
+- Two new conformance fixtures: `valid/periodized-with-deload.json`, `valid/structured-tempo.json`.
+
+### Notes
+All changes are additive. No existing v1.x plan becomes invalid.
+
 ## [1.1.1] — 2026-05-02
 
 ### Changed

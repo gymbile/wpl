@@ -1,0 +1,73 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "version": "1.0.0",
+  "plan": {
+    "id": "plan_tempo_examples",
+    "name": "Tempo Notation Sampler",
+    "description": "Demonstrates both string-form ('30X1') and structured-form tempo on exercise prescriptions.",
+    "type": "workout",
+    "visibility": "private",
+    "metadata": {
+      "tags": ["tempo", "eccentric"],
+      "difficulty": "intermediate",
+      "language": "en"
+    },
+    "goals": [
+      { "id": "goal_hyp", "type": "primary", "category": "hypertrophy", "name": "Hypertrophy" }
+    ],
+    "phases": [
+      {
+        "id": "phase_1", "name": "Single session", "order": 1,
+        "weeks": [
+          {
+            "id": "wk_1", "name": "Week 1", "order": 1,
+            "days": [
+              {
+                "id": "d_1", "day_of_week": 1, "name": "Tempo work", "type": "training",
+                "blocks": [
+                  {
+                    "id": "main", "type": "main", "order": 1, "structure": "straight_sets",
+                    "activities": [
+                      {
+                        "id": "ex_squat",
+                        "type": "exercise",
+                        "exercise_ref": "back_squat",
+                        "name": "Back squat — string tempo",
+                        "prescription": {
+                          "type": "sets_reps",
+                          "sets": 4,
+                          "reps": { "target": 6 },
+                          "tempo": "30X1",
+                          "weight": { "type": "percentage_1rm", "value": 75, "unit": "percent" }
+                        }
+                      },
+                      {
+                        "id": "ex_bench",
+                        "type": "exercise",
+                        "exercise_ref": "barbell_bench_press",
+                        "name": "Bench press — structured tempo",
+                        "prescription": {
+                          "type": "sets_reps",
+                          "sets": 3,
+                          "reps": { "min": 8, "max": 10 },
+                          "tempo": {
+                            "eccentric": 3,
+                            "pause_bottom": 1,
+                            "concentric": 1,
+                            "pause_top": 0,
+                            "explosive_concentric": true
+                          },
+                          "weight": { "type": "percentage_1rm", "value": 70, "unit": "percent" }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
