@@ -7,6 +7,18 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [Unreleased]
 
+## [1.3.0] — 2026-05-03
+
+### Added
+- `ExerciseActivity` gains optional `primary_muscles[]`, `secondary_muscles[]`, `movement_pattern` with controlled vocabularies (`MuscleGroup` and `MovementPattern` enums). Lets analytics tools compute weekly sets per muscle group (Schoenfeld-style volume tracking) without an out-of-band exercise→muscle map.
+- `CardioPrescription.intensity` gains optional `zone_model` enum (`hr_3_zone_seiler`, `hr_5_zone`, `hr_7_zone`, `power_coggan_7_zone`, `pace_critical_speed`, `rpe_borg_10`, `rpe_borg_20`) so a "Zone 2" target is unambiguous. `intensity.type` enum widened with `power` and `bpm`.
+- Plan-level `athlete_thresholds` (HR max/LTHR/resting, FTP, VO2max, critical pace, body weight, 1RM list) — lets consumers convert relative-intensity targets into absolute numbers downstream.
+- New conformance fixtures: `valid/muscle-tagged-workout.json`, `valid/cardio-zone-model.json`, `invalid/schema-violation-bad-muscle-group.json`.
+- `error-codes.md` codifies the `oneOf` path-normalization rule: validators must drill into the best-matching branch when reporting failures inside a `oneOf`-typed schema (matches ajv's native behavior; ex_json_schema requires post-processing).
+
+### Notes
+All changes are additive. Every v1.x plan still validates unchanged.
+
 ## [1.2.0] — 2026-05-03
 
 ### Added

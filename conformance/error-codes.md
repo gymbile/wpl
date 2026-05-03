@@ -36,6 +36,14 @@ The `path` is the RFC 6901 JSON Pointer to the **failing instance node**, follow
 
 Validators built on libraries that report a different convention (e.g. `ex_json_schema` reports `additionalProperties` at the offending property, not the parent) **must normalize** to the table above before emitting the error. The conformance suite is the contract; library idiosyncrasies are not.
 
+#### `oneOf` failures: drill into the best-matching branch
+
+When validation fails inside a `oneOf` (e.g. an inner enum violation on an `ExerciseActivity`, which is one branch of `Activity`), validators **must surface the deepest-specific failure in the best-matching branch**, not a bare `oneOf` failure at the parent.
+
+"Best-matching" is defined as the branch with the fewest inner errors (i.e. closest match to the supplied data, typically determined by const discriminators like `type: "exercise"`).
+
+This matches ajv's native behavior. ex_json_schema reports a single `OneOf` error at the parent by default; the reference Elixir validator post-processes these into branch-specific errors so paths and keywords agree across validators.
+
 ## Pass 2 — Semantic invariants
 
 ### `DUPLICATE_ID`

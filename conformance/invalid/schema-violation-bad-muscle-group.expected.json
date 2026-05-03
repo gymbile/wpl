@@ -1,0 +1,10 @@
+[
+  {
+    "code": "SCHEMA_VIOLATION",
+    "path": "/plan/phases/0/weeks/0/days/0/blocks/0/activities/0/primary_muscles/0",
+    "severity": "error",
+    "meta": {
+      "keyword": "enum"
+    }
+  }
+]

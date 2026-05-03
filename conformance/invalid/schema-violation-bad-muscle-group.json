@@ -1,0 +1,41 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "version": "1.0.0",
+  "plan": {
+    "id": "40404040-4040-4404-8404-404040404040",
+    "name": "Bad muscle group",
+    "type": "workout",
+    "visibility": "private",
+    "metadata": {},
+    "goals": [],
+    "phases": [
+      {
+        "id": "phase_1", "name": "P1", "order": 1,
+        "weeks": [
+          {
+            "id": "week_1", "name": "Week 1", "order": 1,
+            "days": [
+              {
+                "id": "day_1", "day_of_week": 1, "name": "D1", "type": "training",
+                "blocks": [
+                  {
+                    "id": "main", "type": "main", "order": 1,
+                    "activities": [
+                      {
+                        "id": "ex_1",
+                        "type": "exercise",
+                        "exercise_ref": "push_up",
+                        "primary_muscles": ["pectoralis_galaxica"],
+                        "prescription": { "type": "sets_reps", "sets": 3, "reps": { "target": 10 } }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

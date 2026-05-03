@@ -45,11 +45,91 @@
           "items": { "$ref": "#/$defs/Phase" }
         },
         "progress": { "$ref": "#/$defs/Progress" },
+        "athlete_thresholds": { "$ref": "#/$defs/AthleteThresholds" },
         "notifications": {
           "type": "array",
           "items": { "$ref": "#/$defs/Notification" }
         }
       }
+    },
+
+    "AthleteThresholds": {
+      "type": "object",
+      "description": "Optional reference values for the target athlete that resolve relative-intensity targets (HR zones, %FTP, %1RM) into absolute numbers downstream.",
+      "additionalProperties": false,
+      "properties": {
+        "hr_max_bpm": { "type": "integer", "minimum": 60, "maximum": 250 },
+        "lthr_bpm": { "type": "integer", "minimum": 60, "maximum": 250 },
+        "resting_hr_bpm": { "type": "integer", "minimum": 30, "maximum": 120 },
+        "ftp_watts": { "type": "number", "minimum": 0 },
+        "vo2max_ml_kg_min": { "type": "number", "minimum": 0 },
+        "critical_pace_seconds_per_km": { "type": "number", "minimum": 0 },
+        "body_weight_kg": { "type": "number", "minimum": 0 },
+        "one_rm": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/OneRMEntry" }
+        }
+      }
+    },
+
+    "OneRMEntry": {
+      "type": "object",
+      "required": ["exercise_ref", "value", "unit"],
+      "additionalProperties": false,
+      "properties": {
+        "exercise_ref": { "type": "string" },
+        "value": { "type": "number", "minimum": 0 },
+        "unit": { "type": "string", "enum": ["kg", "lb"] }
+      }
+    },
+
+    "MuscleGroup": {
+      "type": "string",
+      "description": "Controlled vocabulary for muscle groups. Lets analytics tools compute weekly sets per muscle (Schoenfeld-style volume tracking) without an out-of-band exercise→muscle map.",
+      "enum": [
+        "chest",
+        "upper_back",
+        "lats",
+        "traps",
+        "front_delts",
+        "side_delts",
+        "rear_delts",
+        "biceps",
+        "triceps",
+        "forearms",
+        "abs",
+        "obliques",
+        "lower_back",
+        "spinal_erectors",
+        "glutes",
+        "quadriceps",
+        "hamstrings",
+        "calves",
+        "hip_adductors",
+        "hip_abductors",
+        "hip_flexors",
+        "neck"
+      ]
+    },
+
+    "MovementPattern": {
+      "type": "string",
+      "description": "Functional movement-pattern taxonomy. Useful for balanced-program checks (e.g. push:pull ratio).",
+      "enum": [
+        "squat",
+        "hinge",
+        "lunge",
+        "push_horizontal",
+        "push_vertical",
+        "pull_horizontal",
+        "pull_vertical",
+        "carry",
+        "rotate",
+        "anti_rotate",
+        "gait",
+        "jump",
+        "isolation"
+      ]
     },
 
     "PlanType": {
@@ -436,7 +516,19 @@
         "name": { "type": "string" },
         "prescription": { "$ref": "#/$defs/ExercisePrescription" },
         "target_rpe": { "type": "number", "minimum": 1, "maximum": 10 },
-        "target_rir": { "type": "number", "minimum": 0 }
+        "target_rir": { "type": "number", "minimum": 0 },
+        "primary_muscles": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/MuscleGroup" },
+          "uniqueItems": true,
+          "minItems": 1
+        },
+        "secondary_muscles": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/MuscleGroup" },
+          "uniqueItems": true
+        },
+        "movement_pattern": { "$ref": "#/$defs/MovementPattern" }
       }
     },
 
@@ -543,9 +635,22 @@
           "properties": {
             "type": {
               "type": "string",
-              "enum": ["heart_rate_zone", "rpe", "pace"]
+              "enum": ["heart_rate_zone", "rpe", "pace", "power", "bpm"]
             },
-            "target": { "type": "object", "additionalProperties": true }
+            "target": { "type": "object", "additionalProperties": true },
+            "zone_model": {
+              "type": "string",
+              "description": "Disambiguates which zone numbering system the target uses. Recommended whenever type is heart_rate_zone, power, or pace.",
+              "enum": [
+                "hr_3_zone_seiler",
+                "hr_5_zone",
+                "hr_7_zone",
+                "power_coggan_7_zone",
+                "pace_critical_speed",
+                "rpe_borg_10",
+                "rpe_borg_20"
+              ]
+            }
           }
         },
         "intervals": {

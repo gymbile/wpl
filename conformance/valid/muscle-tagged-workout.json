@@ -1,0 +1,102 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "version": "1.0.0",
+  "plan": {
+    "id": "plan_muscle_tagged",
+    "name": "Volume-trackable Upper Body",
+    "description": "Activities tagged with primary/secondary muscles and movement patterns so a coach app can compute weekly sets per muscle group and push:pull balance.",
+    "type": "workout",
+    "visibility": "template",
+    "metadata": {
+      "tags": ["taxonomy", "analytics"],
+      "difficulty": "intermediate",
+      "language": "en"
+    },
+    "goals": [
+      { "id": "goal_hyp", "type": "primary", "category": "hypertrophy", "name": "Upper-body hypertrophy" }
+    ],
+    "phases": [
+      {
+        "id": "phase_1", "name": "Single session", "order": 1,
+        "weeks": [
+          {
+            "id": "wk_1", "name": "Week 1", "order": 1,
+            "days": [
+              {
+                "id": "d_upper", "day_of_week": 1, "name": "Upper", "type": "training",
+                "blocks": [
+                  {
+                    "id": "main", "type": "main", "order": 1, "structure": "straight_sets",
+                    "activities": [
+                      {
+                        "id": "ex_bench",
+                        "type": "exercise",
+                        "exercise_ref": "barbell_bench_press",
+                        "name": "Bench press",
+                        "primary_muscles": ["chest"],
+                        "secondary_muscles": ["triceps", "front_delts"],
+                        "movement_pattern": "push_horizontal",
+                        "prescription": {
+                          "type": "sets_reps",
+                          "sets": 4,
+                          "reps": { "min": 6, "max": 8 },
+                          "weight": { "type": "percentage_1rm", "value": 75, "unit": "percent" },
+                          "rest": { "value": 120, "unit": "seconds" }
+                        }
+                      },
+                      {
+                        "id": "ex_row",
+                        "type": "exercise",
+                        "exercise_ref": "barbell_row",
+                        "name": "Bent-over row",
+                        "primary_muscles": ["lats", "upper_back"],
+                        "secondary_muscles": ["biceps", "rear_delts"],
+                        "movement_pattern": "pull_horizontal",
+                        "prescription": {
+                          "type": "sets_reps",
+                          "sets": 4,
+                          "reps": { "min": 8, "max": 10 },
+                          "rest": { "value": 90, "unit": "seconds" }
+                        }
+                      },
+                      {
+                        "id": "ex_ohp",
+                        "type": "exercise",
+                        "exercise_ref": "overhead_press",
+                        "name": "Overhead press",
+                        "primary_muscles": ["front_delts", "side_delts"],
+                        "secondary_muscles": ["triceps", "upper_back"],
+                        "movement_pattern": "push_vertical",
+                        "prescription": {
+                          "type": "sets_reps",
+                          "sets": 3,
+                          "reps": { "target": 8 },
+                          "rest": { "value": 120, "unit": "seconds" }
+                        }
+                      },
+                      {
+                        "id": "ex_chinup",
+                        "type": "exercise",
+                        "exercise_ref": "chin_up",
+                        "name": "Chin-up",
+                        "primary_muscles": ["lats"],
+                        "secondary_muscles": ["biceps", "upper_back"],
+                        "movement_pattern": "pull_vertical",
+                        "prescription": {
+                          "type": "sets_reps",
+                          "sets": 3,
+                          "reps": { "min": 6, "max": 10 },
+                          "rest": { "value": 90, "unit": "seconds" }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
