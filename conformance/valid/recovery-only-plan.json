@@ -1,0 +1,90 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "version": "1.0.0",
+  "plan": {
+    "id": "plan_recovery_week",
+    "name": "Active Recovery Week",
+    "description": "One week of mobility, stretching, and gentle yoga — no resistance training.",
+    "type": "recovery",
+    "visibility": "template",
+    "metadata": {
+      "tags": ["recovery", "mobility", "deload"],
+      "difficulty": "beginner",
+      "estimated_duration_days": 7,
+      "language": "en"
+    },
+    "goals": [
+      { "id": "goal_mobility", "type": "primary", "category": "mobility", "name": "Restore range of motion" }
+    ],
+    "phases": [
+      {
+        "id": "phase_1", "name": "Recovery", "order": 1,
+        "duration": { "value": 1, "unit": "weeks" },
+        "weeks": [
+          {
+            "id": "wk_1", "name": "Week 1", "order": 1,
+            "days": [
+              {
+                "id": "d_1", "day_of_week": 1, "name": "Hip Mobility", "type": "active_recovery",
+                "blocks": [
+                  {
+                    "id": "main", "type": "main", "order": 1,
+                    "activities": [
+                      {
+                        "id": "rec_hip",
+                        "type": "recovery",
+                        "category": "mobility",
+                        "name": "Hip Mobility Flow",
+                        "prescription": {
+                          "duration": { "value": 20, "unit": "minutes" }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "d_2", "day_of_week": 3, "name": "Yoga Flow", "type": "active_recovery",
+                "blocks": [
+                  {
+                    "id": "main", "type": "main", "order": 1,
+                    "activities": [
+                      {
+                        "id": "rec_yoga",
+                        "type": "recovery",
+                        "category": "stretching",
+                        "name": "Gentle Vinyasa",
+                        "prescription": {
+                          "duration": { "value": 30, "unit": "minutes" }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "d_3", "day_of_week": 5, "name": "Foam Rolling", "type": "active_recovery",
+                "blocks": [
+                  {
+                    "id": "main", "type": "main", "order": 1,
+                    "activities": [
+                      {
+                        "id": "rec_smr",
+                        "type": "recovery",
+                        "category": "myofascial_release",
+                        "name": "Full-body foam rolling",
+                        "prescription": {
+                          "duration": { "value": 15, "unit": "minutes" }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

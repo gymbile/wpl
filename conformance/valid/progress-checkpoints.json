@@ -1,0 +1,65 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "version": "1.0.0",
+  "plan": {
+    "id": "plan_progress_full",
+    "name": "8-Week Strength with Checkpoints",
+    "description": "Strength block with 4-week and 8-week assessment checkpoints, points and streaks.",
+    "type": "workout",
+    "visibility": "template",
+    "metadata": {
+      "tags": ["strength", "8_week", "tracking"],
+      "difficulty": "intermediate",
+      "estimated_duration_days": 56,
+      "language": "en"
+    },
+    "goals": [
+      { "id": "goal_str", "type": "primary", "category": "strength", "name": "Increase compound 1RMs" }
+    ],
+    "phases": [
+      {
+        "id": "phase_1", "name": "Base", "order": 1,
+        "duration": { "value": 1, "unit": "weeks" },
+        "weeks": [
+          {
+            "id": "wk_1", "name": "Week 1", "order": 1,
+            "days": [
+              { "id": "d_1", "day_of_week": 1, "name": "Day 1", "type": "training" }
+            ]
+          }
+        ]
+      }
+    ],
+    "progress": {
+      "checkpoints": [
+        {
+          "id": "cp_4wk",
+          "name": "4-Week Assessment",
+          "at": { "value": 4, "unit": "weeks" },
+          "measurements": ["squat_1rm", "bench_1rm", "deadlift_1rm"],
+          "questions": ["How's recovery between sessions?", "Any persistent soreness?"]
+        },
+        {
+          "id": "cp_8wk",
+          "name": "8-Week Final Assessment",
+          "at": { "value": 8, "unit": "weeks" },
+          "measurements": ["squat_1rm", "bench_1rm", "deadlift_1rm", "body_weight"],
+          "questions": ["What was your favorite session?", "What would you change?"]
+        }
+      ],
+      "points_system": {
+        "enabled": true,
+        "rules": [
+          { "action": "complete_workout", "points": 10 },
+          { "action": "complete_week", "points": 50 },
+          { "action": "hit_pr", "points": 100 },
+          { "action": "streak_7_days", "points": 200 }
+        ]
+      },
+      "streaks": {
+        "enabled": true,
+        "types": ["daily_workout", "weekly_volume_target"]
+      }
+    }
+  }
+}

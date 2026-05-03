@@ -1,0 +1,81 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "version": "1.0.0",
+  "plan": {
+    "id": "plan_personalized_full",
+    "name": "Adaptive Strength Plan",
+    "description": "Exercises every action type and condition shape; nothing should fire INVALID_PERSONALIZATION_RULE.",
+    "type": "workout",
+    "visibility": "template",
+    "metadata": {
+      "tags": ["personalization", "adaptive"],
+      "difficulty": "adaptive",
+      "estimated_duration_days": 28,
+      "language": "en"
+    },
+    "goals": [
+      { "id": "goal_adapt", "type": "primary", "category": "strength", "name": "Adapt to user constraints" }
+    ],
+    "personalization": {
+      "inputs": [
+        { "id": "age", "type": "number", "source": "user.age" },
+        { "id": "experience", "type": "string", "source": "user.experience_level" },
+        { "id": "injuries", "type": "array", "source": "user.injuries" },
+        { "id": "has_barbell", "type": "boolean", "source": "user.equipment.barbell" }
+      ],
+      "rules": [
+        {
+          "id": "rule_senior_intensity",
+          "condition": { "field": "age", "op": "gte", "value": 60 },
+          "actions": [
+            { "type": "modify_intensity", "scope": "plan", "delta_percent": -10 },
+            { "type": "increase_rest", "scope": "plan", "extra_seconds": 30 }
+          ]
+        },
+        {
+          "id": "rule_beginner_volume",
+          "condition": { "field": "experience", "op": "eq", "value": "beginner" },
+          "actions": [
+            { "type": "reduce_sets", "scope": "phase", "by": 1 },
+            { "type": "add_warmup_time", "scope": "day", "extra_minutes": 5 }
+          ]
+        },
+        {
+          "id": "rule_back_issue",
+          "condition": {
+            "operator": "and",
+            "conditions": [
+              { "field": "injuries", "op": "contains", "value": "lower_back" },
+              { "field": "experience", "op": "neq", "value": "advanced" }
+            ]
+          },
+          "actions": [
+            { "type": "exclude_exercise", "scope": "plan", "exercise_ref": "deadlift" },
+            { "type": "replace_exercise", "scope": "plan", "from": "back_squat", "to": "leg_press" }
+          ]
+        },
+        {
+          "id": "rule_no_barbell",
+          "condition": { "field": "has_barbell", "op": "eq", "value": false },
+          "actions": [
+            { "type": "modify_exercise", "scope": "activity", "modality": "dumbbell" }
+          ]
+        }
+      ]
+    },
+    "phases": [
+      {
+        "id": "phase_1", "name": "Block 1", "order": 1,
+        "duration": { "value": 1, "unit": "weeks" },
+        "weeks": [
+          {
+            "id": "wk_1", "name": "Week 1", "order": 1,
+            "days": [
+              { "id": "d_1", "day_of_week": 1, "name": "Day 1", "type": "training" }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

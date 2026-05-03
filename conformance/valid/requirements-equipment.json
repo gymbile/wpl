@@ -1,0 +1,74 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "version": "1.0.0",
+  "plan": {
+    "id": "plan_home_gym",
+    "name": "Home Gym Strength",
+    "description": "Plan with explicit equipment requirements, contraindications, and time commitment.",
+    "type": "workout",
+    "visibility": "public",
+    "metadata": {
+      "tags": ["home_gym", "minimal_equipment"],
+      "difficulty": "intermediate",
+      "estimated_duration_days": 28,
+      "language": "en"
+    },
+    "goals": [
+      { "id": "goal_str", "type": "primary", "category": "strength", "name": "Build strength at home" }
+    ],
+    "requirements": {
+      "min_age": 18,
+      "max_age": 65,
+      "fitness_level": ["intermediate", "advanced"],
+      "equipment": [
+        { "id": "barbell", "name": "Barbell", "required": true },
+        { "id": "rack", "name": "Squat rack", "required": true, "alternatives": ["smith_machine"] },
+        { "id": "bench", "name": "Adjustable bench", "required": true },
+        { "id": "plates_140kg", "name": "140 kg of plates", "required": true },
+        { "id": "pull_up_bar", "name": "Pull-up bar", "required": false }
+      ],
+      "contraindications": [
+        { "condition": "lower_back_injury", "action": "exclude", "affected_activities": ["deadlift", "good_morning"] },
+        { "condition": "shoulder_impingement", "action": "modify", "affected_activities": ["overhead_press"] }
+      ],
+      "time_commitment": {
+        "min_days_per_week": 3,
+        "max_days_per_week": 4,
+        "min_minutes_per_day": 45,
+        "max_minutes_per_day": 90
+      }
+    },
+    "phases": [
+      {
+        "id": "phase_1", "name": "Block 1", "order": 1,
+        "duration": { "value": 4, "unit": "weeks" },
+        "weeks": [
+          {
+            "id": "wk_1", "name": "Week 1", "order": 1,
+            "days": [
+              { "id": "d_1", "day_of_week": 1, "name": "Day 1", "type": "training" }
+            ]
+          },
+          {
+            "id": "wk_2", "name": "Week 2", "order": 2,
+            "days": [
+              { "id": "d_2", "day_of_week": 1, "name": "Day 1", "type": "training" }
+            ]
+          },
+          {
+            "id": "wk_3", "name": "Week 3", "order": 3,
+            "days": [
+              { "id": "d_3", "day_of_week": 1, "name": "Day 1", "type": "training" }
+            ]
+          },
+          {
+            "id": "wk_4", "name": "Week 4", "order": 4,
+            "days": [
+              { "id": "d_4", "day_of_week": 1, "name": "Day 1", "type": "training" }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
