@@ -7,6 +7,17 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [Unreleased]
 
+## [1.5.0] — 2026-05-03
+
+### Added
+- New activity variant `SubPlanActivity` (`type: "sub_plan"`, `sub_plan_ref: <plan-id>`). Lets a workout reuse a "warmup plan" or compose larger sessions from smaller plans.
+- Pass-2 rule `CYCLIC_SUBPLAN` is now active (was previously deferred). Single-plan validation catches self-references (`A → A`). Cross-plan cycles (`A → B → A`) are documented as requiring a future `sub_plans` resolution map at validate time.
+- `error-codes.md` updates `CYCLIC_SUBPLAN` from "deferred" to active, with a detection-scope table.
+- New conformance fixtures: `valid/sub-plan-composition.json`, `invalid/cyclic-subplan-self.json`.
+
+### Notes
+The schema addition is additive (new branch in `Activity` `oneOf`). Validator-side: both reference validators (TS + Elixir) gain a single new rule. The cross-plan resolution API is a future minor release.
+
 ## [1.4.0] — 2026-05-03
 
 ### Added

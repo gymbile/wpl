@@ -69,12 +69,19 @@ A `*_ref` value (e.g. `exercise_ref`, `meal_ref`) does not exist in the provided
 
 ### `CYCLIC_SUBPLAN`
 
-Sub-plan references form a cycle.
+Sub-plan references form a cycle. Active as of schema v1.5.0 (`SubPlanActivity`).
 
 - **severity**: `error`
-- **path**: pointer to the activity that closes the cycle
+- **path**: pointer to the offending `SubPlanActivity`
 - **meta**:
-  - `cycle` (array of strings) — the chain of plan ids forming the cycle
+  - `cycle` (array of strings) — the chain of plan ids forming the cycle. For a self-reference this is `[plan_id, plan_id]`.
+
+#### Detection scope
+
+| Cycle shape | Detected by single-plan validate? |
+|---|---|
+| Self-reference (`A → A`) | ✅ always |
+| Cross-plan cycle (`A → B → A`) | ❌ requires the consumer to provide a `sub_plans` map at validate time. When that option is present, validators perform DFS across the resolved graph and emit `CYCLIC_SUBPLAN` with the full cycle path. When absent, only self-references are caught. |
 
 ### `EMPTY_PHASES_FOR_TYPE`
 

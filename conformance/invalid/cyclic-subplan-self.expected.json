@@ -1,0 +1,10 @@
+[
+  {
+    "code": "CYCLIC_SUBPLAN",
+    "path": "/plan/phases/0/weeks/0/days/0/blocks/0/activities/0",
+    "severity": "error",
+    "meta": {
+      "cycle": ["plan_self_cycle", "plan_self_cycle"]
+    }
+  }
+]

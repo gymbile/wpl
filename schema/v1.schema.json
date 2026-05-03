@@ -523,8 +523,25 @@
         { "$ref": "#/$defs/MeditationActivity" },
         { "$ref": "#/$defs/RecoveryActivity" },
         { "$ref": "#/$defs/HabitActivity" },
-        { "$ref": "#/$defs/SimpleActivityOutput" }
+        { "$ref": "#/$defs/SimpleActivityOutput" },
+        { "$ref": "#/$defs/SubPlanActivity" }
       ]
+    },
+
+    "SubPlanActivity": {
+      "type": "object",
+      "description": "Activity that includes another plan by reference. Lets a workout reuse a 'warmup plan' or compose larger sessions from smaller plans. Resolution is the consumer's responsibility (validators emit CYCLIC_SUBPLAN if a self-reference or known cycle is detected).",
+      "required": ["id", "type", "sub_plan_ref"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9_-]*$" },
+        "type": { "const": "sub_plan" },
+        "name": { "type": "string" },
+        "sub_plan_ref": {
+          "type": "string",
+          "description": "Identifier of another WPL plan. Resolution is performed by the consumer; validators only check it's a non-empty string and that the reference is not the containing plan's own id (CYCLIC_SUBPLAN)."
+        }
+      }
     },
 
     "ExerciseActivity": {
