@@ -590,6 +590,10 @@
         "reps": { "$ref": "#/$defs/Reps" },
         "rest": { "$ref": "#/$defs/Duration" },
         "tempo": { "$ref": "#/$defs/Tempo" },
+        "to_failure": {
+          "type": "boolean",
+          "description": "When true, the prescription is performed to momentary muscular failure. Mutually informative with target_rir=0; consumers should treat them as equivalent stop criteria."
+        },
         "weight": { "$ref": "#/$defs/Weight" },
         "duration": { "$ref": "#/$defs/Duration" }
       }
@@ -601,7 +605,11 @@
       "properties": {
         "target": { "type": "integer", "minimum": 1 },
         "min": { "type": "integer", "minimum": 1 },
-        "max": { "type": "integer", "minimum": 1 }
+        "max": { "type": "integer", "minimum": 1 },
+        "amrap": {
+          "type": "boolean",
+          "description": "When true, the set is performed as 'as many reps as possible' to a stop criterion (target_rir, target_rpe, or to_failure). target/min/max may be omitted or used as guidance."
+        }
       }
     },
 
@@ -644,7 +652,12 @@
           "properties": {
             "type": { "enum": ["absolute", "percentage_1rm", "percentage_bodyweight"] },
             "value": { "type": "number" },
-            "unit": { "type": "string" }
+            "unit": { "type": "string" },
+            "metric": {
+              "type": "string",
+              "description": "Reference metric for percentage_1rm. '1RM' = tested 1-rep max, 'e1RM' = estimated 1RM (formula or velocity-derived), 'training_max' = % of 1RM commonly used as program ceiling (e.g. 90% in 5/3/1), 'daily_max' = today's auto-regulated max. Ignored when type is 'absolute' or 'percentage_bodyweight'.",
+              "enum": ["1RM", "e1RM", "training_max", "daily_max"]
+            }
           }
         }
       ]
