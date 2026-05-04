@@ -13,7 +13,7 @@
     },
     "version": {
       "type": "string",
-      "const": "1.0.0"
+      "const": "1.6.0"
     },
     "plan": { "$ref": "#/$defs/Plan" }
   },
@@ -282,9 +282,15 @@
             "lower_back_injury"
           ]
         },
+        "severity": {
+          "type": "string",
+          "description": "Optional clinical-risk tier (mirrors the ACSM low/moderate/high stratification). Lets consumers triage required actions: 'low' may proceed with standard plan, 'moderate' may require modification, 'high' typically requires medical clearance before exercise.",
+          "enum": ["low", "moderate", "high"]
+        },
         "action": {
           "type": "string",
-          "enum": ["exclude", "modify"]
+          "description": "What to do when this contraindication applies.\n  • 'exclude' — drop the affected activities from the compiled plan.\n  • 'modify' — replace or down-regulate the affected activities (consumer policy).\n  • 'require_clearance' — gate plan execution on documented medical clearance (consumer is expected to surface a clearance prompt and check 'user.clearance_obtained' before progressing).",
+          "enum": ["exclude", "modify", "require_clearance"]
         },
         "affected_activities": {
           "type": "array",
