@@ -912,11 +912,45 @@
         "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9_-]*$" },
         "type": { "const": "recovery_exercise" },
         "name": { "type": "string" },
+        "modality": {
+          "type": "string",
+          "description": "Recovery technique. 'static_stretch' = passive hold; 'dynamic_stretch' = active ROM; 'pnf' = proprioceptive neuromuscular facilitation (use the 'pnf' block); 'smr_foam_roll' / 'smr_ball' = self-myofascial release; 'breathwork' = breathing protocol; 'mobility_drill' = active mobility.",
+          "enum": [
+            "static_stretch",
+            "dynamic_stretch",
+            "pnf",
+            "smr_foam_roll",
+            "smr_ball",
+            "breathwork",
+            "mobility_drill"
+          ]
+        },
         "hold_seconds": { "type": "number", "minimum": 0 },
         "reps": { "type": "integer", "minimum": 1 },
         "sides": {
           "type": "string",
           "enum": ["both", "left", "right"]
+        },
+        "intensity_rpe": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 10,
+          "description": "Subjective stretch/work intensity on the 1–10 RPE-style scale. Useful for static_stretch (target ~6–7 for ROM gains) and SMR (target ~5–7)."
+        },
+        "pnf": {
+          "type": "object",
+          "description": "PNF contract-relax parameters. Required when modality='pnf'.",
+          "required": ["contraction_seconds", "relax_seconds", "contractions"],
+          "additionalProperties": false,
+          "properties": {
+            "contraction_seconds": { "type": "number", "minimum": 0 },
+            "relax_seconds": { "type": "number", "minimum": 0 },
+            "contractions": { "type": "integer", "minimum": 1 }
+          }
+        },
+        "body_part": {
+          "type": "string",
+          "description": "Free-text body region (e.g. 'thoracic_spine', 'piriformis'). Use MuscleGroup values where applicable."
         }
       }
     },
