@@ -682,7 +682,25 @@
               "type": "string",
               "enum": ["heart_rate_zone", "rpe", "pace", "power", "bpm"]
             },
-            "target": { "type": "object", "additionalProperties": true },
+            "target": {
+              "type": "object",
+              "additionalProperties": true,
+              "description": "Intensity target. Recognized fields by intensity.type:\n  • heart_rate_zone: { zone: integer } or { min_bpm, max_bpm }\n  • bpm: { min_bpm, max_bpm }\n  • power: { zone: integer } or { min_watts, max_watts }\n  • pace: { value: number, unit: 'min_per_km' | 'min_per_mi' | 'm_per_s' | 'sec_per_100m' }\n  • rpe: { min: number, max: number } on the scale matched by zone_model (rpe_borg_10 or rpe_borg_20)",
+              "properties": {
+                "zone": { "type": "integer", "minimum": 1, "maximum": 7 },
+                "min_bpm": { "type": "integer", "minimum": 30, "maximum": 250 },
+                "max_bpm": { "type": "integer", "minimum": 30, "maximum": 250 },
+                "min_watts": { "type": "number", "minimum": 0 },
+                "max_watts": { "type": "number", "minimum": 0 },
+                "min": { "type": "number" },
+                "max": { "type": "number" },
+                "value": { "type": "number" },
+                "unit": {
+                  "type": "string",
+                  "enum": ["min_per_km", "min_per_mi", "m_per_s", "sec_per_100m"]
+                }
+              }
+            },
             "zone_model": {
               "type": "string",
               "description": "Disambiguates which zone numbering system the target uses. Recommended whenever type is heart_rate_zone, power, or pace.",
@@ -704,20 +722,50 @@
           "additionalProperties": false,
           "properties": {
             "work": {
-              "type": "object",
-              "required": ["duration"],
-              "additionalProperties": false,
-              "properties": {
-                "duration": { "type": "number" }
-              }
+              "oneOf": [
+                {
+                  "type": "object",
+                  "required": ["duration"],
+                  "additionalProperties": false,
+                  "properties": {
+                    "duration": {
+                      "type": "number",
+                      "description": "Work-bout duration in seconds. Deprecated bare-number form — prefer the {value, unit} object for consistency with the rest of the schema."
+                    }
+                  }
+                },
+                {
+                  "type": "object",
+                  "required": ["duration"],
+                  "additionalProperties": false,
+                  "properties": {
+                    "duration": { "$ref": "#/$defs/Duration" }
+                  }
+                }
+              ]
             },
             "rest": {
-              "type": "object",
-              "required": ["duration"],
-              "additionalProperties": false,
-              "properties": {
-                "duration": { "type": "number" }
-              }
+              "oneOf": [
+                {
+                  "type": "object",
+                  "required": ["duration"],
+                  "additionalProperties": false,
+                  "properties": {
+                    "duration": {
+                      "type": "number",
+                      "description": "Rest-bout duration in seconds. Deprecated bare-number form — prefer the {value, unit} object."
+                    }
+                  }
+                },
+                {
+                  "type": "object",
+                  "required": ["duration"],
+                  "additionalProperties": false,
+                  "properties": {
+                    "duration": { "$ref": "#/$defs/Duration" }
+                  }
+                }
+              ]
             },
             "repeat": { "type": "integer", "minimum": 1 }
           }
