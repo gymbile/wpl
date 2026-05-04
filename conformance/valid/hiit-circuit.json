@@ -1,6 +1,6 @@
 {
   "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
-  "version": "1.0.0",
+  "version": "1.6.0",
   "plan": {
     "id": "plan_hiit_circuit",
     "name": "HIIT Circuit with Personalization",
@@ -8,7 +8,12 @@
     "type": "workout",
     "visibility": "template",
     "metadata": {
-      "tags": ["hiit", "circuit", "fat_loss", "intermediate"],
+      "tags": [
+        "hiit",
+        "circuit",
+        "fat_loss",
+        "intermediate"
+      ],
       "difficulty": "intermediate",
       "estimated_duration_days": 1,
       "language": "en"
@@ -51,8 +56,18 @@
             "value": "knee"
           },
           "actions": [
-            { "type": "replace_exercise", "from": "jump_squat", "to": "wall_sit", "scope": "plan" },
-            { "type": "replace_exercise", "from": "burpees", "to": "modified_burpees", "scope": "plan" }
+            {
+              "type": "replace_exercise",
+              "from": "jump_squat",
+              "to": "wall_sit",
+              "scope": "plan"
+            },
+            {
+              "type": "replace_exercise",
+              "from": "burpees",
+              "to": "modified_burpees",
+              "scope": "plan"
+            }
           ]
         },
         {
@@ -63,7 +78,12 @@
             "value": "kettlebell"
           },
           "actions": [
-            { "type": "replace_exercise", "from": "kettlebell_swing", "to": "dumbbell_swing", "scope": "plan" }
+            {
+              "type": "replace_exercise",
+              "from": "kettlebell_swing",
+              "to": "dumbbell_swing",
+              "scope": "plan"
+            }
           ]
         }
       ]
@@ -98,8 +118,16 @@
                         "modality": "jump_rope",
                         "prescription": {
                           "type": "continuous",
-                          "duration": { "value": 3, "unit": "minutes" },
-                          "intensity": { "type": "rpe", "target": { "zone": 4 } }
+                          "duration": {
+                            "value": 3,
+                            "unit": "minutes"
+                          },
+                          "intensity": {
+                            "type": "rpe",
+                            "target": {
+                              "zone": 4
+                            }
+                          }
                         }
                       }
                     ]
@@ -110,7 +138,10 @@
                     "order": 2,
                     "structure": "circuit",
                     "rounds": 4,
-                    "rest_between_rounds": { "value": 90, "unit": "seconds" },
+                    "rest_between_rounds": {
+                      "value": 90,
+                      "unit": "seconds"
+                    },
                     "activities": [
                       {
                         "id": "circ_1",
@@ -119,8 +150,14 @@
                         "name": "Kettlebell Swings",
                         "prescription": {
                           "type": "time",
-                          "duration": { "value": 40, "unit": "seconds" },
-                          "rest": { "value": 20, "unit": "seconds" }
+                          "duration": {
+                            "value": 40,
+                            "unit": "seconds"
+                          },
+                          "rest": {
+                            "value": 20,
+                            "unit": "seconds"
+                          }
                         }
                       },
                       {
@@ -130,8 +167,14 @@
                         "name": "Jump Squats",
                         "prescription": {
                           "type": "time",
-                          "duration": { "value": 40, "unit": "seconds" },
-                          "rest": { "value": 20, "unit": "seconds" }
+                          "duration": {
+                            "value": 40,
+                            "unit": "seconds"
+                          },
+                          "rest": {
+                            "value": 20,
+                            "unit": "seconds"
+                          }
                         }
                       },
                       {
@@ -141,8 +184,14 @@
                         "name": "Push-ups",
                         "prescription": {
                           "type": "time",
-                          "duration": { "value": 40, "unit": "seconds" },
-                          "rest": { "value": 20, "unit": "seconds" }
+                          "duration": {
+                            "value": 40,
+                            "unit": "seconds"
+                          },
+                          "rest": {
+                            "value": 20,
+                            "unit": "seconds"
+                          }
                         }
                       },
                       {
@@ -152,8 +201,14 @@
                         "name": "Burpees",
                         "prescription": {
                           "type": "time",
-                          "duration": { "value": 40, "unit": "seconds" },
-                          "rest": { "value": 20, "unit": "seconds" }
+                          "duration": {
+                            "value": 40,
+                            "unit": "seconds"
+                          },
+                          "rest": {
+                            "value": 20,
+                            "unit": "seconds"
+                          }
                         }
                       }
                     ]

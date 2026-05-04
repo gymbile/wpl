@@ -1,6 +1,6 @@
 {
   "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
-  "version": "1.0.0",
+  "version": "1.6.0",
   "plan": {
     "id": "plan_superset",
     "name": "Push/Pull Superset Day",
@@ -8,23 +8,39 @@
     "type": "workout",
     "visibility": "template",
     "metadata": {
-      "tags": ["superset", "hypertrophy", "intermediate"],
+      "tags": [
+        "superset",
+        "hypertrophy",
+        "intermediate"
+      ],
       "difficulty": "intermediate",
       "estimated_duration_days": 1,
       "language": "en"
     },
     "goals": [
-      { "id": "goal_hypertrophy", "type": "primary", "category": "hypertrophy", "name": "Build upper body" }
+      {
+        "id": "goal_hypertrophy",
+        "type": "primary",
+        "category": "hypertrophy",
+        "name": "Build upper body"
+      }
     ],
     "phases": [
       {
-        "id": "phase_1", "name": "Single Session", "order": 1,
+        "id": "phase_1",
+        "name": "Single Session",
+        "order": 1,
         "weeks": [
           {
-            "id": "wk_1", "name": "Week 1", "order": 1,
+            "id": "wk_1",
+            "name": "Week 1",
+            "order": 1,
             "days": [
               {
-                "id": "d_1", "day_of_week": 1, "name": "Push/Pull Superset", "type": "training",
+                "id": "d_1",
+                "day_of_week": 1,
+                "name": "Push/Pull Superset",
+                "type": "training",
                 "blocks": [
                   {
                     "id": "antag_superset",
@@ -32,7 +48,10 @@
                     "order": 1,
                     "structure": "superset",
                     "rounds": 4,
-                    "rest_between_rounds": { "value": 90, "unit": "seconds" },
+                    "rest_between_rounds": {
+                      "value": 90,
+                      "unit": "seconds"
+                    },
                     "activities": [
                       {
                         "id": "ex_bench",
@@ -41,8 +60,15 @@
                         "name": "Bench Press",
                         "prescription": {
                           "type": "sets_reps",
-                          "reps": { "min": 8, "max": 10 },
-                          "weight": { "type": "percentage_1rm", "value": 70, "unit": "percent" }
+                          "reps": {
+                            "min": 8,
+                            "max": 10
+                          },
+                          "weight": {
+                            "type": "percentage_1rm",
+                            "value": 70,
+                            "unit": "percent"
+                          }
                         }
                       },
                       {
@@ -52,8 +78,15 @@
                         "name": "Bent-Over Row",
                         "prescription": {
                           "type": "sets_reps",
-                          "reps": { "min": 8, "max": 10 },
-                          "weight": { "type": "percentage_1rm", "value": 65, "unit": "percent" }
+                          "reps": {
+                            "min": 8,
+                            "max": 10
+                          },
+                          "weight": {
+                            "type": "percentage_1rm",
+                            "value": 65,
+                            "unit": "percent"
+                          }
                         }
                       }
                     ]

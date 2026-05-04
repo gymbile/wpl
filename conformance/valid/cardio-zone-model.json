@@ -1,6 +1,6 @@
 {
   "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
-  "version": "1.0.0",
+  "version": "1.6.0",
   "plan": {
     "id": "plan_polarized_threshold",
     "name": "Polarized Endurance Week",
@@ -8,13 +8,22 @@
     "type": "workout",
     "visibility": "template",
     "metadata": {
-      "tags": ["polarized", "endurance", "running"],
+      "tags": [
+        "polarized",
+        "endurance",
+        "running"
+      ],
       "difficulty": "advanced",
       "estimated_duration_days": 7,
       "language": "en"
     },
     "goals": [
-      { "id": "goal_vo2", "type": "primary", "category": "endurance", "name": "Improve VO2max and threshold" }
+      {
+        "id": "goal_vo2",
+        "type": "primary",
+        "category": "endurance",
+        "name": "Improve VO2max and threshold"
+      }
     ],
     "athlete_thresholds": {
       "hr_max_bpm": 188,
@@ -27,28 +36,48 @@
     },
     "phases": [
       {
-        "id": "phase_1", "name": "Polarized week", "order": 1,
+        "id": "phase_1",
+        "name": "Polarized week",
+        "order": 1,
         "type": "build",
-        "duration": { "value": 1, "unit": "weeks" },
+        "duration": {
+          "value": 1,
+          "unit": "weeks"
+        },
         "weeks": [
           {
-            "id": "wk_1", "name": "Week 1", "order": 1,
+            "id": "wk_1",
+            "name": "Week 1",
+            "order": 1,
             "days": [
               {
-                "id": "d_easy", "day_of_week": 1, "name": "Easy run", "type": "training",
+                "id": "d_easy",
+                "day_of_week": 1,
+                "name": "Easy run",
+                "type": "training",
                 "blocks": [
                   {
-                    "id": "main", "type": "main", "order": 1,
+                    "id": "main",
+                    "type": "main",
+                    "order": 1,
                     "activities": [
                       {
-                        "id": "run_easy", "type": "cardio", "name": "Easy aerobic", "modality": "running",
+                        "id": "run_easy",
+                        "type": "cardio",
+                        "name": "Easy aerobic",
+                        "modality": "running",
                         "prescription": {
                           "type": "continuous",
-                          "duration": { "value": 60, "unit": "minutes" },
+                          "duration": {
+                            "value": 60,
+                            "unit": "minutes"
+                          },
                           "intensity": {
                             "type": "heart_rate_zone",
                             "zone_model": "hr_3_zone_seiler",
-                            "target": { "zone": 1 }
+                            "target": {
+                              "zone": 1
+                            }
                           }
                         }
                       }
@@ -57,20 +86,33 @@
                 ]
               },
               {
-                "id": "d_threshold", "day_of_week": 3, "name": "Threshold", "type": "training",
+                "id": "d_threshold",
+                "day_of_week": 3,
+                "name": "Threshold",
+                "type": "training",
                 "blocks": [
                   {
-                    "id": "main", "type": "main", "order": 1,
+                    "id": "main",
+                    "type": "main",
+                    "order": 1,
                     "activities": [
                       {
-                        "id": "run_thr", "type": "cardio", "name": "Threshold tempo", "modality": "running",
+                        "id": "run_thr",
+                        "type": "cardio",
+                        "name": "Threshold tempo",
+                        "modality": "running",
                         "prescription": {
                           "type": "continuous",
-                          "duration": { "value": 30, "unit": "minutes" },
+                          "duration": {
+                            "value": 30,
+                            "unit": "minutes"
+                          },
                           "intensity": {
                             "type": "heart_rate_zone",
                             "zone_model": "hr_3_zone_seiler",
-                            "target": { "zone": 2 }
+                            "target": {
+                              "zone": 2
+                            }
                           }
                         }
                       }
@@ -79,23 +121,37 @@
                 ]
               },
               {
-                "id": "d_vo2", "day_of_week": 5, "name": "VO2max intervals", "type": "training",
+                "id": "d_vo2",
+                "day_of_week": 5,
+                "name": "VO2max intervals",
+                "type": "training",
                 "blocks": [
                   {
-                    "id": "main", "type": "main", "order": 1,
+                    "id": "main",
+                    "type": "main",
+                    "order": 1,
                     "activities": [
                       {
-                        "id": "run_int", "type": "cardio", "name": "5x4 min @ 95% LTHR", "modality": "running",
+                        "id": "run_int",
+                        "type": "cardio",
+                        "name": "5x4 min @ 95% LTHR",
+                        "modality": "running",
                         "prescription": {
                           "type": "intervals",
                           "intensity": {
                             "type": "heart_rate_zone",
                             "zone_model": "hr_3_zone_seiler",
-                            "target": { "zone": 3 }
+                            "target": {
+                              "zone": 3
+                            }
                           },
                           "intervals": {
-                            "work": { "duration": 240 },
-                            "rest": { "duration": 180 },
+                            "work": {
+                              "duration": 240
+                            },
+                            "rest": {
+                              "duration": 180
+                            },
                             "repeat": 5
                           }
                         }
@@ -105,20 +161,33 @@
                 ]
               },
               {
-                "id": "d_long", "day_of_week": 7, "name": "Long run", "type": "training",
+                "id": "d_long",
+                "day_of_week": 7,
+                "name": "Long run",
+                "type": "training",
                 "blocks": [
                   {
-                    "id": "main", "type": "main", "order": 1,
+                    "id": "main",
+                    "type": "main",
+                    "order": 1,
                     "activities": [
                       {
-                        "id": "run_long", "type": "cardio", "name": "Long Z1", "modality": "running",
+                        "id": "run_long",
+                        "type": "cardio",
+                        "name": "Long Z1",
+                        "modality": "running",
                         "prescription": {
                           "type": "continuous",
-                          "duration": { "value": 90, "unit": "minutes" },
+                          "duration": {
+                            "value": 90,
+                            "unit": "minutes"
+                          },
                           "intensity": {
                             "type": "pace",
                             "zone_model": "pace_critical_speed",
-                            "target": { "percent_of_critical": 75 }
+                            "target": {
+                              "percent_of_critical": 75
+                            }
                           }
                         }
                       }

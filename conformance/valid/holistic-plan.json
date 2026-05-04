@@ -1,6 +1,6 @@
 {
   "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
-  "version": "1.0.0",
+  "version": "1.6.0",
   "plan": {
     "id": "plan_holistic_week",
     "name": "Holistic Wellness Week",
@@ -8,7 +8,12 @@
     "type": "hybrid",
     "visibility": "template",
     "metadata": {
-      "tags": ["holistic", "beginner", "wellness", "full_program"],
+      "tags": [
+        "holistic",
+        "beginner",
+        "wellness",
+        "full_program"
+      ],
       "difficulty": "beginner",
       "estimated_duration_days": 7,
       "language": "en"
@@ -32,7 +37,10 @@
         "id": "phase_1",
         "name": "Foundation Week",
         "order": 1,
-        "duration": { "value": 1, "unit": "weeks" },
+        "duration": {
+          "value": 1,
+          "unit": "weeks"
+        },
         "weeks": [
           {
             "id": "week_1",
@@ -57,7 +65,10 @@
                         "category": "mindfulness",
                         "name": "Morning Mindfulness",
                         "prescription": {
-                          "duration": { "value": 10, "unit": "minutes" },
+                          "duration": {
+                            "value": 10,
+                            "unit": "minutes"
+                          },
                           "guided": true
                         }
                       }
@@ -77,8 +88,13 @@
                         "prescription": {
                           "type": "sets_reps",
                           "sets": 3,
-                          "reps": { "target": 15 },
-                          "rest": { "value": 45, "unit": "seconds" }
+                          "reps": {
+                            "target": 15
+                          },
+                          "rest": {
+                            "value": 45,
+                            "unit": "seconds"
+                          }
                         }
                       },
                       {
@@ -89,8 +105,14 @@
                         "prescription": {
                           "type": "sets_reps",
                           "sets": 3,
-                          "reps": { "min": 5, "max": 10 },
-                          "rest": { "value": 60, "unit": "seconds" }
+                          "reps": {
+                            "min": 5,
+                            "max": 10
+                          },
+                          "rest": {
+                            "value": 60,
+                            "unit": "seconds"
+                          }
                         }
                       }
                     ]
@@ -108,11 +130,18 @@
                         "timing": {
                           "type": "relative",
                           "reference": "workout_end",
-                          "offset": { "value": 30, "unit": "minutes" }
+                          "offset": {
+                            "value": 30,
+                            "unit": "minutes"
+                          }
                         },
                         "prescription": {
                           "macros": {
-                            "protein": { "min": 20, "max": 30, "unit": "g" }
+                            "protein": {
+                              "min": 20,
+                              "max": 30,
+                              "unit": "g"
+                            }
                           },
                           "suggestions": [
                             "Protein shake with banana",
@@ -133,7 +162,10 @@
                         "category": "stretching",
                         "name": "Full Body Stretch",
                         "prescription": {
-                          "duration": { "value": 10, "unit": "minutes" }
+                          "duration": {
+                            "value": 10,
+                            "unit": "minutes"
+                          }
                         }
                       }
                     ]
@@ -158,7 +190,10 @@
                         "category": "stretching",
                         "name": "Gentle Yoga Flow",
                         "prescription": {
-                          "duration": { "value": 20, "unit": "minutes" }
+                          "duration": {
+                            "value": 20,
+                            "unit": "minutes"
+                          }
                         }
                       },
                       {
@@ -167,7 +202,10 @@
                         "category": "hydration",
                         "name": "Water Intake Goal",
                         "prescription": {
-                          "target": { "value": 8, "unit": "glasses" },
+                          "target": {
+                            "value": 8,
+                            "unit": "glasses"
+                          },
                           "frequency": "daily"
                         },
                         "tracking": {
@@ -188,16 +226,35 @@
       "points_system": {
         "enabled": true,
         "rules": [
-          { "action": "complete_workout", "points": 10 },
-          { "action": "complete_meditation", "points": 15 },
-          { "action": "log_meal", "points": 5 },
-          { "action": "complete_day", "points": 25 },
-          { "action": "streak_7_days", "points": 200 }
+          {
+            "action": "complete_workout",
+            "points": 10
+          },
+          {
+            "action": "complete_meditation",
+            "points": 15
+          },
+          {
+            "action": "log_meal",
+            "points": 5
+          },
+          {
+            "action": "complete_day",
+            "points": 25
+          },
+          {
+            "action": "streak_7_days",
+            "points": 200
+          }
         ]
       },
       "streaks": {
         "enabled": true,
-        "types": ["daily_workout", "daily_meditation", "daily_nutrition"]
+        "types": [
+          "daily_workout",
+          "daily_meditation",
+          "daily_nutrition"
+        ]
       }
     }
   }

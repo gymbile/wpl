@@ -1,6 +1,6 @@
 {
   "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
-  "version": "1.0.0",
+  "version": "1.6.0",
   "plan": {
     "id": "11111111-1111-4111-8111-111111111111",
     "name": "Duplicate Day ID",
@@ -14,15 +14,28 @@
         "id": "phase_1",
         "name": "Phase 1",
         "order": 1,
-        "duration": { "value": 1, "unit": "weeks" },
+        "duration": {
+          "value": 1,
+          "unit": "weeks"
+        },
         "weeks": [
           {
             "id": "week_1",
             "name": "Week 1",
             "order": 1,
             "days": [
-              { "id": "day_1", "day_of_week": 1, "name": "Day 1", "type": "rest" },
-              { "id": "day_1", "day_of_week": 2, "name": "Day 1 again", "type": "rest" }
+              {
+                "id": "day_1",
+                "day_of_week": 1,
+                "name": "Day 1",
+                "type": "rest"
+              },
+              {
+                "id": "day_1",
+                "day_of_week": 2,
+                "name": "Day 1 again",
+                "type": "rest"
+              }
             ]
           }
         ]

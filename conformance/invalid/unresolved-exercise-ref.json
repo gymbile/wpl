@@ -1,6 +1,6 @@
 {
   "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
-  "version": "1.0.0",
+  "version": "1.6.0",
   "plan": {
     "id": "99999999-9999-4999-8999-999999999999",
     "name": "Unknown exercise ref",
@@ -11,8 +11,13 @@
     "requirements": {},
     "phases": [
       {
-        "id": "phase_1", "name": "P1", "order": 1,
-        "duration": { "value": 1, "unit": "weeks" },
+        "id": "phase_1",
+        "name": "P1",
+        "order": 1,
+        "duration": {
+          "value": 1,
+          "unit": "weeks"
+        },
         "weeks": [
           {
             "id": "week_1",
@@ -20,16 +25,27 @@
             "order": 1,
             "days": [
               {
-                "id": "day_1", "day_of_week": 1, "name": "D1", "type": "training",
+                "id": "day_1",
+                "day_of_week": 1,
+                "name": "D1",
+                "type": "training",
                 "blocks": [
                   {
-                    "id": "main", "type": "main", "order": 1,
+                    "id": "main",
+                    "type": "main",
+                    "order": 1,
                     "activities": [
                       {
                         "id": "act_1",
                         "type": "exercise",
                         "exercise_ref": "dumbbell_curl",
-                        "prescription": { "type": "sets_reps", "sets": 3, "reps": { "target": 10 } }
+                        "prescription": {
+                          "type": "sets_reps",
+                          "sets": 3,
+                          "reps": {
+                            "target": 10
+                          }
+                        }
                       }
                     ]
                   }

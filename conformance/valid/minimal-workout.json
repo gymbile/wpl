@@ -1,6 +1,6 @@
 {
   "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
-  "version": "1.0.0",
+  "version": "1.6.0",
   "plan": {
     "id": "plan_minimal",
     "name": "Minimal Workout",
@@ -19,7 +19,12 @@
             "name": "Week 1",
             "order": 1,
             "days": [
-              { "id": "day_1", "day_of_week": 1, "name": "D1", "type": "rest" }
+              {
+                "id": "day_1",
+                "day_of_week": 1,
+                "name": "D1",
+                "type": "rest"
+              }
             ]
           }
         ]

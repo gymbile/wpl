@@ -1,6 +1,6 @@
 {
   "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
-  "version": "1.0.0",
+  "version": "1.6.0",
   "plan": {
     "id": "plan_composed_workout",
     "name": "Composed Workout",
@@ -8,24 +8,40 @@
     "type": "workout",
     "visibility": "template",
     "metadata": {
-      "tags": ["composition"],
+      "tags": [
+        "composition"
+      ],
       "language": "en"
     },
     "goals": [
-      { "id": "goal_str", "type": "primary", "category": "strength", "name": "Strength" }
+      {
+        "id": "goal_str",
+        "type": "primary",
+        "category": "strength",
+        "name": "Strength"
+      }
     ],
     "phases": [
       {
-        "id": "phase_1", "name": "Single session", "order": 1,
+        "id": "phase_1",
+        "name": "Single session",
+        "order": 1,
         "weeks": [
           {
-            "id": "wk_1", "name": "Week 1", "order": 1,
+            "id": "wk_1",
+            "name": "Week 1",
+            "order": 1,
             "days": [
               {
-                "id": "d_1", "day_of_week": 1, "name": "Lift", "type": "training",
+                "id": "d_1",
+                "day_of_week": 1,
+                "name": "Lift",
+                "type": "training",
                 "blocks": [
                   {
-                    "id": "warmup", "type": "warmup", "order": 1,
+                    "id": "warmup",
+                    "type": "warmup",
+                    "order": 1,
                     "activities": [
                       {
                         "id": "sp_warmup",
@@ -36,20 +52,29 @@
                     ]
                   },
                   {
-                    "id": "main", "type": "main", "order": 2, "structure": "straight_sets",
+                    "id": "main",
+                    "type": "main",
+                    "order": 2,
+                    "structure": "straight_sets",
                     "activities": [
                       {
-                        "id": "ex_squat", "type": "exercise", "exercise_ref": "back_squat",
+                        "id": "ex_squat",
+                        "type": "exercise",
+                        "exercise_ref": "back_squat",
                         "prescription": {
                           "type": "sets_reps",
                           "sets": 4,
-                          "reps": { "target": 5 }
+                          "reps": {
+                            "target": 5
+                          }
                         }
                       }
                     ]
                   },
                   {
-                    "id": "cooldown", "type": "cooldown", "order": 3,
+                    "id": "cooldown",
+                    "type": "cooldown",
+                    "order": 3,
                     "activities": [
                       {
                         "id": "sp_cool",

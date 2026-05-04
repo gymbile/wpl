@@ -1,6 +1,6 @@
 {
   "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
-  "version": "1.0.0",
+  "version": "1.6.0",
   "plan": {
     "id": "88888888-8888-4888-8888-888888888888",
     "name": "Duration says 3 weeks, array has 2",
@@ -14,10 +14,37 @@
         "id": "phase_1",
         "name": "P1",
         "order": 1,
-        "duration": { "value": 3, "unit": "weeks" },
+        "duration": {
+          "value": 3,
+          "unit": "weeks"
+        },
         "weeks": [
-          { "id": "week_1", "name": "Week 1", "order": 1, "days": [{ "id": "d1", "day_of_week": 1, "name": "D1", "type": "rest" }] },
-          { "id": "week_2", "name": "Week 2", "order": 2, "days": [{ "id": "d2", "day_of_week": 1, "name": "D2", "type": "rest" }] }
+          {
+            "id": "week_1",
+            "name": "Week 1",
+            "order": 1,
+            "days": [
+              {
+                "id": "d1",
+                "day_of_week": 1,
+                "name": "D1",
+                "type": "rest"
+              }
+            ]
+          },
+          {
+            "id": "week_2",
+            "name": "Week 2",
+            "order": 2,
+            "days": [
+              {
+                "id": "d2",
+                "day_of_week": 1,
+                "name": "D2",
+                "type": "rest"
+              }
+            ]
+          }
         ]
       }
     ]

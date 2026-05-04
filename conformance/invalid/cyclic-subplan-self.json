@@ -1,6 +1,6 @@
 {
   "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
-  "version": "1.0.0",
+  "version": "1.6.0",
   "plan": {
     "id": "plan_self_cycle",
     "name": "Plan that includes itself",
@@ -10,16 +10,25 @@
     "goals": [],
     "phases": [
       {
-        "id": "phase_1", "name": "P1", "order": 1,
+        "id": "phase_1",
+        "name": "P1",
+        "order": 1,
         "weeks": [
           {
-            "id": "week_1", "name": "Week 1", "order": 1,
+            "id": "week_1",
+            "name": "Week 1",
+            "order": 1,
             "days": [
               {
-                "id": "day_1", "day_of_week": 1, "name": "D1", "type": "training",
+                "id": "day_1",
+                "day_of_week": 1,
+                "name": "D1",
+                "type": "training",
                 "blocks": [
                   {
-                    "id": "main", "type": "main", "order": 1,
+                    "id": "main",
+                    "type": "main",
+                    "order": 1,
                     "activities": [
                       {
                         "id": "sp_self",
