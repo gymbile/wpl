@@ -1,0 +1,27 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "version": "1.6.0",
+  "plan": {
+    "id": "bad-questionnaire-plan",
+    "name": "Bad questionnaire value",
+    "type": "hybrid",
+    "visibility": "private",
+    "metadata": {},
+    "goals": [],
+    "phases": [
+      { "id": "phase_1", "name": "P1", "order": 1, "type": "base" }
+    ],
+    "progress": {
+      "checkpoints": [
+        {
+          "id": "ck1",
+          "name": "Week 4 check",
+          "at": { "value": 4, "unit": "weeks" },
+          "measurements": [
+            { "metric": "questionnaire_score", "questionnaire": "phq" }
+          ]
+        }
+      ]
+    }
+  }
+}

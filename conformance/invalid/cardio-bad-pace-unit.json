@@ -1,0 +1,46 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "version": "1.6.0",
+  "plan": {
+    "id": "bad-pace-unit-plan",
+    "name": "Bad pace unit",
+    "type": "workout",
+    "visibility": "private",
+    "metadata": {},
+    "goals": [],
+    "phases": [
+      {
+        "id": "phase_1", "name": "P1", "order": 1, "type": "build",
+        "weeks": [
+          {
+            "id": "week_1", "name": "Week 1", "order": 1,
+            "days": [
+              {
+                "id": "day_1", "day_of_week": 3, "type": "training",
+                "blocks": [
+                  {
+                    "id": "main", "type": "main", "order": 1,
+                    "activities": [
+                      {
+                        "id": "a1", "type": "cardio", "name": "Tempo Run",
+                        "modality": "running",
+                        "prescription": {
+                          "type": "continuous",
+                          "duration": { "value": 20, "unit": "minutes" },
+                          "intensity": {
+                            "type": "pace",
+                            "target": { "value": 4.5, "unit": "min_per_lap" }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

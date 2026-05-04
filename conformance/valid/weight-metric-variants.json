@@ -1,0 +1,66 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "version": "1.6.0",
+  "plan": {
+    "id": "weight-metric-variants",
+    "name": "Weight metric variants",
+    "type": "workout",
+    "visibility": "template",
+    "metadata": {},
+    "goals": [{ "id": "g1", "type": "primary", "category": "strength" }],
+    "phases": [{
+      "id": "p1", "name": "Strength", "order": 1, "type": "build",
+      "weeks": [{
+        "id": "w1", "name": "Week 1", "order": 1,
+        "days": [{
+          "id": "d1", "day_of_week": 1, "type": "training",
+          "blocks": [{
+            "id": "b1", "type": "main", "order": 1,
+            "activities": [
+              {
+                "id": "a1", "type": "exercise",
+                "exercise_ref": "back_squat",
+                "prescription": {
+                  "type": "sets_reps",
+                  "sets": 3,
+                  "reps": { "target": 5 },
+                  "weight": { "type": "percentage_1rm", "value": 85, "unit": "%", "metric": "1RM" }
+                }
+              },
+              {
+                "id": "a2", "type": "exercise",
+                "exercise_ref": "bench_press",
+                "prescription": {
+                  "type": "sets_reps",
+                  "sets": 3,
+                  "reps": { "target": 5 },
+                  "weight": { "type": "percentage_1rm", "value": 80, "unit": "%", "metric": "e1RM" }
+                }
+              },
+              {
+                "id": "a3", "type": "exercise",
+                "exercise_ref": "deadlift",
+                "prescription": {
+                  "type": "sets_reps",
+                  "sets": 5,
+                  "reps": { "target": 3 },
+                  "weight": { "type": "percentage_1rm", "value": 90, "unit": "%", "metric": "training_max" }
+                }
+              },
+              {
+                "id": "a4", "type": "exercise",
+                "exercise_ref": "overhead_press",
+                "prescription": {
+                  "type": "sets_reps",
+                  "sets": 3,
+                  "reps": { "target": 8 },
+                  "weight": { "type": "percentage_1rm", "value": 75, "unit": "%", "metric": "daily_max" }
+                }
+              }
+            ]
+          }]
+        }]
+      }]
+    }]
+  }
+}

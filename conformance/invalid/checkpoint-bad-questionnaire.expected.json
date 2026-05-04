@@ -1,0 +1,10 @@
+[
+  {
+    "code": "SCHEMA_VIOLATION",
+    "path": "/plan/progress/checkpoints/0/measurements/0/questionnaire",
+    "severity": "error",
+    "meta": {
+      "keyword": "enum"
+    }
+  }
+]

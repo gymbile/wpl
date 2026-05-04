@@ -1,0 +1,10 @@
+[
+  {
+    "code": "SCHEMA_VIOLATION",
+    "path": "/plan/phases/0/weeks/0/days/0/blocks/0/activities/0/prescription/intensity/target/unit",
+    "severity": "error",
+    "meta": {
+      "keyword": "enum"
+    }
+  }
+]

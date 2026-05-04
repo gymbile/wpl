@@ -1,0 +1,37 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "version": "1.6.0",
+  "plan": {
+    "id": "tempo-run-pace",
+    "name": "Tempo Run (pace target)",
+    "type": "workout",
+    "visibility": "template",
+    "metadata": {},
+    "goals": [{ "id": "g1", "type": "primary", "category": "vo2max" }],
+    "phases": [{
+      "id": "p1", "name": "Build", "order": 1, "type": "build",
+      "weeks": [{
+        "id": "w1", "name": "Week 1", "order": 1,
+        "days": [{
+          "id": "d1", "day_of_week": 3, "type": "training",
+          "blocks": [{
+            "id": "b1", "type": "main", "order": 1,
+            "activities": [{
+              "id": "a1", "type": "cardio", "name": "Tempo Run",
+              "modality": "running",
+              "prescription": {
+                "type": "continuous",
+                "duration": { "value": 20, "unit": "minutes" },
+                "intensity": {
+                  "type": "pace",
+                  "zone_model": "pace_critical_speed",
+                  "target": { "value": 4.5, "unit": "min_per_km" }
+                }
+              }
+            }]
+          }]
+        }]
+      }]
+    }]
+  }
+}
