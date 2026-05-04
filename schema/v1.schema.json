@@ -1007,13 +1007,78 @@
         },
         "measurements": {
           "type": "array",
-          "items": { "type": "string" }
+          "description": "What to measure at this checkpoint. Items can be a free string (back-compat with 1.0–1.5 plans) or a typed MeasurementSpec for analytics-grade comparability.",
+          "items": {
+            "oneOf": [
+              { "type": "string" },
+              { "$ref": "#/$defs/MeasurementSpec" }
+            ]
+          }
         },
         "questions": {
           "type": "array",
           "items": { "type": "string" }
         }
       }
+    },
+
+    "MeasurementSpec": {
+      "type": "object",
+      "required": ["metric"],
+      "additionalProperties": false,
+      "properties": {
+        "metric": { "$ref": "#/$defs/MeasurementMetric" },
+        "unit": {
+          "type": "string",
+          "description": "Optional unit override. Each MeasurementMetric carries an implied canonical unit (see enum description); set this only to override or disambiguate."
+        },
+        "questionnaire": { "$ref": "#/$defs/Questionnaire" },
+        "note": { "type": "string" }
+      }
+    },
+
+    "MeasurementMetric": {
+      "type": "string",
+      "description": "Standardized measurement vocabulary. Canonical units in parentheses.\n  • body_weight_kg (kg) • waist_cm (cm) • hip_cm (cm) • body_fat_pct (%) • lean_mass_kg (kg)\n  • resting_hr_bpm (bpm) • hrv_rmssd_ms (ms) • blood_pressure_systolic_mmhg (mmHg) • blood_pressure_diastolic_mmhg (mmHg)\n  • vo2max_ml_kg_min (mL/kg/min) • six_min_walk_m (m) • cooper_test_m (m)\n  • one_rm_kg (kg, requires exercise_ref via note) • grip_strength_kg (kg) • vertical_jump_cm (cm)\n  • sit_and_reach_cm (cm) • shoulder_flexion_deg (deg)\n  • sleep_hours_avg (h) • session_rpe_avg (1-10)\n  • questionnaire_score (numeric, paired with the 'questionnaire' field)\n  • photo (string ref) • free_text (free)",
+      "enum": [
+        "body_weight_kg",
+        "waist_cm",
+        "hip_cm",
+        "body_fat_pct",
+        "lean_mass_kg",
+        "resting_hr_bpm",
+        "hrv_rmssd_ms",
+        "blood_pressure_systolic_mmhg",
+        "blood_pressure_diastolic_mmhg",
+        "vo2max_ml_kg_min",
+        "six_min_walk_m",
+        "cooper_test_m",
+        "one_rm_kg",
+        "grip_strength_kg",
+        "vertical_jump_cm",
+        "sit_and_reach_cm",
+        "shoulder_flexion_deg",
+        "sleep_hours_avg",
+        "session_rpe_avg",
+        "questionnaire_score",
+        "photo",
+        "free_text"
+      ]
+    },
+
+    "Questionnaire": {
+      "type": "string",
+      "description": "Validated self-report instrument when metric is 'questionnaire_score'. Consumers pair the resulting numeric score with this enum to interpret cutoffs.",
+      "enum": [
+        "phq9",
+        "gad7",
+        "ipaq_short",
+        "ipaq_long",
+        "psqi",
+        "pss10",
+        "borg_cr10",
+        "rpe_session"
+      ]
     },
 
     "PointsConfig": {
