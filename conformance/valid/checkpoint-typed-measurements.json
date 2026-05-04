@@ -1,0 +1,31 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "version": "1.6.0",
+  "plan": {
+    "id": "12wk-progress",
+    "name": "12-week progress plan",
+    "type": "hybrid",
+    "visibility": "template",
+    "metadata": {},
+    "goals": [{ "id": "g1", "type": "primary", "category": "general_fitness" }],
+    "phases": [{ "id": "p1", "name": "Base", "order": 1, "type": "base" }],
+    "progress": {
+      "checkpoints": [
+        {
+          "id": "ck-baseline",
+          "name": "Baseline assessments",
+          "at": { "value": 0, "unit": "weeks" },
+          "measurements": [
+            { "metric": "body_weight_kg" },
+            { "metric": "waist_cm" },
+            { "metric": "resting_hr_bpm" },
+            { "metric": "hrv_rmssd_ms" },
+            { "metric": "vo2max_ml_kg_min" },
+            { "metric": "questionnaire_score", "questionnaire": "psqi", "note": "sleep quality" },
+            "subjective_notes_freeform"
+          ]
+        }
+      ]
+    }
+  }
+}

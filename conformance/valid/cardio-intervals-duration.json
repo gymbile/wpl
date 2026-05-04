@@ -1,0 +1,41 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "version": "1.6.0",
+  "plan": {
+    "id": "vo2-intervals",
+    "name": "VO2max Intervals",
+    "type": "workout",
+    "visibility": "template",
+    "metadata": {},
+    "goals": [{ "id": "g1", "type": "primary", "category": "vo2max" }],
+    "phases": [{
+      "id": "p1", "name": "Build", "order": 1, "type": "build",
+      "weeks": [{
+        "id": "w1", "name": "Week 1", "order": 1,
+        "days": [{
+          "id": "d1", "day_of_week": 2, "type": "training",
+          "blocks": [{
+            "id": "b1", "type": "main", "order": 1,
+            "activities": [{
+              "id": "a1", "type": "cardio", "name": "4x4 Norwegian",
+              "modality": "running",
+              "prescription": {
+                "type": "intervals",
+                "intensity": {
+                  "type": "heart_rate_zone",
+                  "zone_model": "hr_5_zone",
+                  "target": { "zone": 5, "min_bpm": 165, "max_bpm": 178 }
+                },
+                "intervals": {
+                  "work": { "duration": { "value": 4, "unit": "minutes" } },
+                  "rest": { "duration": { "value": 3, "unit": "minutes" } },
+                  "repeat": 4
+                }
+              }
+            }]
+          }]
+        }]
+      }]
+    }]
+  }
+}

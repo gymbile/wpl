@@ -1,0 +1,33 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "version": "1.6.0",
+  "plan": {
+    "id": "post-cardiac-rehab",
+    "name": "Post-Cardiac Rehab Phase II",
+    "type": "hybrid",
+    "visibility": "template",
+    "metadata": { "difficulty": "beginner" },
+    "goals": [
+      { "id": "g1", "type": "primary", "category": "cardiovascular_health" }
+    ],
+    "requirements": {
+      "contraindications": [
+        {
+          "condition": "acsm:cardiac_rehab_phase_2",
+          "severity": "high",
+          "action": "require_clearance",
+          "affected_activities": ["high_intensity_intervals"]
+        },
+        {
+          "condition": "icd10:M54.5",
+          "severity": "moderate",
+          "action": "modify",
+          "affected_activities": ["barbell_deadlift"]
+        }
+      ]
+    },
+    "phases": [
+      { "id": "p1", "name": "Phase 1", "order": 1, "type": "base" }
+    ]
+  }
+}

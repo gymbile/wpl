@@ -1,0 +1,51 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "version": "1.6.0",
+  "plan": {
+    "id": "pnf-mobility",
+    "name": "PNF + SMR session",
+    "type": "recovery",
+    "visibility": "template",
+    "metadata": {},
+    "goals": [{ "id": "g1", "type": "primary", "category": "mobility" }],
+    "phases": [{
+      "id": "p1", "name": "Recovery", "order": 1, "type": "recovery",
+      "weeks": [{
+        "id": "w1", "name": "Week 1", "order": 1,
+        "days": [{
+          "id": "d1", "day_of_week": 7, "type": "active_recovery",
+          "blocks": [{
+            "id": "b1", "type": "cooldown", "order": 1,
+            "activities": [{
+              "id": "a1", "type": "recovery", "name": "Hip mobility",
+              "category": "mobility",
+              "prescription": {
+                "exercises": [
+                  {
+                    "id": "rx1",
+                    "type": "recovery_exercise",
+                    "name": "Couch stretch (PNF contract-relax)",
+                    "modality": "pnf",
+                    "sides": "both",
+                    "intensity_rpe": 6,
+                    "pnf": { "contraction_seconds": 6, "relax_seconds": 20, "contractions": 3 },
+                    "body_part": "hip_flexors"
+                  },
+                  {
+                    "id": "rx2",
+                    "type": "recovery_exercise",
+                    "name": "Foam roll thoracic",
+                    "modality": "smr_foam_roll",
+                    "hold_seconds": 60,
+                    "intensity_rpe": 5,
+                    "body_part": "thoracic_spine"
+                  }
+                ]
+              }
+            }]
+          }]
+        }]
+      }]
+    }]
+  }
+}

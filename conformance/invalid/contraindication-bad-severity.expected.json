@@ -1,0 +1,10 @@
+[
+  {
+    "code": "SCHEMA_VIOLATION",
+    "path": "/plan/requirements/contraindications/0/severity",
+    "severity": "error",
+    "meta": {
+      "keyword": "enum"
+    }
+  }
+]

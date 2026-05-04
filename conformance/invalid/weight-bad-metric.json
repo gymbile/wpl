@@ -1,0 +1,45 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "version": "1.6.0",
+  "plan": {
+    "id": "bad-weight-metric-plan",
+    "name": "Bad Weight.metric value",
+    "type": "workout",
+    "visibility": "private",
+    "metadata": {},
+    "goals": [],
+    "phases": [
+      {
+        "id": "phase_1", "name": "P1", "order": 1,
+        "weeks": [
+          {
+            "id": "week_1", "name": "Week 1", "order": 1,
+            "days": [
+              {
+                "id": "day_1", "day_of_week": 1, "name": "D1", "type": "training",
+                "blocks": [
+                  {
+                    "id": "main", "type": "main", "order": 1,
+                    "activities": [
+                      {
+                        "id": "ex_1",
+                        "type": "exercise",
+                        "exercise_ref": "bench_press",
+                        "prescription": {
+                          "type": "sets_reps",
+                          "sets": 3,
+                          "reps": { "target": 5 },
+                          "weight": { "type": "percentage_1rm", "value": 85, "unit": "%", "metric": "5RM" }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

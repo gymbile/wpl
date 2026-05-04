@@ -1,0 +1,34 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "version": "1.6.0",
+  "plan": {
+    "id": "bad-severity-plan",
+    "name": "Bad contraindication severity",
+    "type": "workout",
+    "visibility": "private",
+    "metadata": {},
+    "goals": [],
+    "requirements": {
+      "contraindications": [
+        {
+          "condition": "icd10:I25.10",
+          "severity": "critical",
+          "action": "exclude"
+        }
+      ]
+    },
+    "phases": [
+      {
+        "id": "phase_1", "name": "P1", "order": 1,
+        "weeks": [
+          {
+            "id": "week_1", "name": "Week 1", "order": 1,
+            "days": [
+              { "id": "day_1", "day_of_week": 1, "name": "D1", "type": "rest" }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

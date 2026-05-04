@@ -1,0 +1,35 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "version": "1.6.0",
+  "plan": {
+    "id": "amrap-test",
+    "name": "AMRAP test set",
+    "type": "workout",
+    "visibility": "template",
+    "metadata": {},
+    "goals": [{ "id": "g1", "type": "primary", "category": "strength" }],
+    "phases": [{
+      "id": "p1", "name": "Realization", "order": 1, "type": "realization",
+      "weeks": [{
+        "id": "w1", "name": "Test Week", "order": 1,
+        "days": [{
+          "id": "d1", "day_of_week": 3, "type": "training",
+          "blocks": [{
+            "id": "b1", "type": "main", "order": 1,
+            "activities": [{
+              "id": "a1", "type": "exercise", "exercise_ref": "back-squat", "name": "Back squat AMRAP",
+              "target_rir": 0,
+              "prescription": {
+                "type": "sets_reps",
+                "sets": 1,
+                "reps": { "amrap": true, "min": 5 },
+                "to_failure": true,
+                "weight": { "type": "percentage_1rm", "value": 90, "unit": "%", "metric": "training_max" }
+              }
+            }]
+          }]
+        }]
+      }]
+    }]
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "version": "1.6.0",
+  "plan": {
+    "id": "bad-modality-plan",
+    "name": "Bad recovery modality",
+    "type": "recovery",
+    "visibility": "private",
+    "metadata": {},
+    "goals": [],
+    "phases": [
+      {
+        "id": "phase_1", "name": "P1", "order": 1, "type": "recovery",
+        "weeks": [
+          {
+            "id": "week_1", "name": "Week 1", "order": 1,
+            "days": [
+              {
+                "id": "day_1", "day_of_week": 1, "type": "active_recovery",
+                "blocks": [
+                  {
+                    "id": "main", "type": "cooldown", "order": 1,
+                    "activities": [
+                      {
+                        "id": "a1", "type": "recovery", "name": "Cool down",
+                        "category": "mobility",
+                        "prescription": {
+                          "exercises": [
+                            {
+                              "id": "rx1",
+                              "type": "recovery_exercise",
+                              "name": "Hip flexor stretch",
+                              "modality": "stretching"
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
