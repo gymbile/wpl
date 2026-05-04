@@ -7,6 +7,20 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [Unreleased]
 
+## [1.6.0] — 2026-05-04
+
+### Added
+- **Contraindication tightening.** Optional `severity` (`low | moderate | high`, ACSM-style risk tiering) and a new `action: "require_clearance"` for plans that should gate execution behind documented medical clearance.
+- **Cardio interval consistency.** `CardioPrescription.intervals.work.duration` and `.rest.duration` now accept a full `Duration` object alongside the existing bare number (seconds, retained for back-compat).
+- **Cardio intensity slots.** `intensity.target` documents and pre-defines named slots: `zone`, `min_bpm`/`max_bpm`, `min_watts`/`max_watts`, and `value`+`unit` for pace (`min_per_km | min_per_mi | m_per_s | sec_per_100m`). Stays open (`additionalProperties: true`).
+- **Resistance prescription extras.** `Reps.amrap: bool`, `ExercisePrescription.to_failure: bool`, and `Weight.metric` enum (`1RM | e1RM | training_max | daily_max`) for percentage-of-1RM prescriptions.
+- **Typed progress measurements.** `Checkpoint.measurements[]` items now accept either a free string (back-compat) or a `MeasurementSpec` referencing the new `MeasurementMetric` enum (24 standardized metrics: body composition, hemodynamic, cardiorespiratory, strength, flexibility, sleep, RPE) and a `Questionnaire` enum (PHQ-9, GAD-7, IPAQ, PSQI, PSS-10, Borg CR-10, session RPE).
+- **Recovery typing.** `RecoveryExercise` gains optional `modality` (static/dynamic/PNF/SMR/breathwork/mobility), `intensity_rpe`, a structured `pnf` block, and `body_part`.
+- New conformance fixtures: `valid/contraindication-clearance.json`, `valid/cardio-intervals-duration.json`, `valid/amrap-to-failure.json`, `valid/checkpoint-typed-measurements.json`, `valid/recovery-pnf-smr.json`, `invalid/contraindication-bad-severity.json`, `invalid/contraindication-bad-action.json`, `invalid/checkpoint-bad-metric.json`, `invalid/recovery-bad-modality.json`, `invalid/weight-bad-metric.json`.
+
+### Notes
+All changes are additive; every plan that validated under 1.5.0 continues to validate under 1.6.0. Bare-number `intervals.work.duration` is now documented as deprecated but still accepted.
+
 ## [1.5.0] — 2026-05-03
 
 ### Added

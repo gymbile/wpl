@@ -242,6 +242,14 @@ Goals define what the plan aims to achieve and how success is measured.
 }
 ```
 
+#### Contraindication Fields (v1.6.0)
+
+Each contraindication entry supports optional `severity` (`low | moderate | high`, ACSM-style risk tiering) and the new `action` value `require_clearance`, which gates plan execution behind documented medical clearance. Existing `action` values (`exclude`, `modify`) remain valid.
+
+```json
+{"condition": "acsm:cardiac_event_recent", "severity": "high", "action": "require_clearance", "message": "Physician clearance required before starting."}
+```
+
 ### Personalization Rules
 
 Client input drives plan customization through conditional rules.
@@ -507,6 +515,14 @@ Each day contains multiple activity blocks.
 }
 ```
 
+#### ExercisePrescription / Reps / Weight Fields (v1.6.0)
+
+`ExercisePrescription` accepts optional `to_failure: true` to signal that the final set should be taken to muscular failure. `Reps` accepts optional `amrap: true` for "as many reps as possible" sets. For `percentage_1rm` weight prescriptions, `Weight.metric` clarifies the reference: `1RM | e1RM | training_max | daily_max`.
+
+```json
+{"type": "sets_reps", "sets": 3, "reps": {"min": 5, "max": 8}, "to_failure": true, "weight": {"type": "percentage_1rm", "value": 80, "metric": "e1RM"}}
+```
+
 ### 5.2 Cardio Activity
 
 ```json
@@ -536,6 +552,16 @@ Each day contains multiple activity blocks.
     "log_calories": true
   }
 }
+```
+
+#### CardioPrescription Fields (v1.6.0)
+
+`intervals.work.duration` and `intervals.rest.duration` accept either a bare number (seconds, back-compat) or a full `Duration` object (`{"value": 40, "unit": "seconds"}`). Bare-number form is deprecated in favour of the object form.
+
+`intensity.target` is an open object (`additionalProperties: true`) with pre-defined named slots: `zone` (integer), `min_bpm`/`max_bpm` (integers), `min_watts`/`max_watts` (numbers), and `value`+`unit` for pace where `unit` is one of `min_per_km | min_per_mi | m_per_s | sec_per_100m`.
+
+```json
+{"type": "bpm", "target": {"min_bpm": 130, "max_bpm": 150}, "zone_model": "hr_5_zone"}
 ```
 
 ### 5.3 Nutrition Activity
@@ -634,6 +660,14 @@ Each day contains multiple activity blocks.
 }
 ```
 
+#### RecoveryExercise Fields (v1.6.0)
+
+Each entry in `prescription.exercises` (a `RecoveryExercise`) accepts optional: `modality` (`static | dynamic | PNF | SMR | breathwork | mobility`), `intensity_rpe` (1–10 number), `body_part` (free string), and a structured `pnf` block (`{"contract_seconds": 6, "relax_seconds": 10, "reps": 3}`).
+
+```json
+{"name": "Hip Flexor PNF", "modality": "PNF", "body_part": "hip_flexor", "pnf": {"contract_seconds": 6, "relax_seconds": 10, "reps": 3}, "intensity_rpe": 4}
+```
+
 ### 5.6 Habit Activity
 
 ```json
@@ -720,6 +754,14 @@ These activity types are produced by the WPL-AI compiler as intermediate forms w
     }
   }
 }
+```
+
+#### Checkpoint Measurements (v1.6.0)
+
+`Checkpoint.measurements[]` items now accept either a free string (back-compat) or a `MeasurementSpec` object. `MeasurementSpec` references `MeasurementMetric` (24-value enum covering body composition, hemodynamic, cardiorespiratory, strength, flexibility, sleep, and RPE metrics) and an optional `Questionnaire` enum (`PHQ-9 | GAD-7 | IPAQ | PSQI | PSS-10 | Borg_CR-10 | session_RPE`).
+
+```json
+{"measurements": ["body_weight", {"metric": "resting_hr", "unit": "bpm"}, {"questionnaire": "PHQ-9"}]}
 ```
 
 ---
