@@ -1,0 +1,5 @@
+{
+  "since": "1.0.0",
+  "description": "Meditation activity with guided: false. Tests that false boolean is emitted in prescription.",
+  "category": "meditation"
+}

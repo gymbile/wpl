@@ -1,0 +1,13 @@
+PLAN "KG Units"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+ATHLETE_THRESHOLDS
+  body_weight 75 kg
+  one_rm overhead_press 60 kg
+
+PHASES
+  PHASE "Week One" (1 weeks):
+    WEEK 1:

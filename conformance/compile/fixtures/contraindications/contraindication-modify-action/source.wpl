@@ -1,0 +1,12 @@
+PLAN "Contraindication Modify"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+REQUIRES
+  contraindication shoulder_impingement severity moderate action modify
+
+PHASES
+  PHASE "Week One" (1 weeks):
+    WEEK 1:

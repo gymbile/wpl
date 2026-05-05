@@ -1,0 +1,5 @@
+{
+  "since": "1.4.0",
+  "description": "PERSONALIZATION rule with compound AND condition and modify_intensity action. Tests multi-condition AND compilation.",
+  "category": "personalization"
+}

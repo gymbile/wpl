@@ -1,0 +1,5 @@
+{
+  "since": "1.3.0",
+  "description": "REQUIRES with age range 18..65. Tests min_age and max_age compilation.",
+  "category": "requires"
+}

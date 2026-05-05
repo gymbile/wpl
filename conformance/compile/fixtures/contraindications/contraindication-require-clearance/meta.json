@@ -1,0 +1,5 @@
+{
+  "since": "1.6.0",
+  "description": "REQUIRES with contraindication require_clearance action. Tests action=require_clearance compilation.",
+  "category": "contraindications"
+}

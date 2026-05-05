@@ -1,0 +1,15 @@
+PLAN "Exclude Rule"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PERSONALIZATION
+  RULES
+    WHEN injury contains shoulder:
+      exclude overhead_press
+      exclude lateral_raise
+
+PHASES
+  PHASE "Week One" (1 weeks):
+    WEEK 1:

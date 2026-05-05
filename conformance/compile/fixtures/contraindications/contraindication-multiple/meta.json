@@ -1,0 +1,5 @@
+{
+  "since": "1.6.0",
+  "description": "REQUIRES with three contraindications covering all three actions and all three severity levels. Tests multiple contraindication compilation.",
+  "category": "contraindications"
+}

@@ -1,0 +1,5 @@
+{
+  "since": "1.0.0",
+  "description": "GOALS block with no goals. Tests that goals compiles to empty array.",
+  "category": "goals"
+}

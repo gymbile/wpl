@@ -1,0 +1,12 @@
+PLAN "Fitness Levels Required"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+REQUIRES
+  fitness intermediate, advanced
+
+PHASES
+  PHASE "Week One" (1 weeks):
+    WEEK 1:

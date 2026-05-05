@@ -1,0 +1,16 @@
+PLAN "Multi Sub Plan Day"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Week One" (1 weeks):
+    WEEK 1:
+      DAY Wednesday training "Template Day":
+        warmup:
+          subplan plan_warmup_upper "Upper Warmup"
+        main straight_sets:
+          bench_press 4x6
+        cooldown:
+          subplan plan_cooldown_chest "Chest Cooldown"

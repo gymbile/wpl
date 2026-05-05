@@ -1,0 +1,12 @@
+PLAN "Body Weight Threshold"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+ATHLETE_THRESHOLDS
+  body_weight 68 kg
+
+PHASES
+  PHASE "Week One" (1 weeks):
+    WEEK 1:

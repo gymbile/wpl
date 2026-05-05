@@ -1,0 +1,17 @@
+PLAN "Multiple Meditations"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Week One" (1 weeks):
+    WEEK 1:
+      DAY Monday training "Morning Practice":
+        meditation:
+          meditation breathing:
+            duration 5 minutes
+            guided false
+          meditation mindfulness:
+            duration 10 minutes
+            guided true

@@ -1,0 +1,15 @@
+PLAN "Audio Meditation"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Week One" (1 weeks):
+    WEEK 1:
+      DAY Thursday training "Guided Audio Session":
+        meditation:
+          meditation visualization:
+            duration 12 minutes
+            guided true
+            audio relaxing_ocean_001

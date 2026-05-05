@@ -1,0 +1,14 @@
+PLAN "Multiple Contraindications"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+REQUIRES
+  contraindication knee_pain severity high action exclude
+  contraindication shoulder_injury severity moderate action modify
+  contraindication hypertension severity low action require_clearance
+
+PHASES
+  PHASE "Week One" (1 weeks):
+    WEEK 1:

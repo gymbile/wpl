@@ -1,0 +1,62 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "plan": {
+    "goals": [],
+    "id": "<UUID>",
+    "metadata": {
+      "language": "en"
+    },
+    "name": "OR Conditions",
+    "personalization": {
+      "inputs": [],
+      "rules": [
+        {
+          "actions": [
+            {
+              "amount": 1,
+              "type": "reduce_sets"
+            }
+          ],
+          "condition": {
+            "conditions": [
+              {
+                "field": "injury",
+                "op": "contains",
+                "value": "knee"
+              },
+              {
+                "field": "injury",
+                "op": "contains",
+                "value": "ankle"
+              }
+            ],
+            "operator": "or"
+          },
+          "id": "rule_1"
+        }
+      ]
+    },
+    "phases": [
+      {
+        "duration": {
+          "unit": "weeks",
+          "value": 1
+        },
+        "id": "<AUTO_ID>",
+        "name": "Week One",
+        "order": 1,
+        "weeks": [
+          {
+            "id": "<AUTO_ID>",
+            "name": "Week 1",
+            "order": 1
+          }
+        ]
+      }
+    ],
+    "requirements": {},
+    "type": "workout",
+    "visibility": "public"
+  },
+  "version": "1.6.0"
+}

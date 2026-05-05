@@ -1,0 +1,17 @@
+PLAN "Full Thresholds"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+ATHLETE_THRESHOLDS
+  hr_max 190 bpm
+  lthr 170 bpm
+  resting_hr 48 bpm
+  ftp 300 watts
+  vo2max 58.5
+  body_weight 80 kg
+
+PHASES
+  PHASE "Week One" (1 weeks):
+    WEEK 1:

@@ -1,0 +1,14 @@
+PLAN "Breathing Plan"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Week One" (1 weeks):
+    WEEK 1:
+      DAY Friday training "Breathing Session":
+        meditation:
+          meditation breathing:
+            duration 8 minutes
+            guided true

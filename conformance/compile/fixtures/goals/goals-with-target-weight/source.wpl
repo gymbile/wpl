@@ -1,0 +1,12 @@
+PLAN "Goal With Target"
+TYPE workout
+VISIBILITY public
+
+GOALS
+  GOAL primary fitness:
+    name "Lose Weight"
+    target weight 70 kg
+
+PHASES
+  PHASE "Week One" (1 weeks):
+    WEEK 1:

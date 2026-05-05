@@ -1,0 +1,5 @@
+{
+  "since": "1.5.0",
+  "description": "Multiple sub-plan references in one day (warmup and cooldown). Tests that sub_plan activities work in multiple blocks within the same day.",
+  "category": "sub_plan"
+}

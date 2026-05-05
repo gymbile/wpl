@@ -1,0 +1,55 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "plan": {
+    "goals": [],
+    "id": "<UUID>",
+    "metadata": {
+      "language": "en"
+    },
+    "name": "Multiple Contraindications",
+    "personalization": {
+      "inputs": [],
+      "rules": []
+    },
+    "phases": [
+      {
+        "duration": {
+          "unit": "weeks",
+          "value": 1
+        },
+        "id": "<AUTO_ID>",
+        "name": "Week One",
+        "order": 1,
+        "weeks": [
+          {
+            "id": "<AUTO_ID>",
+            "name": "Week 1",
+            "order": 1
+          }
+        ]
+      }
+    ],
+    "requirements": {
+      "contraindications": [
+        {
+          "action": "exclude",
+          "condition": "knee_pain",
+          "severity": "high"
+        },
+        {
+          "action": "modify",
+          "condition": "shoulder_injury",
+          "severity": "moderate"
+        },
+        {
+          "action": "require_clearance",
+          "condition": "hypertension",
+          "severity": "low"
+        }
+      ]
+    },
+    "type": "workout",
+    "visibility": "public"
+  },
+  "version": "1.6.0"
+}

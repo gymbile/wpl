@@ -1,0 +1,13 @@
+PLAN "One RM Thresholds"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+ATHLETE_THRESHOLDS
+  hr_max 182 bpm
+  one_rm squat 120 kg
+
+PHASES
+  PHASE "Week One" (1 weeks):
+    WEEK 1:

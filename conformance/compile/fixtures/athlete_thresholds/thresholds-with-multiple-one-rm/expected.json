@@ -1,0 +1,56 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "plan": {
+    "athlete_thresholds": {
+      "one_rm": [
+        {
+          "exercise_ref": "squat",
+          "unit": "kg",
+          "value": 140
+        },
+        {
+          "exercise_ref": "bench_press",
+          "unit": "kg",
+          "value": 100
+        },
+        {
+          "exercise_ref": "deadlift",
+          "unit": "kg",
+          "value": 180
+        }
+      ]
+    },
+    "goals": [],
+    "id": "<UUID>",
+    "metadata": {
+      "language": "en"
+    },
+    "name": "Multiple One RMs",
+    "personalization": {
+      "inputs": [],
+      "rules": []
+    },
+    "phases": [
+      {
+        "duration": {
+          "unit": "weeks",
+          "value": 1
+        },
+        "id": "<AUTO_ID>",
+        "name": "Week One",
+        "order": 1,
+        "weeks": [
+          {
+            "id": "<AUTO_ID>",
+            "name": "Week 1",
+            "order": 1
+          }
+        ]
+      }
+    ],
+    "requirements": {},
+    "type": "workout",
+    "visibility": "public"
+  },
+  "version": "1.6.0"
+}

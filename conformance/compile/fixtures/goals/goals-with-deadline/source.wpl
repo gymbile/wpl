@@ -1,0 +1,13 @@
+PLAN "Goal With Deadline"
+TYPE workout
+VISIBILITY public
+
+GOALS
+  GOAL primary fitness:
+    name "Lose Weight"
+    target weight 70 kg
+    deadline 2026-12-31
+
+PHASES
+  PHASE "Week One" (1 weeks):
+    WEEK 1:

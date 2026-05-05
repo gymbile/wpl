@@ -1,0 +1,5 @@
+{
+  "since": "1.0.0",
+  "description": "GOALS with primary fitness goal with weight target and deadline. Tests goal deadline field compilation.",
+  "category": "goals"
+}

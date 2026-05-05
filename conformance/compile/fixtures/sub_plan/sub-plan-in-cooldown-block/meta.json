@@ -1,0 +1,5 @@
+{
+  "since": "1.5.0",
+  "description": "Sub-plan reference in cooldown block. Tests sub_plan type in cooldown context.",
+  "category": "sub_plan"
+}

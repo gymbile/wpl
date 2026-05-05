@@ -1,0 +1,12 @@
+PLAN "Contraindication Require Clearance"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+REQUIRES
+  contraindication cardiac_condition severity high action require_clearance
+
+PHASES
+  PHASE "Week One" (1 weeks):
+    WEEK 1:

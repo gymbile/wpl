@@ -1,0 +1,12 @@
+PLAN "Contraindication No Severity"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+REQUIRES
+  contraindication pregnancy action exclude
+
+PHASES
+  PHASE "Week One" (1 weeks):
+    WEEK 1:

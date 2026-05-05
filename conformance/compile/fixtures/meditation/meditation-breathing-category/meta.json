@@ -1,0 +1,5 @@
+{
+  "since": "1.0.0",
+  "description": "Meditation with breathing category. Verifies category field and auto-derived name 'Breathing Meditation'.",
+  "category": "meditation"
+}

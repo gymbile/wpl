@@ -1,0 +1,14 @@
+PLAN "AND Conditions"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PERSONALIZATION
+  RULES
+    WHEN fitness_level = advanced AND client_age < 40 :
+      modify intensity factor 1.1
+
+PHASES
+  PHASE "Week One" (1 weeks):
+    WEEK 1:

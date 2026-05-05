@@ -1,0 +1,5 @@
+{
+  "since": "1.4.0",
+  "description": "PERSONALIZATION rule with compound OR condition and reduce_sets action. Tests multi-condition OR compilation.",
+  "category": "personalization"
+}

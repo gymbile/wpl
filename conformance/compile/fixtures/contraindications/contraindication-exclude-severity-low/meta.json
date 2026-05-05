@@ -1,0 +1,5 @@
+{
+  "since": "1.6.0",
+  "description": "REQUIRES with contraindication exclude action and low severity. Tests severity=low compilation.",
+  "category": "contraindications"
+}

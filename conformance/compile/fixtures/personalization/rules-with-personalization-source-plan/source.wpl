@@ -1,0 +1,14 @@
+PLAN "Plan Source"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PERSONALIZATION
+  INPUTS
+    week_number = plan as number
+    phase_name = plan as string
+
+PHASES
+  PHASE "Week One" (1 weeks):
+    WEEK 1:

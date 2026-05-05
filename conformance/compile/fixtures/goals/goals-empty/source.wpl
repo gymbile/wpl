@@ -1,0 +1,9 @@
+PLAN "Empty Goals"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Week One" (1 weeks):
+    WEEK 1:

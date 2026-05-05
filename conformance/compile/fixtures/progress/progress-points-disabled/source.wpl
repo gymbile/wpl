@@ -1,0 +1,12 @@
+PLAN "Points Disabled"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PROGRESS
+  points disabled
+
+PHASES
+  PHASE "Week One" (1 weeks):
+    WEEK 1:

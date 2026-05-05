@@ -1,0 +1,17 @@
+PLAN "Full Requirements"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+REQUIRES
+  fitness intermediate, advanced
+  age 21..60
+  equipment:
+    barbell
+    bench
+  contraindication knee_pain severity high action exclude
+
+PHASES
+  PHASE "Week One" (1 weeks):
+    WEEK 1:

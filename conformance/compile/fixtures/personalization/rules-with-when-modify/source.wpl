@@ -1,0 +1,15 @@
+PLAN "Modify Rule"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PERSONALIZATION
+  RULES
+    WHEN client_age >= 60 :
+      modify intensity factor 0.8
+      add warmup 5 minutes
+
+PHASES
+  PHASE "Week One" (1 weeks):
+    WEEK 1:

@@ -1,0 +1,14 @@
+PLAN "Mindfulness Plan"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Week One" (1 weeks):
+    WEEK 1:
+      DAY Tuesday training "Mindfulness Session":
+        meditation:
+          meditation mindfulness:
+            duration 15 minutes
+            guided true

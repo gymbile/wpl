@@ -1,0 +1,13 @@
+PLAN "LB Units"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+ATHLETE_THRESHOLDS
+  one_rm squat 315 lb
+  one_rm bench_press 225 lb
+
+PHASES
+  PHASE "Week One" (1 weeks):
+    WEEK 1:

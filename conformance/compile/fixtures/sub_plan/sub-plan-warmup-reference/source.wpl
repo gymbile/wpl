@@ -1,0 +1,14 @@
+PLAN "Sub Plan Warmup"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Week One" (1 weeks):
+    WEEK 1:
+      DAY Monday training "Warmup Day":
+        warmup:
+          subplan plan_warmup_standard
+        main straight_sets:
+          push_up 3x10

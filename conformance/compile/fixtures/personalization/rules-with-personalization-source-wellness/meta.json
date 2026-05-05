@@ -1,0 +1,5 @@
+{
+  "since": "1.4.0",
+  "description": "PERSONALIZATION inputs with source=wellness (sleep_quality number, stress_level enum). Tests wellness input source compilation.",
+  "category": "personalization"
+}

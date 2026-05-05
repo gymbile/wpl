@@ -1,0 +1,56 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "plan": {
+    "goals": [],
+    "id": "<UUID>",
+    "metadata": {
+      "language": "en"
+    },
+    "name": "Modify Rule",
+    "personalization": {
+      "inputs": [],
+      "rules": [
+        {
+          "actions": [
+            {
+              "factor": 0.8,
+              "type": "modify_intensity"
+            },
+            {
+              "minutes": 5,
+              "type": "add_warmup_time"
+            }
+          ],
+          "condition": {
+            "field": "client_age",
+            "op": "gte",
+            "value": 60
+          },
+          "id": "rule_1"
+        }
+      ]
+    },
+    "phases": [
+      {
+        "duration": {
+          "unit": "weeks",
+          "value": 1
+        },
+        "id": "<AUTO_ID>",
+        "name": "Week One",
+        "order": 1,
+        "weeks": [
+          {
+            "id": "<AUTO_ID>",
+            "name": "Week 1",
+            "order": 1
+          }
+        ]
+      }
+    ],
+    "requirements": {},
+    "type": "workout",
+    "visibility": "public"
+  },
+  "version": "1.6.0"
+}

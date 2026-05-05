@@ -1,0 +1,5 @@
+{
+  "since": "1.4.0",
+  "description": "PERSONALIZATION rule with WHEN contains condition and replace_exercise actions. Tests replace_exercise action compilation.",
+  "category": "personalization"
+}

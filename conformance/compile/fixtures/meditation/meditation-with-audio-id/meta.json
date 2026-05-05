@@ -1,0 +1,5 @@
+{
+  "since": "1.0.0",
+  "description": "Meditation activity with audio field in DSL. Both compilers parse the audio token but do not emit audio_id in the compiled JSON (it is parsed but not yet compiled). Tests that audio field in DSL does not break compilation.",
+  "category": "meditation"
+}

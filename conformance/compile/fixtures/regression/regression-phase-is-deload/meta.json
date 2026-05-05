@@ -1,0 +1,5 @@
+{
+  "since": "1.2.0",
+  "description": "Phase with one normal week and one deload week. Tests is_deload=true compilation on a week.",
+  "category": "regression"
+}

@@ -1,0 +1,5 @@
+{
+  "since": "1.3.0",
+  "description": "REQUIRES with both fitness levels and equipment list. Tests combined fitness_level and equipment compilation.",
+  "category": "requires"
+}

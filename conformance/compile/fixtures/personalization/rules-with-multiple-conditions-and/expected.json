@@ -1,0 +1,62 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "plan": {
+    "goals": [],
+    "id": "<UUID>",
+    "metadata": {
+      "language": "en"
+    },
+    "name": "AND Conditions",
+    "personalization": {
+      "inputs": [],
+      "rules": [
+        {
+          "actions": [
+            {
+              "factor": 1.1,
+              "type": "modify_intensity"
+            }
+          ],
+          "condition": {
+            "conditions": [
+              {
+                "field": "fitness_level",
+                "op": "eq",
+                "value": "advanced"
+              },
+              {
+                "field": "client_age",
+                "op": "lt",
+                "value": 40
+              }
+            ],
+            "operator": "and"
+          },
+          "id": "rule_1"
+        }
+      ]
+    },
+    "phases": [
+      {
+        "duration": {
+          "unit": "weeks",
+          "value": 1
+        },
+        "id": "<AUTO_ID>",
+        "name": "Week One",
+        "order": 1,
+        "weeks": [
+          {
+            "id": "<AUTO_ID>",
+            "name": "Week 1",
+            "order": 1
+          }
+        ]
+      }
+    ],
+    "requirements": {},
+    "type": "workout",
+    "visibility": "public"
+  },
+  "version": "1.6.0"
+}

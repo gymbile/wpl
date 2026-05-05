@@ -1,0 +1,15 @@
+PLAN "Replace Rule"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PERSONALIZATION
+  RULES
+    WHEN injury contains knee:
+      replace squat -> wall_sit
+      replace lunge -> step_up
+
+PHASES
+  PHASE "Week One" (1 weeks):
+    WEEK 1:

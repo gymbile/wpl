@@ -1,0 +1,5 @@
+{
+  "since": "1.0.0",
+  "description": "Meditation activity with guided: true flag. Tests that guided boolean is emitted in prescription.",
+  "category": "meditation"
+}

@@ -1,0 +1,5 @@
+{
+  "since": "1.6.0",
+  "description": "REQUIRES with contraindication without severity field. Tests that severity is optional and omitted from output when absent.",
+  "category": "contraindications"
+}

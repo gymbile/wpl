@@ -1,0 +1,5 @@
+{
+  "since": "1.3.0",
+  "description": "ATHLETE_THRESHOLDS with three one_rm entries (squat, bench_press, deadlift). Tests multiple one_rm entries in array.",
+  "category": "athlete_thresholds"
+}

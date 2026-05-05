@@ -1,0 +1,14 @@
+PLAN "Wellness Source"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PERSONALIZATION
+  INPUTS
+    sleep_quality = wellness as number
+    stress_level = wellness as enum
+
+PHASES
+  PHASE "Week One" (1 weeks):
+    WEEK 1:

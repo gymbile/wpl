@@ -1,0 +1,14 @@
+PLAN "Equipment Only"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+REQUIRES
+  equipment:
+    barbell
+    rack
+
+PHASES
+  PHASE "Week One" (1 weeks):
+    WEEK 1:

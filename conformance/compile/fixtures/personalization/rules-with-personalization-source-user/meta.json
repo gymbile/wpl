@@ -1,0 +1,5 @@
+{
+  "since": "1.4.0",
+  "description": "PERSONALIZATION inputs with source=user. Tests user input source compilation.",
+  "category": "personalization"
+}

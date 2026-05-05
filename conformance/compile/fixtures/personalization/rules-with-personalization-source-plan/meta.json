@@ -1,0 +1,5 @@
+{
+  "since": "1.4.0",
+  "description": "PERSONALIZATION inputs with source=plan (week_number and phase_name). Tests plan input source compilation.",
+  "category": "personalization"
+}

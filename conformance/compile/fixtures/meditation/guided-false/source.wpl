@@ -1,0 +1,14 @@
+PLAN "Unguided Meditation"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Week One" (1 weeks):
+    WEEK 1:
+      DAY Monday training "Quiet Practice":
+        meditation:
+          meditation breathing:
+            duration 5 minutes
+            guided false

@@ -1,0 +1,5 @@
+{
+  "since": "1.3.0",
+  "description": "REQUIRES with fitness levels (intermediate, advanced). Tests fitness_level compilation.",
+  "category": "requires"
+}

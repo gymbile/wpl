@@ -1,0 +1,5 @@
+{
+  "since": "1.5.0",
+  "description": "Sub-plan reference with explicit name string. Tests that name field is emitted when provided in DSL.",
+  "category": "sub_plan"
+}

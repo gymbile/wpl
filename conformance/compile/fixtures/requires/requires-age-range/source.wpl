@@ -1,0 +1,12 @@
+PLAN "Age Range Required"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+REQUIRES
+  age 18..65
+
+PHASES
+  PHASE "Week One" (1 weeks):
+    WEEK 1:

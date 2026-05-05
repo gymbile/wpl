@@ -1,0 +1,14 @@
+PLAN "Multiple One RMs"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+ATHLETE_THRESHOLDS
+  one_rm squat 140 kg
+  one_rm bench_press 100 kg
+  one_rm deadlift 180 kg
+
+PHASES
+  PHASE "Week One" (1 weeks):
+    WEEK 1:

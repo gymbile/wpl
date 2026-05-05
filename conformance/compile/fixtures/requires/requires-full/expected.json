@@ -1,0 +1,63 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "plan": {
+    "goals": [],
+    "id": "<UUID>",
+    "metadata": {
+      "language": "en"
+    },
+    "name": "Full Requirements",
+    "personalization": {
+      "inputs": [],
+      "rules": []
+    },
+    "phases": [
+      {
+        "duration": {
+          "unit": "weeks",
+          "value": 1
+        },
+        "id": "<AUTO_ID>",
+        "name": "Week One",
+        "order": 1,
+        "weeks": [
+          {
+            "id": "<AUTO_ID>",
+            "name": "Week 1",
+            "order": 1
+          }
+        ]
+      }
+    ],
+    "requirements": {
+      "contraindications": [
+        {
+          "action": "exclude",
+          "condition": "knee_pain",
+          "severity": "high"
+        }
+      ],
+      "equipment": [
+        {
+          "id": "barbell",
+          "name": "barbell",
+          "required": false
+        },
+        {
+          "id": "bench",
+          "name": "bench",
+          "required": false
+        }
+      ],
+      "fitness_level": [
+        "intermediate",
+        "advanced"
+      ],
+      "max_age": 60,
+      "min_age": 21
+    },
+    "type": "workout",
+    "visibility": "public"
+  },
+  "version": "1.6.0"
+}

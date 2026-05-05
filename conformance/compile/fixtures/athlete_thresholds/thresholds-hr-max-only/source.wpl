@@ -1,0 +1,12 @@
+PLAN "HR Max Only"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+ATHLETE_THRESHOLDS
+  hr_max 185 bpm
+
+PHASES
+  PHASE "Week One" (1 weeks):
+    WEEK 1:

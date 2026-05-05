@@ -1,0 +1,5 @@
+{
+  "since": "1.3.0",
+  "description": "REQUIRES with equipment list only (barbell, rack). Tests basic equipment compilation.",
+  "category": "requires"
+}

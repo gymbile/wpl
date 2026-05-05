@@ -1,0 +1,5 @@
+{
+  "since": "1.6.0",
+  "description": "REQUIRES with contraindication modify action and moderate severity. Tests action=modify compilation.",
+  "category": "contraindications"
+}

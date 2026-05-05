@@ -1,0 +1,5 @@
+{
+  "since": "1.4.0",
+  "description": "PERSONALIZATION with two inputs (user and assessment sources) and no rules. Tests basic input compilation.",
+  "category": "personalization"
+}

@@ -1,0 +1,14 @@
+PLAN "Device Source"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PERSONALIZATION
+  INPUTS
+    resting_hr = device as number
+    hrv_score = device as number
+
+PHASES
+  PHASE "Week One" (1 weeks):
+    WEEK 1:

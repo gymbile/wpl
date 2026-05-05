@@ -1,0 +1,15 @@
+PLAN "Multiple Goals"
+TYPE workout
+VISIBILITY public
+
+GOALS
+  GOAL primary fitness:
+    name "Lose Weight"
+  GOAL secondary performance:
+    name "Run 5K"
+  GOAL tertiary wellness:
+    name "Better Sleep"
+
+PHASES
+  PHASE "Week One" (1 weeks):
+    WEEK 1:

@@ -1,0 +1,5 @@
+{
+  "since": "1.4.0",
+  "description": "PERSONALIZATION rule with WHEN contains condition and exclude_exercise actions. Tests exclude_exercise action compilation.",
+  "category": "personalization"
+}

@@ -1,0 +1,5 @@
+{
+  "since": "1.0.0",
+  "description": "Two meditation activities inside a single meditation block. Tests multiple activities parsing and sequential ID numbering.",
+  "category": "meditation"
+}

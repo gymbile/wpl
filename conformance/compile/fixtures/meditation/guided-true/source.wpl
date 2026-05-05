@@ -1,0 +1,14 @@
+PLAN "Guided Meditation"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Week One" (1 weeks):
+    WEEK 1:
+      DAY Monday training "Meditation Day":
+        meditation:
+          meditation mindfulness:
+            duration 10 minutes
+            guided true

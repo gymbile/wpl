@@ -1,0 +1,5 @@
+{
+  "since": "1.6.0",
+  "description": "REQUIRES with all fields: fitness, age range, equipment, and contraindication. Tests full requirements compilation.",
+  "category": "requires"
+}

@@ -1,0 +1,14 @@
+PLAN "OR Conditions"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PERSONALIZATION
+  RULES
+    WHEN injury contains knee OR injury contains ankle:
+      reduce sets by 1
+
+PHASES
+  PHASE "Week One" (1 weeks):
+    WEEK 1:

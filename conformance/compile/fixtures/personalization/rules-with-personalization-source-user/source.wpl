@@ -1,0 +1,14 @@
+PLAN "User Source"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PERSONALIZATION
+  INPUTS
+    client_age = user as number
+    client_weight = user as number
+
+PHASES
+  PHASE "Week One" (1 weeks):
+    WEEK 1:

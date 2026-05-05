@@ -1,0 +1,13 @@
+PLAN "Duration Meditation"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Week One" (1 weeks):
+    WEEK 1:
+      DAY Wednesday training "Evening Wind Down":
+        meditation:
+          meditation body_scan:
+            duration 20 minutes

@@ -1,0 +1,13 @@
+PLAN "Multiple Phases"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Foundation" (2 weeks):
+    WEEK 1:
+    WEEK 2:
+  PHASE "Build" (2 weeks):
+    WEEK 1:
+    WEEK 2:

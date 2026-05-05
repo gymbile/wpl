@@ -1,0 +1,5 @@
+{
+  "since": "1.6.0",
+  "description": "PROGRESS block with points enabled. Tests progress.points.enabled=true compilation.",
+  "category": "progress"
+}

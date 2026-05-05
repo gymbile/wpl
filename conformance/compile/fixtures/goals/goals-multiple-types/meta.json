@@ -1,0 +1,5 @@
+{
+  "since": "1.0.0",
+  "description": "GOALS with three goals of different priorities (primary, secondary, tertiary). Tests multiple goal compilation.",
+  "category": "goals"
+}

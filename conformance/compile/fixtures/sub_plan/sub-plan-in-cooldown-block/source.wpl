@@ -1,0 +1,14 @@
+PLAN "Cooldown Sub Plan"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Week One" (1 weeks):
+    WEEK 1:
+      DAY Tuesday training "Cooldown Day":
+        main straight_sets:
+          push_up 3x10
+        cooldown:
+          subplan plan_cooldown_mobility

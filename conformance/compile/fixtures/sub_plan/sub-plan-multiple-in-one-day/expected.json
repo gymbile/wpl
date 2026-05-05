@@ -1,0 +1,95 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "plan": {
+    "goals": [],
+    "id": "<UUID>",
+    "metadata": {
+      "language": "en"
+    },
+    "name": "Multi Sub Plan Day",
+    "personalization": {
+      "inputs": [],
+      "rules": []
+    },
+    "phases": [
+      {
+        "duration": {
+          "unit": "weeks",
+          "value": 1
+        },
+        "id": "<AUTO_ID>",
+        "name": "Week One",
+        "order": 1,
+        "weeks": [
+          {
+            "days": [
+              {
+                "blocks": [
+                  {
+                    "activities": [
+                      {
+                        "id": "<AUTO_ID>",
+                        "name": "Upper Warmup",
+                        "sub_plan_ref": "plan_warmup_upper",
+                        "type": "sub_plan"
+                      }
+                    ],
+                    "id": "<AUTO_ID>",
+                    "order": 1,
+                    "type": "warmup"
+                  },
+                  {
+                    "activities": [
+                      {
+                        "exercise_ref": "bench_press",
+                        "id": "<AUTO_ID>",
+                        "name": "Bench Press",
+                        "prescription": {
+                          "reps": {
+                            "target": 6
+                          },
+                          "sets": 4,
+                          "type": "sets_reps"
+                        },
+                        "type": "exercise"
+                      }
+                    ],
+                    "id": "<AUTO_ID>",
+                    "order": 2,
+                    "structure": "straight_sets",
+                    "type": "main"
+                  },
+                  {
+                    "activities": [
+                      {
+                        "id": "<AUTO_ID>",
+                        "name": "Chest Cooldown",
+                        "sub_plan_ref": "plan_cooldown_chest",
+                        "type": "sub_plan"
+                      }
+                    ],
+                    "id": "<AUTO_ID>",
+                    "order": 3,
+                    "type": "cooldown"
+                  }
+                ],
+                "day_of_week": 3,
+                "estimated_duration_minutes": 0,
+                "id": "<AUTO_ID>",
+                "name": "Template Day",
+                "type": "training"
+              }
+            ],
+            "id": "<AUTO_ID>",
+            "name": "Week 1",
+            "order": 1
+          }
+        ]
+      }
+    ],
+    "requirements": {},
+    "type": "workout",
+    "visibility": "public"
+  },
+  "version": "1.6.0"
+}

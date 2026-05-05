@@ -1,0 +1,5 @@
+{
+  "since": "1.4.0",
+  "description": "PERSONALIZATION rule with WHEN gte condition and modify_intensity + add_warmup_time actions. Tests multiple action types in one rule.",
+  "category": "personalization"
+}

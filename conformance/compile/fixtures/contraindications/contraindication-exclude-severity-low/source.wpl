@@ -1,0 +1,12 @@
+PLAN "Contraindication Exclude Low"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+REQUIRES
+  contraindication lower_back_tension severity low action exclude
+
+PHASES
+  PHASE "Week One" (1 weeks):
+    WEEK 1:

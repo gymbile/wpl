@@ -1,0 +1,5 @@
+{
+  "since": "1.0.0",
+  "description": "Meditation activity with only duration specified and no guided flag. Tests that prescription contains only duration when guided is omitted.",
+  "category": "meditation"
+}

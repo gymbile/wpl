@@ -1,0 +1,15 @@
+PLAN "Equipment And Fitness"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+REQUIRES
+  fitness beginner, intermediate
+  equipment:
+    dumbbells
+    mat
+
+PHASES
+  PHASE "Week One" (1 weeks):
+    WEEK 1:

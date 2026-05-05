@@ -1,0 +1,5 @@
+{
+  "since": "1.0.0",
+  "description": "Plan with two phases each containing two weeks. Tests multi-phase ordering and week ordering.",
+  "category": "regression"
+}

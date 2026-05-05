@@ -1,0 +1,14 @@
+PLAN "Named Sub Plan"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Week One" (1 weeks):
+    WEEK 1:
+      DAY Monday training "Named Day":
+        warmup:
+          subplan plan_warmup_full_body "Full Body Warmup"
+        main straight_sets:
+          squat 3x8

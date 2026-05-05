@@ -1,0 +1,5 @@
+{
+  "since": "1.3.0",
+  "description": "ATHLETE_THRESHOLDS with one_rm entries using lb units. Tests lb unit parsing.",
+  "category": "athlete_thresholds"
+}
