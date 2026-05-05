@@ -1,0 +1,15 @@
+PLAN "Nutrition Timing Pre Workout"
+TYPE nutrition
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Week One" (1 weeks):
+    WEEK 1:
+      DAY Monday training "Fuel Day":
+        nutrition:
+          nutrition pre_workout:
+            timing before_workout - 30 minutes
+            protein 30..50 g
+            carbs 40..60 g

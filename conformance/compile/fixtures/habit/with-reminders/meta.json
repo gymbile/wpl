@@ -1,0 +1,1 @@
+{"since":"1.0.0","description":"Habit with reminder_times nested under prescription (not flat). Reminders must be preserved even after frequency is parsed.","category":"habit"}

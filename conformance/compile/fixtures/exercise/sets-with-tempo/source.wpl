@@ -1,0 +1,12 @@
+PLAN "Sets With Tempo"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Strength" (1 weeks):
+    WEEK 1:
+      DAY Monday training "Bench Day":
+        main straight_sets:
+          bench_press 3x8 tempo 3 - 1 - 1 - 0 rest 90 seconds weight 60 kg

@@ -1,0 +1,14 @@
+PLAN "Nutrition Timing Absolute"
+TYPE nutrition
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Week One" (1 weeks):
+    WEEK 1:
+      DAY Monday rest "Breakfast Day":
+        nutrition:
+          nutrition breakfast:
+            timing at 07:30
+            protein 30..50 g

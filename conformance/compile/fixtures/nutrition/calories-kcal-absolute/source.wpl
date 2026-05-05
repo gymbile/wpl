@@ -1,0 +1,13 @@
+PLAN "Calories Kcal Absolute"
+TYPE nutrition
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Week One" (1 weeks):
+    WEEK 1:
+      DAY Monday rest "Fuel Day":
+        nutrition:
+          nutrition daily_target:
+            calories 1800..2200

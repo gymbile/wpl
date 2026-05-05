@@ -1,0 +1,12 @@
+PLAN "Weight Bodyweight"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Strength" (1 weeks):
+    WEEK 1:
+      DAY Monday training "Bodyweight Day":
+        main straight_sets:
+          pull_up 3x8 bodyweight

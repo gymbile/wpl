@@ -1,0 +1,82 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "plan": {
+    "goals": [],
+    "id": "<UUID>",
+    "metadata": {
+      "language": "en"
+    },
+    "name": "Nutrition Timing Post Workout",
+    "personalization": {
+      "inputs": [],
+      "rules": []
+    },
+    "phases": [
+      {
+        "duration": {
+          "unit": "weeks",
+          "value": 1
+        },
+        "id": "<AUTO_ID>",
+        "name": "Week One",
+        "order": 1,
+        "weeks": [
+          {
+            "days": [
+              {
+                "blocks": [
+                  {
+                    "activities": [
+                      {
+                        "category": "post_workout",
+                        "id": "<AUTO_ID>",
+                        "name": "Post Workout",
+                        "prescription": {
+                          "calories": {
+                            "max": 600,
+                            "min": 400
+                          },
+                          "macros": {
+                            "protein": {
+                              "max": 60,
+                              "min": 40,
+                              "unit": "g"
+                            }
+                          }
+                        },
+                        "timing": {
+                          "offset": {
+                            "unit": "minutes",
+                            "value": 30
+                          },
+                          "reference": "workout_end",
+                          "type": "relative"
+                        },
+                        "type": "nutrition"
+                      }
+                    ],
+                    "id": "<AUTO_ID>",
+                    "order": 1,
+                    "type": "nutrition"
+                  }
+                ],
+                "day_of_week": 1,
+                "estimated_duration_minutes": 0,
+                "id": "<AUTO_ID>",
+                "name": "Recovery Fuel Day",
+                "type": "training"
+              }
+            ],
+            "id": "<AUTO_ID>",
+            "name": "Week 1",
+            "order": 1
+          }
+        ]
+      }
+    ],
+    "requirements": {},
+    "type": "nutrition",
+    "visibility": "public"
+  },
+  "version": "1.6.0"
+}

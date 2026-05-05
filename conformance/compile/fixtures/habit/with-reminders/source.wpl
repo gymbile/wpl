@@ -1,0 +1,15 @@
+PLAN "Habit With Reminders"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Phase 1" (1 weeks):
+    WEEK 1:
+      DAY Monday training:
+        main:
+          habit sleep:
+            target 8 hours
+            frequency daily
+            reminders 21:00

@@ -1,0 +1,12 @@
+PLAN "Weight Percentage Bodyweight"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Strength" (1 weeks):
+    WEEK 1:
+      DAY Monday training "Pull Day":
+        main straight_sets:
+          pull_up 3x8 weight 50% bw

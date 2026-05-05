@@ -1,0 +1,14 @@
+PLAN "Habit Steps"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Phase 1" (1 weeks):
+    WEEK 1:
+      DAY Monday training:
+        main:
+          habit steps:
+            target 10000 steps
+            frequency daily

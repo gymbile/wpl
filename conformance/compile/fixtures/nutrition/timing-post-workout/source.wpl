@@ -1,0 +1,15 @@
+PLAN "Nutrition Timing Post Workout"
+TYPE nutrition
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Week One" (1 weeks):
+    WEEK 1:
+      DAY Monday training "Recovery Fuel Day":
+        nutrition:
+          nutrition post_workout:
+            timing after_workout + 30 minutes
+            protein 40..60 g
+            calories 400..600

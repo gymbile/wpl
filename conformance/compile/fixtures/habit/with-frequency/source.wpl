@@ -1,0 +1,14 @@
+PLAN "Habit With Frequency"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Phase 1" (1 weeks):
+    WEEK 1:
+      DAY Monday training:
+        main:
+          habit hydration:
+            target 8 glasses
+            frequency daily

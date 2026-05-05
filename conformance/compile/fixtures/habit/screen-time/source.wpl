@@ -1,0 +1,14 @@
+PLAN "Habit Screen Time"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Phase 1" (1 weeks):
+    WEEK 1:
+      DAY Monday training:
+        main:
+          habit screen_time:
+            target 2 hours
+            frequency daily

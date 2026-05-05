@@ -1,0 +1,84 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "plan": {
+    "goals": [],
+    "id": "<UUID>",
+    "metadata": {
+      "language": "en"
+    },
+    "name": "Sets With Tempo",
+    "personalization": {
+      "inputs": [],
+      "rules": []
+    },
+    "phases": [
+      {
+        "duration": {
+          "unit": "weeks",
+          "value": 1
+        },
+        "id": "<AUTO_ID>",
+        "name": "Strength",
+        "order": 1,
+        "weeks": [
+          {
+            "days": [
+              {
+                "blocks": [
+                  {
+                    "activities": [
+                      {
+                        "exercise_ref": "bench_press",
+                        "id": "<AUTO_ID>",
+                        "name": "Bench Press",
+                        "prescription": {
+                          "reps": {
+                            "target": 8
+                          },
+                          "rest": {
+                            "unit": "seconds",
+                            "value": 90
+                          },
+                          "sets": 3,
+                          "tempo": {
+                            "concentric": 1,
+                            "eccentric": 3,
+                            "pause_bottom": 1,
+                            "pause_top": 0
+                          },
+                          "type": "sets_reps",
+                          "weight": {
+                            "type": "absolute",
+                            "unit": "kg",
+                            "value": 60
+                          }
+                        },
+                        "type": "exercise"
+                      }
+                    ],
+                    "id": "<AUTO_ID>",
+                    "order": 1,
+                    "structure": "straight_sets",
+                    "type": "main"
+                  }
+                ],
+                "day_of_week": 1,
+                "estimated_duration_minutes": 0,
+                "id": "<AUTO_ID>",
+                "name": "Bench Day",
+                "type": "training"
+              }
+            ],
+            "id": "<AUTO_ID>",
+            "name": "Week 1",
+            "order": 1
+          }
+        ]
+      }
+    ],
+    "requirements": {},
+    "type": "workout",
+    "visibility": "public"
+  },
+  "version": "1.6.0"
+}
