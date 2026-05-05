@@ -1,0 +1,5 @@
+{
+  "since": "1.0.0",
+  "description": "Plan with multiple PHASE blocks emits all phases in order.",
+  "category": "basic"
+}

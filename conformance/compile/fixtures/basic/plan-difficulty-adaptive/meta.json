@@ -1,0 +1,5 @@
+{
+  "since": "1.0.0",
+  "description": "Plan with DIFFICULTY adaptive emits metadata.difficulty=adaptive.",
+  "category": "basic"
+}

@@ -1,0 +1,9 @@
+PLAN "Template Plan"
+TYPE workout
+VISIBILITY template
+
+GOALS
+
+PHASES
+  PHASE "Foundation" (1 weeks):
+    WEEK 1:

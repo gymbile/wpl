@@ -1,0 +1,12 @@
+PLAN "Sets Reps RIR"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Training" (1 weeks):
+    WEEK 1:
+      DAY Monday training "Strength":
+        main straight_sets:
+          deadlift 4x5 rir 2 rest 180 seconds

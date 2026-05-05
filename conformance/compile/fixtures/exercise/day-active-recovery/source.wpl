@@ -1,0 +1,16 @@
+PLAN "Active Recovery Day"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Week" (1 weeks):
+    WEEK 1:
+      DAY Monday training "Training":
+        main straight_sets:
+          squat 4x6 weight 80 kg rest 120 seconds
+      DAY Tuesday active_recovery "Active Recovery":
+        cooldown:
+          recovery stretching:
+            hamstring_stretch 30s x2 sides both

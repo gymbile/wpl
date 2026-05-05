@@ -1,0 +1,14 @@
+PLAN "Recovery With Duration"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Recovery" (1 weeks):
+    WEEK 1:
+      DAY Tuesday active_recovery 30m "Yoga":
+        cooldown:
+          recovery yoga:
+            pigeon_pose 60s x2 sides both
+            child_pose 60s x1

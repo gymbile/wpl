@@ -1,0 +1,73 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "plan": {
+    "goals": [],
+    "id": "<UUID>",
+    "metadata": {
+      "language": "en"
+    },
+    "name": "HR Zone 5 Run",
+    "personalization": {
+      "inputs": [],
+      "rules": []
+    },
+    "phases": [
+      {
+        "duration": {
+          "unit": "weeks",
+          "value": 1
+        },
+        "id": "<AUTO_ID>",
+        "name": "Speed",
+        "order": 1,
+        "weeks": [
+          {
+            "days": [
+              {
+                "blocks": [
+                  {
+                    "activities": [
+                      {
+                        "id": "<AUTO_ID>",
+                        "modality": "running",
+                        "name": "Running",
+                        "prescription": {
+                          "duration": {
+                            "unit": "minutes",
+                            "value": 20
+                          },
+                          "intensity": {
+                            "type": "heart_rate_zone",
+                            "zone": 3,
+                            "zone_model": "hr_5_zone"
+                          },
+                          "type": "continuous"
+                        },
+                        "type": "cardio"
+                      }
+                    ],
+                    "id": "<AUTO_ID>",
+                    "order": 1,
+                    "type": "main"
+                  }
+                ],
+                "day_of_week": 6,
+                "estimated_duration_minutes": 0,
+                "id": "<AUTO_ID>",
+                "name": "VO2 Max",
+                "type": "training"
+              }
+            ],
+            "id": "<AUTO_ID>",
+            "name": "Week 1",
+            "order": 1
+          }
+        ]
+      }
+    ],
+    "requirements": {},
+    "type": "workout",
+    "visibility": "public"
+  },
+  "version": "1.6.0"
+}

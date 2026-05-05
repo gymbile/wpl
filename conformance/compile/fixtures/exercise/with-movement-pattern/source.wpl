@@ -1,0 +1,12 @@
+PLAN "Movement Pattern"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Strength" (1 weeks):
+    WEEK 1:
+      DAY Monday training "Upper":
+        main straight_sets:
+          push_up 3x10 pattern push_horizontal rest 60 seconds

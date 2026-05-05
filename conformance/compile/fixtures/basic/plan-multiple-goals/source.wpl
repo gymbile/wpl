@@ -1,0 +1,15 @@
+PLAN "Multi Goal Plan"
+TYPE workout
+VISIBILITY public
+
+GOALS
+  GOAL primary strength:
+    name "Build Strength"
+  GOAL secondary endurance:
+    name "Improve Cardio"
+  GOAL tertiary weight_loss:
+    name "Reduce Body Fat"
+
+PHASES
+  PHASE "Foundation" (1 weeks):
+    WEEK 1:

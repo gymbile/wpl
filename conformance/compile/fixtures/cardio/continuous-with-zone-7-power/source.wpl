@@ -1,0 +1,14 @@
+PLAN "Zone 7 Power"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Power" (1 weeks):
+    WEEK 1:
+      DAY Wednesday training "Polarized":
+        main:
+          cardio cycling continuous:
+            total 45 minutes
+            zone 2 model power_coggan_7_zone

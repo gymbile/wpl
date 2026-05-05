@@ -1,0 +1,11 @@
+PLAN "Intensification Phase"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Intensity Block" intensification (3 weeks):
+    WEEK 1:
+    WEEK 2:
+    WEEK 3:

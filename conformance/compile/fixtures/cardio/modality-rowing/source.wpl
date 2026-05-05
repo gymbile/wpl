@@ -1,0 +1,14 @@
+PLAN "Rowing Cardio"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Base" (1 weeks):
+    WEEK 1:
+      DAY Monday training "Row":
+        main:
+          cardio rowing continuous:
+            total 20 minutes
+            zone 2

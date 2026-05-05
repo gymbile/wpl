@@ -1,0 +1,12 @@
+PLAN "To Failure"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Hypertrophy" (1 weeks):
+    WEEK 1:
+      DAY Monday training "Chest":
+        main straight_sets:
+          push_up 3x10 to_failure rest 90 seconds

@@ -1,0 +1,77 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "plan": {
+    "goals": [],
+    "id": "<UUID>",
+    "metadata": {
+      "language": "en"
+    },
+    "name": "Intervals Fixed",
+    "personalization": {
+      "inputs": [],
+      "rules": []
+    },
+    "phases": [
+      {
+        "duration": {
+          "unit": "weeks",
+          "value": 1
+        },
+        "id": "<AUTO_ID>",
+        "name": "Speed",
+        "order": 1,
+        "weeks": [
+          {
+            "days": [
+              {
+                "blocks": [
+                  {
+                    "activities": [
+                      {
+                        "id": "<AUTO_ID>",
+                        "modality": "running",
+                        "name": "Running",
+                        "prescription": {
+                          "duration": {
+                            "unit": "minutes",
+                            "value": 20
+                          },
+                          "intervals": {
+                            "repeat": 10,
+                            "rest": {
+                              "duration": 30
+                            },
+                            "work": {
+                              "duration": 30
+                            }
+                          },
+                          "type": "intervals"
+                        },
+                        "type": "cardio"
+                      }
+                    ],
+                    "id": "<AUTO_ID>",
+                    "order": 1,
+                    "type": "main"
+                  }
+                ],
+                "day_of_week": 5,
+                "estimated_duration_minutes": 0,
+                "id": "<AUTO_ID>",
+                "name": "Intervals",
+                "type": "training"
+              }
+            ],
+            "id": "<AUTO_ID>",
+            "name": "Week 1",
+            "order": 1
+          }
+        ]
+      }
+    ],
+    "requirements": {},
+    "type": "workout",
+    "visibility": "public"
+  },
+  "version": "1.6.0"
+}

@@ -1,0 +1,122 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "plan": {
+    "goals": [],
+    "id": "<UUID>",
+    "metadata": {
+      "language": "en"
+    },
+    "name": "Straight Sets Block",
+    "personalization": {
+      "inputs": [],
+      "rules": []
+    },
+    "phases": [
+      {
+        "duration": {
+          "unit": "weeks",
+          "value": 1
+        },
+        "id": "<AUTO_ID>",
+        "name": "Hypertrophy",
+        "order": 1,
+        "weeks": [
+          {
+            "days": [
+              {
+                "blocks": [
+                  {
+                    "activities": [
+                      {
+                        "exercise_ref": "bench_press",
+                        "id": "<AUTO_ID>",
+                        "name": "Bench Press",
+                        "prescription": {
+                          "reps": {
+                            "target": 8
+                          },
+                          "rest": {
+                            "unit": "seconds",
+                            "value": 90
+                          },
+                          "sets": 4,
+                          "type": "sets_reps",
+                          "weight": {
+                            "type": "absolute",
+                            "unit": "kg",
+                            "value": 70
+                          }
+                        },
+                        "type": "exercise"
+                      },
+                      {
+                        "exercise_ref": "dumbbell_row",
+                        "id": "<AUTO_ID>",
+                        "name": "Dumbbell Row",
+                        "prescription": {
+                          "reps": {
+                            "target": 10
+                          },
+                          "rest": {
+                            "unit": "seconds",
+                            "value": 90
+                          },
+                          "sets": 4,
+                          "type": "sets_reps",
+                          "weight": {
+                            "type": "absolute",
+                            "unit": "kg",
+                            "value": 20
+                          }
+                        },
+                        "type": "exercise"
+                      },
+                      {
+                        "exercise_ref": "overhead_press",
+                        "id": "<AUTO_ID>",
+                        "name": "Overhead Press",
+                        "prescription": {
+                          "reps": {
+                            "target": 10
+                          },
+                          "rest": {
+                            "unit": "seconds",
+                            "value": 90
+                          },
+                          "sets": 3,
+                          "type": "sets_reps",
+                          "weight": {
+                            "type": "absolute",
+                            "unit": "kg",
+                            "value": 40
+                          }
+                        },
+                        "type": "exercise"
+                      }
+                    ],
+                    "id": "<AUTO_ID>",
+                    "order": 1,
+                    "structure": "straight_sets",
+                    "type": "main"
+                  }
+                ],
+                "day_of_week": 1,
+                "estimated_duration_minutes": 0,
+                "id": "<AUTO_ID>",
+                "name": "Upper Body",
+                "type": "training"
+              }
+            ],
+            "id": "<AUTO_ID>",
+            "name": "Week 1",
+            "order": 1
+          }
+        ]
+      }
+    ],
+    "requirements": {},
+    "type": "workout",
+    "visibility": "public"
+  },
+  "version": "1.6.0"
+}

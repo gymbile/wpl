@@ -1,0 +1,68 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "plan": {
+    "goals": [],
+    "id": "<UUID>",
+    "metadata": {
+      "language": "en"
+    },
+    "name": "Calories TDEE",
+    "personalization": {
+      "inputs": [],
+      "rules": []
+    },
+    "phases": [
+      {
+        "duration": {
+          "unit": "weeks",
+          "value": 1
+        },
+        "id": "<AUTO_ID>",
+        "name": "Week One",
+        "order": 1,
+        "weeks": [
+          {
+            "days": [
+              {
+                "blocks": [
+                  {
+                    "activities": [
+                      {
+                        "category": "daily_target",
+                        "id": "<AUTO_ID>",
+                        "name": "Daily Target",
+                        "prescription": {
+                          "calories": {
+                            "max": 0.95,
+                            "min": 0.85,
+                            "unit": "multiplier_of_tdee"
+                          }
+                        },
+                        "type": "nutrition"
+                      }
+                    ],
+                    "id": "<AUTO_ID>",
+                    "order": 1,
+                    "type": "nutrition"
+                  }
+                ],
+                "day_of_week": 1,
+                "estimated_duration_minutes": 0,
+                "id": "<AUTO_ID>",
+                "name": "Rest Day",
+                "type": "rest"
+              }
+            ],
+            "id": "<AUTO_ID>",
+            "name": "Week 1",
+            "order": 1
+          }
+        ]
+      }
+    ],
+    "requirements": {},
+    "type": "nutrition",
+    "visibility": "public"
+  },
+  "version": "1.6.0"
+}

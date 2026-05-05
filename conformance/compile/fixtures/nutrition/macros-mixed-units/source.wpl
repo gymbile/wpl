@@ -1,0 +1,15 @@
+PLAN "Mixed Macro Units"
+TYPE nutrition
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Week One" (1 weeks):
+    WEEK 1:
+      DAY Monday rest "Fuel Day":
+        nutrition:
+          nutrition daily_target:
+            protein 1.8 .. 2.2 g_per_kg
+            carbs 200
+            fat 0.8 .. 1.0 g_per_kg

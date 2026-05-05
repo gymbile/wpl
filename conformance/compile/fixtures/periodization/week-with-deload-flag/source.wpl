@@ -1,0 +1,12 @@
+PLAN "Deload Week"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Training Block" (4 weeks):
+    WEEK 1:
+    WEEK 2:
+    WEEK 3:
+    WEEK 4 deload "Deload Week":

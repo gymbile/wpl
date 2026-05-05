@@ -1,0 +1,14 @@
+PLAN "Multi Week Plan"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Training Block" (6 weeks):
+    WEEK 1 "Base Load":
+    WEEK 2:
+    WEEK 3:
+    WEEK 4:
+    WEEK 5:
+    WEEK 6 deload "Deload":

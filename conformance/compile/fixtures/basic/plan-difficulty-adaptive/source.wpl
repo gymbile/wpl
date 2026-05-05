@@ -1,0 +1,10 @@
+PLAN "Adaptive Plan"
+TYPE workout
+VISIBILITY public
+DIFFICULTY adaptive
+
+GOALS
+
+PHASES
+  PHASE "Adaptive Block" (1 weeks):
+    WEEK 1:

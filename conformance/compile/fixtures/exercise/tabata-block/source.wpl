@@ -1,0 +1,13 @@
+PLAN "Tabata Block"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "HIIT" (1 weeks):
+    WEEK 1:
+      DAY Monday training "Tabata":
+        main tabata:
+          push_up 3x20s
+          squat 3x20s

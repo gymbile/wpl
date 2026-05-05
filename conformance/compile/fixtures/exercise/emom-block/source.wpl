@@ -1,0 +1,13 @@
+PLAN "EMOM Block"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Conditioning" (1 weeks):
+    WEEK 1:
+      DAY Monday training "EMOM Day":
+        main emom:
+          kettlebell_swing 3x10 rest 40 seconds
+          push_up 3x10 rest 40 seconds

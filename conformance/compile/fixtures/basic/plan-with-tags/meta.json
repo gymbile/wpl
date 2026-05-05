@@ -1,0 +1,5 @@
+{
+  "since": "1.0.0",
+  "description": "Plan with TAGS directive emits metadata.tags array.",
+  "category": "basic"
+}

@@ -1,0 +1,145 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "plan": {
+    "goals": [
+      {
+        "category": "endurance",
+        "id": "<AUTO_ID>",
+        "name": "Build Aerobic Base",
+        "type": "primary"
+      }
+    ],
+    "id": "<UUID>",
+    "metadata": {
+      "language": "en"
+    },
+    "name": "Multi Day Cardio",
+    "personalization": {
+      "inputs": [],
+      "rules": []
+    },
+    "phases": [
+      {
+        "duration": {
+          "unit": "weeks",
+          "value": 1
+        },
+        "id": "<AUTO_ID>",
+        "name": "Base Building",
+        "order": 1,
+        "weeks": [
+          {
+            "days": [
+              {
+                "blocks": [
+                  {
+                    "activities": [
+                      {
+                        "id": "<AUTO_ID>",
+                        "modality": "running",
+                        "name": "Running",
+                        "prescription": {
+                          "duration": {
+                            "unit": "minutes",
+                            "value": 45
+                          },
+                          "intensity": {
+                            "type": "heart_rate_zone",
+                            "zone": 2
+                          },
+                          "type": "continuous"
+                        },
+                        "type": "cardio"
+                      }
+                    ],
+                    "id": "<AUTO_ID>",
+                    "order": 1,
+                    "type": "main"
+                  }
+                ],
+                "day_of_week": 2,
+                "estimated_duration_minutes": 0,
+                "id": "<AUTO_ID>",
+                "name": "Zone 2 Run",
+                "type": "training"
+              },
+              {
+                "blocks": [
+                  {
+                    "activities": [
+                      {
+                        "id": "<AUTO_ID>",
+                        "modality": "cycling",
+                        "name": "Cycling",
+                        "prescription": {
+                          "duration": {
+                            "unit": "minutes",
+                            "value": 60
+                          },
+                          "intensity": {
+                            "type": "heart_rate_zone",
+                            "zone": 3
+                          },
+                          "type": "continuous"
+                        },
+                        "type": "cardio"
+                      }
+                    ],
+                    "id": "<AUTO_ID>",
+                    "order": 1,
+                    "type": "main"
+                  }
+                ],
+                "day_of_week": 4,
+                "estimated_duration_minutes": 0,
+                "id": "<AUTO_ID>",
+                "name": "Zone 3 Bike",
+                "type": "training"
+              },
+              {
+                "blocks": [
+                  {
+                    "activities": [
+                      {
+                        "id": "<AUTO_ID>",
+                        "modality": "running",
+                        "name": "Running",
+                        "prescription": {
+                          "duration": {
+                            "unit": "minutes",
+                            "value": 90
+                          },
+                          "intensity": {
+                            "type": "heart_rate_zone",
+                            "zone": 2
+                          },
+                          "type": "continuous"
+                        },
+                        "type": "cardio"
+                      }
+                    ],
+                    "id": "<AUTO_ID>",
+                    "order": 1,
+                    "type": "main"
+                  }
+                ],
+                "day_of_week": 6,
+                "estimated_duration_minutes": 0,
+                "id": "<AUTO_ID>",
+                "name": "Long Run",
+                "type": "training"
+              }
+            ],
+            "id": "<AUTO_ID>",
+            "name": "Week 1",
+            "order": 1
+          }
+        ]
+      }
+    ],
+    "requirements": {},
+    "type": "workout",
+    "visibility": "public"
+  },
+  "version": "1.6.0"
+}

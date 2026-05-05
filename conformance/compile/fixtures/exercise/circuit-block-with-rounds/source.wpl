@@ -1,0 +1,16 @@
+PLAN "Circuit Block"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Conditioning" (1 weeks):
+    WEEK 1:
+      DAY Wednesday training "Full Body Circuit":
+        main circuit:
+          rounds 3
+          rest_between_rounds 120 seconds
+          push_up 3x15 rest 30 seconds
+          squat 3x15 rest 30 seconds
+          burpee 3x8 rest 30 seconds

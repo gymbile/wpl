@@ -1,0 +1,10 @@
+PLAN "Beginner Plan"
+TYPE workout
+VISIBILITY public
+DIFFICULTY beginner
+
+GOALS
+
+PHASES
+  PHASE "Start" (1 weeks):
+    WEEK 1:

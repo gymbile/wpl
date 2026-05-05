@@ -1,0 +1,10 @@
+PLAN "Advanced Plan"
+TYPE workout
+VISIBILITY public
+DIFFICULTY advanced
+
+GOALS
+
+PHASES
+  PHASE "Peak" (1 weeks):
+    WEEK 1:

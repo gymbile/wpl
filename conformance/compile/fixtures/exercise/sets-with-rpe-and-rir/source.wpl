@@ -1,0 +1,15 @@
+PLAN "RPE And RIR"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Strength" (1 weeks):
+    WEEK 1:
+      DAY Monday training "Bench":
+        main straight_sets:
+          bench_press 4x6 weight 80 kg rpe 8 rest 120 seconds
+      DAY Wednesday training "Squat":
+        main straight_sets:
+          squat 4x6 weight 100 kg rir 2 rest 180 seconds

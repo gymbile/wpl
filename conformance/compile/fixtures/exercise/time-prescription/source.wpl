@@ -1,0 +1,13 @@
+PLAN "Time Prescription"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Mobility" (1 weeks):
+    WEEK 1:
+      DAY Monday training "Holds":
+        main straight_sets:
+          plank 3x30s
+          side_plank 3x20s

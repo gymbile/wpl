@@ -1,0 +1,18 @@
+PLAN "Multi Phase"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Accumulation" accumulation (4 weeks):
+    WEEK 1:
+    WEEK 2:
+    WEEK 3:
+    WEEK 4 deload "Deload":
+  PHASE "Intensification" (3 weeks):
+    WEEK 1:
+    WEEK 2:
+    WEEK 3:
+  PHASE "Realization" realization (1 weeks):
+    WEEK 1:

@@ -1,0 +1,12 @@
+PLAN "Exact Reps"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Strength" (1 weeks):
+    WEEK 1:
+      DAY Monday training "Heavy":
+        main straight_sets:
+          squat 5x5 weight 100 kg rpe 8 rest 180 seconds

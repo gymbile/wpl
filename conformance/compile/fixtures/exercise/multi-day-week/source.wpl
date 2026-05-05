@@ -1,0 +1,18 @@
+PLAN "Multi Day Week"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Training Week" (1 weeks):
+    WEEK 1:
+      DAY Monday training "Upper Body":
+        main straight_sets:
+          bench_press 4x8 weight 70 kg rest 90 seconds
+      DAY Wednesday training "Lower Body":
+        main straight_sets:
+          squat 4x6 weight 100 kg rest 120 seconds
+      DAY Friday training "Pull":
+        main straight_sets:
+          deadlift 3x5 weight 120 kg rest 180 seconds

@@ -1,0 +1,14 @@
+PLAN "HR Zone 5 Run"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Speed" (1 weeks):
+    WEEK 1:
+      DAY Saturday training "VO2 Max":
+        main:
+          cardio running continuous:
+            total 20 minutes
+            zone 3 model hr_5_zone

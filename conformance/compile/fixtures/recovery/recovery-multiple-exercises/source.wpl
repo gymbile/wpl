@@ -1,0 +1,16 @@
+PLAN "Recovery Multiple"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Recovery" (1 weeks):
+    WEEK 1:
+      DAY Tuesday active_recovery "Full Body Stretch":
+        cooldown:
+          recovery stretching:
+            hamstring_stretch 30s x2 sides both
+            quad_stretch 30s x2 sides both
+            calf_stretch 30s x2 sides both
+            shoulder_stretch 30s x2 sides both

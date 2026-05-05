@@ -1,0 +1,12 @@
+PLAN "Weight Lb"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Strength" (1 weeks):
+    WEEK 1:
+      DAY Monday training "Arms":
+        main straight_sets:
+          bicep_curl 3x10 weight 25 lb rest 60 seconds

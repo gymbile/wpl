@@ -1,0 +1,14 @@
+PLAN "Swimming Cardio"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Base" (1 weeks):
+    WEEK 1:
+      DAY Wednesday training "Swim":
+        main:
+          cardio swimming continuous:
+            total 30 minutes
+            zone 2

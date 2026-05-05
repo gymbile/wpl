@@ -1,0 +1,11 @@
+PLAN "Nutrition Plan"
+TYPE nutrition
+VISIBILITY public
+
+GOALS
+  GOAL primary nutrition:
+    name "Fuel Performance"
+
+PHASES
+  PHASE "Foundation" (1 weeks):
+    WEEK 1:

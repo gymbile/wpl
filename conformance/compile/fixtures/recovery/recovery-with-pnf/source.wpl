@@ -1,0 +1,14 @@
+PLAN "PNF Recovery"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Recovery" (1 weeks):
+    WEEK 1:
+      DAY Tuesday active_recovery "PNF Stretch":
+        cooldown:
+          recovery stretching:
+            hip_flexor_stretch 30s x2 sides both modality pnf intensity 6 body hip_flexors
+            pnf 6s contract 20s relax 3 contractions

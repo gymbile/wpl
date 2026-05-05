@@ -1,0 +1,81 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "plan": {
+    "goals": [],
+    "id": "<UUID>",
+    "metadata": {
+      "language": "en"
+    },
+    "name": "Modality Dynamic Stretch",
+    "personalization": {
+      "inputs": [],
+      "rules": []
+    },
+    "phases": [
+      {
+        "duration": {
+          "unit": "weeks",
+          "value": 1
+        },
+        "id": "<AUTO_ID>",
+        "name": "Warmup",
+        "order": 1,
+        "weeks": [
+          {
+            "days": [
+              {
+                "blocks": [
+                  {
+                    "activities": [
+                      {
+                        "category": "warmup",
+                        "id": "<AUTO_ID>",
+                        "name": "Warmup",
+                        "prescription": {
+                          "exercises": [
+                            {
+                              "hold_seconds": 10,
+                              "id": "<AUTO_ID>",
+                              "modality": "dynamic_stretch",
+                              "name": "leg_swing",
+                              "reps": 10,
+                              "type": "recovery_exercise"
+                            },
+                            {
+                              "hold_seconds": 10,
+                              "id": "<AUTO_ID>",
+                              "modality": "dynamic_stretch",
+                              "name": "arm_circles",
+                              "reps": 10,
+                              "type": "recovery_exercise"
+                            }
+                          ]
+                        },
+                        "type": "recovery"
+                      }
+                    ],
+                    "id": "<AUTO_ID>",
+                    "order": 1,
+                    "type": "warmup"
+                  }
+                ],
+                "day_of_week": 1,
+                "estimated_duration_minutes": 0,
+                "id": "<AUTO_ID>",
+                "name": "Active Warmup",
+                "type": "training"
+              }
+            ],
+            "id": "<AUTO_ID>",
+            "name": "Week 1",
+            "order": 1
+          }
+        ]
+      }
+    ],
+    "requirements": {},
+    "type": "workout",
+    "visibility": "public"
+  },
+  "version": "1.6.0"
+}

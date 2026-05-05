@@ -1,0 +1,81 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "plan": {
+    "goals": [],
+    "id": "<UUID>",
+    "metadata": {
+      "language": "en"
+    },
+    "name": "PNF Recovery",
+    "personalization": {
+      "inputs": [],
+      "rules": []
+    },
+    "phases": [
+      {
+        "duration": {
+          "unit": "weeks",
+          "value": 1
+        },
+        "id": "<AUTO_ID>",
+        "name": "Recovery",
+        "order": 1,
+        "weeks": [
+          {
+            "days": [
+              {
+                "blocks": [
+                  {
+                    "activities": [
+                      {
+                        "category": "stretching",
+                        "id": "<AUTO_ID>",
+                        "name": "Stretching",
+                        "prescription": {
+                          "exercises": [
+                            {
+                              "body_part": "hip_flexors",
+                              "hold_seconds": 30,
+                              "id": "<AUTO_ID>",
+                              "intensity_rpe": 6,
+                              "modality": "pnf",
+                              "name": "hip_flexor_stretch",
+                              "pnf": {
+                                "contraction_seconds": 6,
+                                "contractions": 3,
+                                "relax_seconds": 20
+                              },
+                              "reps": 2,
+                              "sides": "both",
+                              "type": "recovery_exercise"
+                            }
+                          ]
+                        },
+                        "type": "recovery"
+                      }
+                    ],
+                    "id": "<AUTO_ID>",
+                    "order": 1,
+                    "type": "cooldown"
+                  }
+                ],
+                "day_of_week": 2,
+                "estimated_duration_minutes": 0,
+                "id": "<AUTO_ID>",
+                "name": "PNF Stretch",
+                "type": "active_recovery"
+              }
+            ],
+            "id": "<AUTO_ID>",
+            "name": "Week 1",
+            "order": 1
+          }
+        ]
+      }
+    ],
+    "requirements": {},
+    "type": "workout",
+    "visibility": "public"
+  },
+  "version": "1.6.0"
+}

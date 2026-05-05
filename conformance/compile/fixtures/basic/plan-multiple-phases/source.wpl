@@ -1,0 +1,13 @@
+PLAN "Multi Phase Plan"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Block A" (2 weeks):
+    WEEK 1:
+    WEEK 2:
+  PHASE "Block B" (2 weeks):
+    WEEK 1:
+    WEEK 2:

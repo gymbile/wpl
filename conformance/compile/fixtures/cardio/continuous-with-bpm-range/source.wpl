@@ -1,0 +1,14 @@
+PLAN "Cardio BPM Range"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Cardio" (1 weeks):
+    WEEK 1:
+      DAY Tuesday training "HR Zone Run":
+        main:
+          cardio running continuous:
+            total 40 minutes
+            intensity bpm 150..170

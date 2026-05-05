@@ -1,0 +1,15 @@
+PLAN "Tagged And Difficult"
+TYPE workout
+VISIBILITY public
+DIFFICULTY advanced
+TAGS strength, powerlifting, competition
+
+GOALS
+  GOAL primary strength:
+    name "Powerlifting Total"
+
+PHASES
+  PHASE "Peaking" (3 weeks):
+    WEEK 1:
+    WEEK 2:
+    WEEK 3:

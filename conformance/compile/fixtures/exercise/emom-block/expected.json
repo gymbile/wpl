@@ -1,0 +1,90 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "plan": {
+    "goals": [],
+    "id": "<UUID>",
+    "metadata": {
+      "language": "en"
+    },
+    "name": "EMOM Block",
+    "personalization": {
+      "inputs": [],
+      "rules": []
+    },
+    "phases": [
+      {
+        "duration": {
+          "unit": "weeks",
+          "value": 1
+        },
+        "id": "<AUTO_ID>",
+        "name": "Conditioning",
+        "order": 1,
+        "weeks": [
+          {
+            "days": [
+              {
+                "blocks": [
+                  {
+                    "activities": [
+                      {
+                        "exercise_ref": "kettlebell_swing",
+                        "id": "<AUTO_ID>",
+                        "name": "Kettlebell Swing",
+                        "prescription": {
+                          "reps": {
+                            "target": 10
+                          },
+                          "rest": {
+                            "unit": "seconds",
+                            "value": 40
+                          },
+                          "sets": 3,
+                          "type": "sets_reps"
+                        },
+                        "type": "exercise"
+                      },
+                      {
+                        "exercise_ref": "push_up",
+                        "id": "<AUTO_ID>",
+                        "name": "Push Up",
+                        "prescription": {
+                          "reps": {
+                            "target": 10
+                          },
+                          "rest": {
+                            "unit": "seconds",
+                            "value": 40
+                          },
+                          "sets": 3,
+                          "type": "sets_reps"
+                        },
+                        "type": "exercise"
+                      }
+                    ],
+                    "id": "<AUTO_ID>",
+                    "order": 1,
+                    "structure": "emom",
+                    "type": "main"
+                  }
+                ],
+                "day_of_week": 1,
+                "estimated_duration_minutes": 0,
+                "id": "<AUTO_ID>",
+                "name": "EMOM Day",
+                "type": "training"
+              }
+            ],
+            "id": "<AUTO_ID>",
+            "name": "Week 1",
+            "order": 1
+          }
+        ]
+      }
+    ],
+    "requirements": {},
+    "type": "workout",
+    "visibility": "public"
+  },
+  "version": "1.6.0"
+}

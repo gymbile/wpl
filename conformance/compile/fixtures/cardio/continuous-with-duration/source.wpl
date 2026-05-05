@@ -1,0 +1,13 @@
+PLAN "Continuous Cardio"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Cardio Week" (1 weeks):
+    WEEK 1:
+      DAY Tuesday training "Easy Run":
+        main:
+          cardio running continuous:
+            total 45 minutes

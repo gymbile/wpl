@@ -1,0 +1,12 @@
+PLAN "Muscles Shorthand"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Strength" (1 weeks):
+    WEEK 1:
+      DAY Monday training "Push":
+        main straight_sets:
+          push_up 3x10 muscles chest, triceps, front_delts rest 60 seconds

@@ -1,0 +1,84 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "plan": {
+    "goals": [],
+    "id": "<UUID>",
+    "metadata": {
+      "language": "en"
+    },
+    "name": "Intervals BPM",
+    "personalization": {
+      "inputs": [],
+      "rules": []
+    },
+    "phases": [
+      {
+        "duration": {
+          "unit": "weeks",
+          "value": 1
+        },
+        "id": "<AUTO_ID>",
+        "name": "Base",
+        "order": 1,
+        "weeks": [
+          {
+            "days": [
+              {
+                "blocks": [
+                  {
+                    "activities": [
+                      {
+                        "id": "<AUTO_ID>",
+                        "modality": "cycling",
+                        "name": "Cycling",
+                        "prescription": {
+                          "duration": {
+                            "unit": "minutes",
+                            "value": 30
+                          },
+                          "intensity": {
+                            "target": {
+                              "max_bpm": 180,
+                              "min_bpm": 160
+                            },
+                            "type": "bpm"
+                          },
+                          "intervals": {
+                            "repeat": 8,
+                            "rest": {
+                              "duration": 30
+                            },
+                            "work": {
+                              "duration": 30
+                            }
+                          },
+                          "type": "intervals"
+                        },
+                        "type": "cardio"
+                      }
+                    ],
+                    "id": "<AUTO_ID>",
+                    "order": 1,
+                    "type": "main"
+                  }
+                ],
+                "day_of_week": 4,
+                "estimated_duration_minutes": 0,
+                "id": "<AUTO_ID>",
+                "name": "HR Intervals",
+                "type": "training"
+              }
+            ],
+            "id": "<AUTO_ID>",
+            "name": "Week 1",
+            "order": 1
+          }
+        ]
+      }
+    ],
+    "requirements": {},
+    "type": "workout",
+    "visibility": "public"
+  },
+  "version": "1.6.0"
+}

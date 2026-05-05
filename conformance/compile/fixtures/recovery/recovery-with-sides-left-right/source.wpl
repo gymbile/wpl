@@ -1,0 +1,14 @@
+PLAN "Recovery Sides"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Recovery" (1 weeks):
+    WEEK 1:
+      DAY Wednesday active_recovery "Unilateral Stretch":
+        cooldown:
+          recovery stretching:
+            hip_flexor_stretch 30s x2 sides left
+            hip_flexor_stretch 30s x2 sides right

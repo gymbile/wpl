@@ -1,0 +1,166 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "plan": {
+    "goals": [],
+    "id": "<UUID>",
+    "metadata": {
+      "language": "en"
+    },
+    "name": "Warmup And Cooldown",
+    "personalization": {
+      "inputs": [],
+      "rules": []
+    },
+    "phases": [
+      {
+        "duration": {
+          "unit": "weeks",
+          "value": 1
+        },
+        "id": "<AUTO_ID>",
+        "name": "Training",
+        "order": 1,
+        "weeks": [
+          {
+            "days": [
+              {
+                "blocks": [
+                  {
+                    "activities": [
+                      {
+                        "exercise_ref": "jumping_jack",
+                        "id": "<AUTO_ID>",
+                        "name": "Jumping Jack",
+                        "prescription": {
+                          "reps": {
+                            "target": 30
+                          },
+                          "sets": 3,
+                          "type": "sets_reps"
+                        },
+                        "type": "exercise"
+                      },
+                      {
+                        "id": "<AUTO_ID>",
+                        "name": "S",
+                        "type": "simple"
+                      },
+                      {
+                        "exercise_ref": "arm_circles",
+                        "id": "<AUTO_ID>",
+                        "name": "Arm Circles",
+                        "prescription": {
+                          "reps": {
+                            "target": 20
+                          },
+                          "sets": 2,
+                          "type": "sets_reps"
+                        },
+                        "type": "exercise"
+                      },
+                      {
+                        "id": "<AUTO_ID>",
+                        "name": "S",
+                        "type": "simple"
+                      }
+                    ],
+                    "id": "<AUTO_ID>",
+                    "order": 1,
+                    "type": "warmup"
+                  },
+                  {
+                    "activities": [
+                      {
+                        "exercise_ref": "push_up",
+                        "id": "<AUTO_ID>",
+                        "name": "Push Up",
+                        "prescription": {
+                          "reps": {
+                            "target": 10
+                          },
+                          "rest": {
+                            "unit": "seconds",
+                            "value": 60
+                          },
+                          "sets": 3,
+                          "type": "sets_reps"
+                        },
+                        "type": "exercise"
+                      },
+                      {
+                        "exercise_ref": "squat",
+                        "id": "<AUTO_ID>",
+                        "name": "Squat",
+                        "prescription": {
+                          "reps": {
+                            "target": 10
+                          },
+                          "rest": {
+                            "unit": "seconds",
+                            "value": 60
+                          },
+                          "sets": 3,
+                          "type": "sets_reps"
+                        },
+                        "type": "exercise"
+                      }
+                    ],
+                    "id": "<AUTO_ID>",
+                    "order": 2,
+                    "structure": "straight_sets",
+                    "type": "main"
+                  },
+                  {
+                    "activities": [
+                      {
+                        "category": "stretching",
+                        "id": "<AUTO_ID>",
+                        "name": "Stretching",
+                        "prescription": {
+                          "exercises": [
+                            {
+                              "hold_seconds": 30,
+                              "id": "<AUTO_ID>",
+                              "name": "hamstring_stretch",
+                              "reps": 2,
+                              "sides": "both",
+                              "type": "recovery_exercise"
+                            },
+                            {
+                              "hold_seconds": 30,
+                              "id": "<AUTO_ID>",
+                              "name": "chest_stretch",
+                              "reps": 2,
+                              "sides": "both",
+                              "type": "recovery_exercise"
+                            }
+                          ]
+                        },
+                        "type": "recovery"
+                      }
+                    ],
+                    "id": "<AUTO_ID>",
+                    "order": 3,
+                    "type": "cooldown"
+                  }
+                ],
+                "day_of_week": 1,
+                "estimated_duration_minutes": 0,
+                "id": "<AUTO_ID>",
+                "name": "Full Session",
+                "type": "training"
+              }
+            ],
+            "id": "<AUTO_ID>",
+            "name": "Week 1",
+            "order": 1
+          }
+        ]
+      }
+    ],
+    "requirements": {},
+    "type": "workout",
+    "visibility": "public"
+  },
+  "version": "1.6.0"
+}

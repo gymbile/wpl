@@ -1,0 +1,13 @@
+PLAN "Superset Block"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Hypertrophy" (1 weeks):
+    WEEK 1:
+      DAY Monday training "Arms":
+        main superset:
+          bicep_curl 3x10 weight 15 kg rest 60 seconds
+          tricep_extension 3x10 weight 12 kg rest 60 seconds

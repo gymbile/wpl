@@ -1,0 +1,15 @@
+PLAN "Intervals BPM"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Base" (1 weeks):
+    WEEK 1:
+      DAY Thursday training "HR Intervals":
+        main:
+          cardio cycling intervals:
+            total 30 minutes
+            30s work / 30s rest x 8
+            intensity bpm 160..180

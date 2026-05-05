@@ -1,0 +1,14 @@
+PLAN "Straight Sets Block"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Hypertrophy" (1 weeks):
+    WEEK 1:
+      DAY Monday training "Upper Body":
+        main straight_sets:
+          bench_press 4x8 weight 70 kg rest 90 seconds
+          dumbbell_row 4x10 weight 20 kg rest 90 seconds
+          overhead_press 3x10 weight 40 kg rest 90 seconds

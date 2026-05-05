@@ -1,0 +1,80 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "plan": {
+    "goals": [],
+    "id": "<UUID>",
+    "metadata": {
+      "language": "en"
+    },
+    "name": "Recovery With Duration",
+    "personalization": {
+      "inputs": [],
+      "rules": []
+    },
+    "phases": [
+      {
+        "duration": {
+          "unit": "weeks",
+          "value": 1
+        },
+        "id": "<AUTO_ID>",
+        "name": "Recovery",
+        "order": 1,
+        "weeks": [
+          {
+            "days": [
+              {
+                "blocks": [
+                  {
+                    "activities": [
+                      {
+                        "category": "yoga",
+                        "id": "<AUTO_ID>",
+                        "name": "Yoga",
+                        "prescription": {
+                          "exercises": [
+                            {
+                              "hold_seconds": 60,
+                              "id": "<AUTO_ID>",
+                              "name": "pigeon_pose",
+                              "reps": 2,
+                              "sides": "both",
+                              "type": "recovery_exercise"
+                            },
+                            {
+                              "hold_seconds": 60,
+                              "id": "<AUTO_ID>",
+                              "name": "child_pose",
+                              "reps": 1,
+                              "type": "recovery_exercise"
+                            }
+                          ]
+                        },
+                        "type": "recovery"
+                      }
+                    ],
+                    "id": "<AUTO_ID>",
+                    "order": 1,
+                    "type": "cooldown"
+                  }
+                ],
+                "day_of_week": 2,
+                "estimated_duration_minutes": 30,
+                "id": "<AUTO_ID>",
+                "name": "Yoga",
+                "type": "active_recovery"
+              }
+            ],
+            "id": "<AUTO_ID>",
+            "name": "Week 1",
+            "order": 1
+          }
+        ]
+      }
+    ],
+    "requirements": {},
+    "type": "workout",
+    "visibility": "public"
+  },
+  "version": "1.6.0"
+}

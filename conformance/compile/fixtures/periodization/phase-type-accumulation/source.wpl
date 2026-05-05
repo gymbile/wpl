@@ -1,0 +1,11 @@
+PLAN "Accumulation Phase"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Volume Block" accumulation (3 weeks):
+    WEEK 1:
+    WEEK 2:
+    WEEK 3:

@@ -1,0 +1,14 @@
+PLAN "Modality Dynamic Stretch"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Warmup" (1 weeks):
+    WEEK 1:
+      DAY Monday training "Active Warmup":
+        warmup:
+          recovery warmup:
+            leg_swing 10s x10 modality dynamic_stretch
+            arm_circles 10s x10 modality dynamic_stretch

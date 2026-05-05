@@ -1,0 +1,80 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "plan": {
+    "goals": [],
+    "id": "<UUID>",
+    "metadata": {
+      "language": "en"
+    },
+    "name": "Macros Grams",
+    "personalization": {
+      "inputs": [],
+      "rules": []
+    },
+    "phases": [
+      {
+        "duration": {
+          "unit": "weeks",
+          "value": 1
+        },
+        "id": "<AUTO_ID>",
+        "name": "Week One",
+        "order": 1,
+        "weeks": [
+          {
+            "days": [
+              {
+                "blocks": [
+                  {
+                    "activities": [
+                      {
+                        "category": "daily_target",
+                        "id": "<AUTO_ID>",
+                        "name": "Daily Target",
+                        "prescription": {
+                          "macros": {
+                            "carbs": {
+                              "max": 0,
+                              "min": 250,
+                              "unit": "g"
+                            },
+                            "fat": {
+                              "max": 0,
+                              "min": 60,
+                              "unit": "g"
+                            },
+                            "protein": {
+                              "max": 0,
+                              "min": 150,
+                              "unit": "g"
+                            }
+                          }
+                        },
+                        "type": "nutrition"
+                      }
+                    ],
+                    "id": "<AUTO_ID>",
+                    "order": 1,
+                    "type": "nutrition"
+                  }
+                ],
+                "day_of_week": 1,
+                "estimated_duration_minutes": 0,
+                "id": "<AUTO_ID>",
+                "name": "Fuel Day",
+                "type": "training"
+              }
+            ],
+            "id": "<AUTO_ID>",
+            "name": "Week 1",
+            "order": 1
+          }
+        ]
+      }
+    ],
+    "requirements": {},
+    "type": "nutrition",
+    "visibility": "public"
+  },
+  "version": "1.6.0"
+}

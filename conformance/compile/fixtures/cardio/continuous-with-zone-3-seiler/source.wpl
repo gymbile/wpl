@@ -1,0 +1,14 @@
+PLAN "Seiler Zone 3"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Base" (1 weeks):
+    WEEK 1:
+      DAY Tuesday training "Zone 3 Seiler":
+        main:
+          cardio running continuous:
+            total 60 minutes
+            zone 3 model hr_3_zone_seiler

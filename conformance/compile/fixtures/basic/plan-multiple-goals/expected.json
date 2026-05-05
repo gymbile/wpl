@@ -1,0 +1,56 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "plan": {
+    "goals": [
+      {
+        "category": "strength",
+        "id": "<AUTO_ID>",
+        "name": "Build Strength",
+        "type": "primary"
+      },
+      {
+        "category": "endurance",
+        "id": "<AUTO_ID>",
+        "name": "Improve Cardio",
+        "type": "secondary"
+      },
+      {
+        "category": "weight_loss",
+        "id": "<AUTO_ID>",
+        "name": "Reduce Body Fat",
+        "type": "primary"
+      }
+    ],
+    "id": "<UUID>",
+    "metadata": {
+      "language": "en"
+    },
+    "name": "Multi Goal Plan",
+    "personalization": {
+      "inputs": [],
+      "rules": []
+    },
+    "phases": [
+      {
+        "duration": {
+          "unit": "weeks",
+          "value": 1
+        },
+        "id": "<AUTO_ID>",
+        "name": "Foundation",
+        "order": 1,
+        "weeks": [
+          {
+            "id": "<AUTO_ID>",
+            "name": "Week 1",
+            "order": 1
+          }
+        ]
+      }
+    ],
+    "requirements": {},
+    "type": "workout",
+    "visibility": "public"
+  },
+  "version": "1.6.0"
+}

@@ -1,0 +1,14 @@
+PLAN "Running Cardio"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Base" (1 weeks):
+    WEEK 1:
+      DAY Tuesday training "Easy Run":
+        main:
+          cardio running continuous:
+            total 30 minutes
+            zone 2

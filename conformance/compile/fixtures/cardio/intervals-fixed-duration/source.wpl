@@ -1,0 +1,14 @@
+PLAN "Intervals Fixed"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Speed" (1 weeks):
+    WEEK 1:
+      DAY Friday training "Intervals":
+        main:
+          cardio running intervals:
+            total 20 minutes
+            30s work / 30s rest x 10

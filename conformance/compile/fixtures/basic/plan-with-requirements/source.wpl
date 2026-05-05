@@ -1,0 +1,16 @@
+PLAN "Plan With Requirements"
+TYPE workout
+VISIBILITY public
+
+REQUIRES
+  age 18..65
+  fitness intermediate
+  equipment:
+    barbell
+    squat_rack (optional)
+
+GOALS
+
+PHASES
+  PHASE "Foundation" (1 weeks):
+    WEEK 1:

@@ -1,0 +1,84 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "plan": {
+    "goals": [],
+    "id": "<UUID>",
+    "metadata": {
+      "estimated_duration_days": 56,
+      "language": "en"
+    },
+    "name": "Plan With Duration",
+    "personalization": {
+      "inputs": [],
+      "rules": []
+    },
+    "phases": [
+      {
+        "duration": {
+          "unit": "weeks",
+          "value": 4
+        },
+        "id": "<AUTO_ID>",
+        "name": "Foundation",
+        "order": 1,
+        "weeks": [
+          {
+            "id": "<AUTO_ID>",
+            "name": "Week 1",
+            "order": 1
+          },
+          {
+            "id": "<AUTO_ID>",
+            "name": "Week 2",
+            "order": 2
+          },
+          {
+            "id": "<AUTO_ID>",
+            "name": "Week 3",
+            "order": 3
+          },
+          {
+            "id": "<AUTO_ID>",
+            "name": "Week 4",
+            "order": 4
+          }
+        ]
+      },
+      {
+        "duration": {
+          "unit": "weeks",
+          "value": 4
+        },
+        "id": "<AUTO_ID>",
+        "name": "Peak",
+        "order": 2,
+        "weeks": [
+          {
+            "id": "<AUTO_ID>",
+            "name": "Week 1",
+            "order": 1
+          },
+          {
+            "id": "<AUTO_ID>",
+            "name": "Week 2",
+            "order": 2
+          },
+          {
+            "id": "<AUTO_ID>",
+            "name": "Week 3",
+            "order": 3
+          },
+          {
+            "id": "<AUTO_ID>",
+            "name": "Week 4",
+            "order": 4
+          }
+        ]
+      }
+    ],
+    "requirements": {},
+    "type": "workout",
+    "visibility": "public"
+  },
+  "version": "1.6.0"
+}

@@ -1,0 +1,15 @@
+PLAN "Rest Between Rounds"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Circuit" (1 weeks):
+    WEEK 1:
+      DAY Monday training "Conditioning":
+        main circuit:
+          rounds 4
+          rest_between_rounds 90 seconds
+          push_up 4x10 rest 20 seconds
+          squat 4x10 rest 20 seconds

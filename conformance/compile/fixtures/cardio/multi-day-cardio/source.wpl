@@ -1,0 +1,26 @@
+PLAN "Multi Day Cardio"
+TYPE workout
+VISIBILITY public
+
+GOALS
+  GOAL primary endurance:
+    name "Build Aerobic Base"
+
+PHASES
+  PHASE "Base Building" (1 weeks):
+    WEEK 1:
+      DAY Tuesday training "Zone 2 Run":
+        main:
+          cardio running continuous:
+            total 45 minutes
+            zone 2
+      DAY Thursday training "Zone 3 Bike":
+        main:
+          cardio cycling continuous:
+            total 60 minutes
+            zone 3
+      DAY Saturday training "Long Run":
+        main:
+          cardio running continuous:
+            total 90 minutes
+            zone 2

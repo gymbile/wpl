@@ -1,0 +1,10 @@
+PLAN "Tagged Plan"
+TYPE workout
+VISIBILITY public
+TAGS strength, hypertrophy, upper_body
+
+GOALS
+
+PHASES
+  PHASE "Foundation" (1 weeks):
+    WEEK 1:

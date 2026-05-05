@@ -1,0 +1,24 @@
+PLAN "Personalized Plan"
+TYPE workout
+VISIBILITY template
+DIFFICULTY intermediate
+
+PERSONALIZATION
+  RULES
+    WHEN injury contains knee:
+      replace squat -> goblet_squat
+      replace lunge -> step_up
+    WHEN injury contains shoulder:
+      exclude overhead_press
+
+GOALS
+  GOAL primary strength:
+    name "Build Functional Strength"
+
+PHASES
+  PHASE "Foundation" (1 weeks):
+    WEEK 1:
+      DAY Monday training "Legs":
+        main straight_sets:
+          squat 4x8 rest 90 seconds
+          lunge 3x10 rest 60 seconds

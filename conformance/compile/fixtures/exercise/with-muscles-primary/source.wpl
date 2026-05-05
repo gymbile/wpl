@@ -1,0 +1,12 @@
+PLAN "Primary Muscles"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Strength" (1 weeks):
+    WEEK 1:
+      DAY Monday training "Push":
+        main straight_sets:
+          bench_press 4x8 muscles primary chest, front_delts, triceps rest 90 seconds

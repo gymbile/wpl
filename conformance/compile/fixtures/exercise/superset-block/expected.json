@@ -1,0 +1,100 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "plan": {
+    "goals": [],
+    "id": "<UUID>",
+    "metadata": {
+      "language": "en"
+    },
+    "name": "Superset Block",
+    "personalization": {
+      "inputs": [],
+      "rules": []
+    },
+    "phases": [
+      {
+        "duration": {
+          "unit": "weeks",
+          "value": 1
+        },
+        "id": "<AUTO_ID>",
+        "name": "Hypertrophy",
+        "order": 1,
+        "weeks": [
+          {
+            "days": [
+              {
+                "blocks": [
+                  {
+                    "activities": [
+                      {
+                        "exercise_ref": "bicep_curl",
+                        "id": "<AUTO_ID>",
+                        "name": "Bicep Curl",
+                        "prescription": {
+                          "reps": {
+                            "target": 10
+                          },
+                          "rest": {
+                            "unit": "seconds",
+                            "value": 60
+                          },
+                          "sets": 3,
+                          "type": "sets_reps",
+                          "weight": {
+                            "type": "absolute",
+                            "unit": "kg",
+                            "value": 15
+                          }
+                        },
+                        "type": "exercise"
+                      },
+                      {
+                        "exercise_ref": "tricep_extension",
+                        "id": "<AUTO_ID>",
+                        "name": "Tricep Extension",
+                        "prescription": {
+                          "reps": {
+                            "target": 10
+                          },
+                          "rest": {
+                            "unit": "seconds",
+                            "value": 60
+                          },
+                          "sets": 3,
+                          "type": "sets_reps",
+                          "weight": {
+                            "type": "absolute",
+                            "unit": "kg",
+                            "value": 12
+                          }
+                        },
+                        "type": "exercise"
+                      }
+                    ],
+                    "id": "<AUTO_ID>",
+                    "order": 1,
+                    "structure": "superset",
+                    "type": "main"
+                  }
+                ],
+                "day_of_week": 1,
+                "estimated_duration_minutes": 0,
+                "id": "<AUTO_ID>",
+                "name": "Arms",
+                "type": "training"
+              }
+            ],
+            "id": "<AUTO_ID>",
+            "name": "Week 1",
+            "order": 1
+          }
+        ]
+      }
+    ],
+    "requirements": {},
+    "type": "workout",
+    "visibility": "public"
+  },
+  "version": "1.6.0"
+}

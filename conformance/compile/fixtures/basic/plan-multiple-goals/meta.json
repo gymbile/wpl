@@ -1,0 +1,5 @@
+{
+  "since": "1.0.0",
+  "description": "Plan with multiple GOAL declarations emits all goals in the goals array.",
+  "category": "basic"
+}

@@ -1,0 +1,13 @@
+PLAN "Recovery Body Part"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Recovery" (1 weeks):
+    WEEK 1:
+      DAY Tuesday active_recovery "Hip Stretch":
+        cooldown:
+          recovery stretching:
+            pigeon_pose 45s x2 body hip_flexors

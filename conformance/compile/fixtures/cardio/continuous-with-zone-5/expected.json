@@ -1,0 +1,72 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "plan": {
+    "goals": [],
+    "id": "<UUID>",
+    "metadata": {
+      "language": "en"
+    },
+    "name": "Zone 5 Cardio",
+    "personalization": {
+      "inputs": [],
+      "rules": []
+    },
+    "phases": [
+      {
+        "duration": {
+          "unit": "weeks",
+          "value": 1
+        },
+        "id": "<AUTO_ID>",
+        "name": "Endurance",
+        "order": 1,
+        "weeks": [
+          {
+            "days": [
+              {
+                "blocks": [
+                  {
+                    "activities": [
+                      {
+                        "id": "<AUTO_ID>",
+                        "modality": "cycling",
+                        "name": "Cycling",
+                        "prescription": {
+                          "duration": {
+                            "unit": "minutes",
+                            "value": 30
+                          },
+                          "intensity": {
+                            "type": "heart_rate_zone",
+                            "zone": 5
+                          },
+                          "type": "continuous"
+                        },
+                        "type": "cardio"
+                      }
+                    ],
+                    "id": "<AUTO_ID>",
+                    "order": 1,
+                    "type": "main"
+                  }
+                ],
+                "day_of_week": 3,
+                "estimated_duration_minutes": 0,
+                "id": "<AUTO_ID>",
+                "name": "Zone 5",
+                "type": "training"
+              }
+            ],
+            "id": "<AUTO_ID>",
+            "name": "Week 1",
+            "order": 1
+          }
+        ]
+      }
+    ],
+    "requirements": {},
+    "type": "workout",
+    "visibility": "public"
+  },
+  "version": "1.6.0"
+}

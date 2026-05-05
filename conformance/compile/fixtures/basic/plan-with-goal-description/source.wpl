@@ -1,0 +1,12 @@
+PLAN "Goal With Description"
+TYPE workout
+VISIBILITY public
+
+GOALS
+  GOAL primary strength:
+    name "Build Raw Strength"
+    description "Focus on the big three lifts to maximise total."
+
+PHASES
+  PHASE "Foundation" (1 weeks):
+    WEEK 1:

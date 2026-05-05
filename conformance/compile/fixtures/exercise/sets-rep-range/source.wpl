@@ -1,0 +1,12 @@
+PLAN "Rep Range"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Hypertrophy" (1 weeks):
+    WEEK 1:
+      DAY Monday training "Legs":
+        main straight_sets:
+          squat 4x6..10 rest 90 seconds

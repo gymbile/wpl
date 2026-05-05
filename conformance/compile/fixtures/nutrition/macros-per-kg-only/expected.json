@@ -1,0 +1,80 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "plan": {
+    "goals": [],
+    "id": "<UUID>",
+    "metadata": {
+      "language": "en"
+    },
+    "name": "Macros Per Kg Only",
+    "personalization": {
+      "inputs": [],
+      "rules": []
+    },
+    "phases": [
+      {
+        "duration": {
+          "unit": "weeks",
+          "value": 1
+        },
+        "id": "<AUTO_ID>",
+        "name": "Week One",
+        "order": 1,
+        "weeks": [
+          {
+            "days": [
+              {
+                "blocks": [
+                  {
+                    "activities": [
+                      {
+                        "category": "daily_target",
+                        "id": "<AUTO_ID>",
+                        "name": "Daily Target",
+                        "prescription": {
+                          "macros": {
+                            "carbs": {
+                              "max": 6,
+                              "min": 4,
+                              "unit": "g_per_kg"
+                            },
+                            "fat": {
+                              "max": 1,
+                              "min": 0.7,
+                              "unit": "g_per_kg"
+                            },
+                            "protein": {
+                              "max": 2.2,
+                              "min": 1.6,
+                              "unit": "g_per_kg"
+                            }
+                          }
+                        },
+                        "type": "nutrition"
+                      }
+                    ],
+                    "id": "<AUTO_ID>",
+                    "order": 1,
+                    "type": "nutrition"
+                  }
+                ],
+                "day_of_week": 1,
+                "estimated_duration_minutes": 0,
+                "id": "<AUTO_ID>",
+                "name": "Fuel Day",
+                "type": "rest"
+              }
+            ],
+            "id": "<AUTO_ID>",
+            "name": "Week 1",
+            "order": 1
+          }
+        ]
+      }
+    ],
+    "requirements": {},
+    "type": "nutrition",
+    "visibility": "public"
+  },
+  "version": "1.6.0"
+}

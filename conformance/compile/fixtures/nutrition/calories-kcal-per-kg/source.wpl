@@ -1,0 +1,13 @@
+PLAN "Calories Per Kg"
+TYPE nutrition
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Week One" (1 weeks):
+    WEEK 1:
+      DAY Monday rest "Fuel Day":
+        nutrition:
+          nutrition daily_target:
+            calories 30 .. 35 kcal_per_kg

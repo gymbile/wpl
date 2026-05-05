@@ -1,0 +1,9 @@
+PLAN "Hybrid Plan"
+TYPE hybrid
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Foundation" (1 weeks):
+    WEEK 1:

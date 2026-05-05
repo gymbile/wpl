@@ -1,0 +1,12 @@
+PLAN "Hinge Pattern"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Strength" (1 weeks):
+    WEEK 1:
+      DAY Monday training "Pull Day":
+        main straight_sets:
+          deadlift 4x5 weight 120 kg muscles primary hamstrings, glutes pattern hinge rest 180 seconds

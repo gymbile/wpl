@@ -1,0 +1,12 @@
+PLAN "Primary And Secondary Muscles"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Strength" (1 weeks):
+    WEEK 1:
+      DAY Monday training "Squat Day":
+        main straight_sets:
+          squat 4x6 muscles primary quadriceps, glutes secondary hamstrings, calves rest 120 seconds

@@ -1,0 +1,10 @@
+PLAN "Realization Phase"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Peak Block" realization (2 weeks):
+    WEEK 1:
+    WEEK 2:

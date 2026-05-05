@@ -1,0 +1,13 @@
+PLAN "Calories TDEE"
+TYPE nutrition
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Week One" (1 weeks):
+    WEEK 1:
+      DAY Monday rest "Rest Day":
+        nutrition:
+          nutrition daily_target:
+            calories 0.85 .. 0.95 multiplier_of_tdee

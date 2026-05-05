@@ -1,0 +1,14 @@
+PLAN "Cycling Cardio"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Endurance" (1 weeks):
+    WEEK 1:
+      DAY Sunday training "Bike Ride":
+        main:
+          cardio cycling continuous:
+            total 60 minutes
+            zone 2

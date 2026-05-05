@@ -1,0 +1,10 @@
+PLAN "Intermediate Plan"
+TYPE workout
+VISIBILITY public
+DIFFICULTY intermediate
+
+GOALS
+
+PHASES
+  PHASE "Build" (1 weeks):
+    WEEK 1:

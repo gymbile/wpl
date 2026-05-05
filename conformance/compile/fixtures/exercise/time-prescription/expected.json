@@ -1,0 +1,92 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "plan": {
+    "goals": [],
+    "id": "<UUID>",
+    "metadata": {
+      "language": "en"
+    },
+    "name": "Time Prescription",
+    "personalization": {
+      "inputs": [],
+      "rules": []
+    },
+    "phases": [
+      {
+        "duration": {
+          "unit": "weeks",
+          "value": 1
+        },
+        "id": "<AUTO_ID>",
+        "name": "Mobility",
+        "order": 1,
+        "weeks": [
+          {
+            "days": [
+              {
+                "blocks": [
+                  {
+                    "activities": [
+                      {
+                        "exercise_ref": "plank",
+                        "id": "<AUTO_ID>",
+                        "name": "Plank",
+                        "prescription": {
+                          "reps": {
+                            "target": 30
+                          },
+                          "sets": 3,
+                          "type": "sets_reps"
+                        },
+                        "type": "exercise"
+                      },
+                      {
+                        "id": "<AUTO_ID>",
+                        "name": "S",
+                        "type": "simple"
+                      },
+                      {
+                        "exercise_ref": "side_plank",
+                        "id": "<AUTO_ID>",
+                        "name": "Side Plank",
+                        "prescription": {
+                          "reps": {
+                            "target": 20
+                          },
+                          "sets": 3,
+                          "type": "sets_reps"
+                        },
+                        "type": "exercise"
+                      },
+                      {
+                        "id": "<AUTO_ID>",
+                        "name": "S",
+                        "type": "simple"
+                      }
+                    ],
+                    "id": "<AUTO_ID>",
+                    "order": 1,
+                    "structure": "straight_sets",
+                    "type": "main"
+                  }
+                ],
+                "day_of_week": 1,
+                "estimated_duration_minutes": 0,
+                "id": "<AUTO_ID>",
+                "name": "Holds",
+                "type": "training"
+              }
+            ],
+            "id": "<AUTO_ID>",
+            "name": "Week 1",
+            "order": 1
+          }
+        ]
+      }
+    ],
+    "requirements": {},
+    "type": "workout",
+    "visibility": "public"
+  },
+  "version": "1.6.0"
+}

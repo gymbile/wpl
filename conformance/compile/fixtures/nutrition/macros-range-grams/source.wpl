@@ -1,0 +1,15 @@
+PLAN "Macros Range Grams"
+TYPE nutrition
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Week One" (1 weeks):
+    WEEK 1:
+      DAY Monday rest "Fuel Day":
+        nutrition:
+          nutrition daily_target:
+            protein 140..180
+            carbs 200..280
+            fat 50..70

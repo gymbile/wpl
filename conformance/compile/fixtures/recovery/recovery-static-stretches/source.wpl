@@ -1,0 +1,15 @@
+PLAN "Static Stretches"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Recovery" (1 weeks):
+    WEEK 1:
+      DAY Tuesday active_recovery "Stretch Day":
+        cooldown:
+          recovery stretching:
+            hamstring_stretch 30s x2 sides both
+            hip_flexor_stretch 30s x2 sides both
+            chest_stretch 30s x2 sides both

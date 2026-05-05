@@ -1,0 +1,13 @@
+PLAN "Recovery Intensity RPE"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Recovery" (1 weeks):
+    WEEK 1:
+      DAY Tuesday active_recovery "Deep Stretch":
+        cooldown:
+          recovery stretching:
+            hamstring_stretch 30s x3 modality static_stretch intensity 6
