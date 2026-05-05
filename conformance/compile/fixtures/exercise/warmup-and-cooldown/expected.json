@@ -28,40 +28,28 @@
                   {
                     "activities": [
                       {
-                        "exercise_ref": "jumping_jack",
+                        "category": "warmup",
                         "id": "<AUTO_ID>",
-                        "name": "Jumping Jack",
+                        "name": "Warmup",
                         "prescription": {
-                          "reps": {
-                            "target": 30
-                          },
-                          "sets": 3,
-                          "type": "sets_reps"
+                          "exercises": [
+                            {
+                              "hold_seconds": 30,
+                              "id": "<AUTO_ID>",
+                              "name": "jumping_jack",
+                              "reps": 3,
+                              "type": "recovery_exercise"
+                            },
+                            {
+                              "hold_seconds": 20,
+                              "id": "<AUTO_ID>",
+                              "name": "arm_circles",
+                              "reps": 2,
+                              "type": "recovery_exercise"
+                            }
+                          ]
                         },
-                        "type": "exercise"
-                      },
-                      {
-                        "id": "<AUTO_ID>",
-                        "name": "S",
-                        "type": "simple"
-                      },
-                      {
-                        "exercise_ref": "arm_circles",
-                        "id": "<AUTO_ID>",
-                        "name": "Arm Circles",
-                        "prescription": {
-                          "reps": {
-                            "target": 20
-                          },
-                          "sets": 2,
-                          "type": "sets_reps"
-                        },
-                        "type": "exercise"
-                      },
-                      {
-                        "id": "<AUTO_ID>",
-                        "name": "S",
-                        "type": "simple"
+                        "type": "recovery"
                       }
                     ],
                     "id": "<AUTO_ID>",

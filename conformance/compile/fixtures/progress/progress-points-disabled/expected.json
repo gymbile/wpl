@@ -30,7 +30,7 @@
       }
     ],
     "progress": {
-      "points": {
+      "points_system": {
         "enabled": false
       }
     },
