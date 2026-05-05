@@ -1,0 +1,8 @@
+[
+  {
+    "kind": "parse",
+    "type": "invalid_structure",
+    "severity": "error",
+    "message": "Unsupported checkpoint trigger 'completion' — use 'at N weeks' or 'at N days'."
+  }
+]

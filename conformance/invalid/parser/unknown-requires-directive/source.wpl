@@ -1,0 +1,9 @@
+PLAN "Unknown Requires Directive"
+TYPE workout
+
+REQUIRES
+  supervision required
+
+PHASES
+  PHASE "P1" (1 weeks):
+    WEEK 1:

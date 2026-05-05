@@ -1,0 +1,8 @@
+[
+  {
+    "kind": "parse",
+    "type": "invalid_structure",
+    "severity": "error",
+    "message": "Unknown REQUIRES directive: 'supervision required'. Recognized: contraindication, fitness, equipment, age, time_commitment."
+  }
+]

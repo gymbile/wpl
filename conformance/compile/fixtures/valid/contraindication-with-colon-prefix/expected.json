@@ -1,0 +1,44 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "plan": {
+    "goals": [],
+    "id": "<UUID>",
+    "metadata": {
+      "language": "en"
+    },
+    "name": "Contraindication Colon Prefix",
+    "personalization": {
+      "inputs": [],
+      "rules": []
+    },
+    "phases": [
+      {
+        "duration": {
+          "unit": "weeks",
+          "value": 1
+        },
+        "id": "<AUTO_ID>",
+        "name": "P1",
+        "order": 1,
+        "weeks": [
+          {
+            "id": "<AUTO_ID>",
+            "name": "Week 1",
+            "order": 1
+          }
+        ]
+      }
+    ],
+    "requirements": {
+      "contraindications": [
+        {
+          "action": "exclude",
+          "condition": "acsm:cardiac_rehab_phase_2"
+        }
+      ]
+    },
+    "type": "workout",
+    "visibility": "public"
+  },
+  "version": "1.6.0"
+}
