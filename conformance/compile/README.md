@@ -62,37 +62,37 @@ The fields `created_at` and `updated_at` inside any `metadata` object are
 removed before comparison.  They are always set to the current wall-clock
 time and will never match across compiler runs.
 
-### 5. Strip `metadata.language` (known compiler divergence)
+### 5. Coerce whole-number floats to integers
 
-The `language` field inside `metadata` is present in TS output (`"en"` by
-default) but absent in Elixir output.  It is stripped before comparison.
-This is a **known compiler divergence** tracked in the issue tracker.
+Any numeric value that is a float with no fractional part (e.g. `1.0`, `6.0`)
+is coerced to its integer equivalent before comparison.  This handles the case
+where one compiler emits an integer and the other emits a float for the same
+logical value (e.g. Elixir may emit `1.0` for a value that TS emits as `1`).
 
-### 6. Strip auto-derived activity display names (known compiler divergence)
-
-The `name` field on activity objects whose `type` is `"exercise"`,
-`"cardio"`, or `"nutrition"` is stripped before comparison when the name
-was not explicitly authored in the DSL.  The TS compiler auto-derives
-display names from the exercise reference (e.g. `push_up` → `"Push Up"`,
-`running` → `"Running"`); the Elixir compiler does not.  This is a
-**known compiler divergence** tracked in the issue tracker.
-
-Fixtures with explicit DSL-authored activity names should **not** apply
-this rule.  Such fixtures should set `strip_activity_display_names: false`
-in `meta.json` (default is `true` to enable the strip).
-
-### 7. Exact floating-point match
-
-Floating-point values are compared exactly.  Fixtures must not produce
-float drift.  Use integer-representable floats (e.g. `1.6`, `2.2`) where
-possible.
-
-### 8. `version` field asserted as-is
+### 6. `version` field asserted as-is
 
 The top-level `"version"` field is compared verbatim.  A compiler emitting
 an older schema version will fail fixtures that set `version` to a newer
 version.  This is intentional: version-locked fixtures document when a
 feature was introduced.
+
+## Rules No Longer Needed (resolved divergences)
+
+The following normalization rules existed to paper over compiler divergences
+and were removed in `wpl-ai-ex v1.6.1` once both compilers aligned:
+
+- **`metadata.language` strip** — TS compiler always emits `"language": "en"`;
+  Elixir compiler previously omitted it.  Fixed: Elixir now defaults `language`
+  to `"en"` (TS parity).  `expected.json` files include `"language": "en"` and
+  runners no longer strip it.
+
+- **Activity display `name` strip** — TS compiler auto-derives `name` from the
+  exercise_ref / modality / category token for Exercise, Cardio, Nutrition,
+  Meditation, Recovery, and Habit activities; Elixir previously omitted `name`.
+  Fixed: Elixir now derives `name` using the same `humanise()` logic (split on
+  `[_\s-]+`, title-case each word, uppercase known acronyms HIIT/AMRAP/EMOM/
+  RPE/RIR/1RM).  `expected.json` files include the derived `name` and runners
+  no longer strip it.
 
 ## `meta.json` Schema
 
@@ -103,10 +103,10 @@ feature was introduced.
   "category": "basic",
   "known_divergence": [
     {
-      "field": "metadata.language",
-      "ts_value": "en",
-      "ex_value": null,
-      "note": "TS emits language; Elixir does not. Normalized away."
+      "field": "some.field",
+      "ts_value": "...",
+      "ex_value": "...",
+      "note": "Explanation and which normalization rule handles it."
     }
   ]
 }

@@ -3,7 +3,9 @@
   "plan": {
     "goals": [],
     "id": "<UUID>",
-    "metadata": {},
+    "metadata": {
+      "language": "en"
+    },
     "name": "Nutrition Per KG",
     "personalization": {
       "inputs": [],
@@ -28,6 +30,7 @@
                       {
                         "category": "daily_target",
                         "id": "<AUTO_ID>",
+                        "name": "Daily Target",
                         "prescription": {
                           "macros": {
                             "carbs": {

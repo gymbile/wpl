@@ -3,7 +3,9 @@
   "plan": {
     "goals": [],
     "id": "<UUID>",
-    "metadata": {},
+    "metadata": {
+      "language": "en"
+    },
     "name": "Deload Phase",
     "personalization": {
       "inputs": [],

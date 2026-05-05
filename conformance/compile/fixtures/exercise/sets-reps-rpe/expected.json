@@ -3,7 +3,9 @@
   "plan": {
     "goals": [],
     "id": "<UUID>",
-    "metadata": {},
+    "metadata": {
+      "language": "en"
+    },
     "name": "Sets and Reps",
     "personalization": {
       "inputs": [],
@@ -28,6 +30,7 @@
                       {
                         "exercise_ref": "push_up",
                         "id": "<AUTO_ID>",
+                        "name": "Push Up",
                         "prescription": {
                           "reps": {
                             "max": 12,

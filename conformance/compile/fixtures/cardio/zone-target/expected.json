@@ -3,7 +3,9 @@
   "plan": {
     "goals": [],
     "id": "<UUID>",
-    "metadata": {},
+    "metadata": {
+      "language": "en"
+    },
     "name": "Cardio Zone",
     "personalization": {
       "inputs": [],
@@ -28,6 +30,7 @@
                       {
                         "id": "<AUTO_ID>",
                         "modality": "running",
+                        "name": "Running",
                         "prescription": {
                           "duration": {
                             "unit": "minutes",
