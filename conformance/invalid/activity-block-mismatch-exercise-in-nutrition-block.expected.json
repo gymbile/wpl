@@ -1,0 +1,11 @@
+[
+  {
+    "code": "ACTIVITY_BLOCK_MISMATCH",
+    "path": "/plan/phases/0/weeks/0/days/0/blocks/0/activities/0",
+    "severity": "error",
+    "meta": {
+      "activity_type": "exercise",
+      "block_type": "nutrition"
+    }
+  }
+]

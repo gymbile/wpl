@@ -130,6 +130,31 @@ Points-system rule has missing/invalid points value.
 - **meta**:
   - `reason` (string) — `missing_action` | `missing_points` | `points_must_be_non_negative_integer`
 
+### `ACTIVITY_BLOCK_MISMATCH`
+
+An activity's `type` is not permitted inside the parent block's `type`. JSON Schema cannot enforce this constraint because `Block.activities` is an open `oneOf` over all activity types.
+
+- **severity**: `error`
+- **path**: pointer to the offending activity
+- **meta**:
+  - `activity_type` (string) — the rejected activity type
+  - `block_type` (string) — the containing block's type
+  - `allowed` (array of strings) — the full allowed-activity list for that block type
+
+#### Allowed activity types per block type
+
+| Block type  | Allowed activity types |
+|-------------|------------------------|
+| `warmup`    | `cardio`, `recovery`, `simple`, `sub_plan` |
+| `main`      | `exercise`, `cardio`, `nutrition`, `meditation`, `recovery`, `habit`, `simple`, `sub_plan` |
+| `cooldown`  | `cardio`, `recovery`, `meditation`, `simple`, `sub_plan` |
+| `nutrition` | `nutrition`, `simple`, `sub_plan` |
+| `meditation`| `meditation`, `simple`, `sub_plan` |
+| `education` | `simple`, `habit`, `sub_plan` |
+| `assessment`| `exercise`, `cardio`, `simple`, `sub_plan` |
+
+`simple` and `sub_plan` are intentionally permitted in every block type as escape hatches. Unknown block types (not in the table above) are not checked.
+
 ### `PHASE_DURATION_MISMATCH`
 
 Phase's `duration` and the length of its `weeks` array disagree.

@@ -456,6 +456,8 @@ Each day contains multiple activity blocks.
 | `education` | Learning content |
 | `assessment` | Progress checks |
 
+`Block.type` constrains which `Activity.type` values are permitted inside `Block.activities`. Placing an activity whose type is not allowed for the parent block's type is a semantic error (`ACTIVITY_BLOCK_MISMATCH`). See [conformance/error-codes.md](../conformance/error-codes.md) for the full allowed-activity table.
+
 ---
 
 ## 5. Activity Types

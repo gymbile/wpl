@@ -7,6 +7,12 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [Unreleased]
 
+### Added (conformance only — no schema change)
+- Pass-2 semantic rule `ACTIVITY_BLOCK_MISMATCH` documented in `conformance/error-codes.md`: rejects activities whose `type` is not permitted in the parent block's `type`. See error-codes.md for the full allowed-activity table.
+- `SPECIFICATION.md` notes that `Block.type` constrains allowed `Activity.type` values (references error-codes.md).
+- New conformance fixtures: `valid/exercise-in-main-block.json`, `invalid/activity-block-mismatch-exercise-in-cooldown.json`, `invalid/activity-block-mismatch-nutrition-in-warmup.json`, `invalid/activity-block-mismatch-exercise-in-nutrition-block.json`.
+- Updated `valid/simple-workout.json`: warmup activity changed from `exercise` (arm circles) to `recovery` (mobility) to comply with the new constraint.
+
 ## [1.6.0] — 2026-05-04
 
 ### Added

@@ -50,11 +50,10 @@
                     "activities": [
                       {
                         "id": "warmup_1",
-                        "type": "exercise",
-                        "exercise_ref": "arm_circles",
+                        "type": "recovery",
                         "name": "Arm Circles",
+                        "category": "mobility",
                         "prescription": {
-                          "type": "time",
                           "duration": {
                             "value": 30,
                             "unit": "seconds"
