@@ -1,0 +1,9 @@
+PLAN "Minimal Plan"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Foundation" (1 weeks):
+    WEEK 1:

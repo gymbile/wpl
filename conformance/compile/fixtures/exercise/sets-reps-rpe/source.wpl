@@ -1,0 +1,12 @@
+PLAN "Sets and Reps"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Training" (1 weeks):
+    WEEK 1:
+      DAY Monday training "Upper Body":
+        main straight_sets:
+          push_up 3x8..12 rpe 7 rest 60 seconds

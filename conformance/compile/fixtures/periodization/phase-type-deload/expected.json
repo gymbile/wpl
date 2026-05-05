@@ -1,0 +1,42 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "plan": {
+    "goals": [],
+    "id": "<UUID>",
+    "metadata": {},
+    "name": "Deload Phase",
+    "personalization": {
+      "inputs": [],
+      "rules": []
+    },
+    "phases": [
+      {
+        "duration": {
+          "unit": "weeks",
+          "value": 2
+        },
+        "id": "<AUTO_ID>",
+        "name": "Intensification",
+        "order": 1,
+        "type": "intensification",
+        "weeks": [
+          {
+            "id": "<AUTO_ID>",
+            "name": "Week 1",
+            "order": 1
+          },
+          {
+            "id": "<AUTO_ID>",
+            "is_deload": true,
+            "name": "Week 2",
+            "order": 2
+          }
+        ]
+      }
+    ],
+    "requirements": {},
+    "type": "workout",
+    "visibility": "public"
+  },
+  "version": "1.6.0"
+}

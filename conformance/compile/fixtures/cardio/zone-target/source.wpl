@@ -1,0 +1,14 @@
+PLAN "Cardio Zone"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Cardio Week" (1 weeks):
+    WEEK 1:
+      DAY Tuesday training "Zone Run":
+        main:
+          cardio running continuous:
+            total 30 minutes
+            zone 3

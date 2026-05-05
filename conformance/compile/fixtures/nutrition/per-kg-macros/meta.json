@@ -1,0 +1,25 @@
+{
+  "since": "1.4.0",
+  "description": "Daily nutrition activity with per-kg macro targets: protein 1.6-2.2 g/kg, carbs 4-6 g/kg, fat 0.7-1.0 g/kg. Covers the g_per_kg unit introduced in schema v1.4.0.",
+  "category": "nutrition",
+  "known_divergence": [
+    {
+      "field": "metadata.language",
+      "ts_value": "en",
+      "ex_value": null,
+      "note": "TS compiler always emits language:en; Elixir compiler omits it. Stripped during normalization."
+    },
+    {
+      "field": "activities[].name",
+      "ts_value": "Daily Target",
+      "ex_value": null,
+      "note": "TS auto-derives display names from nutrition category (daily_target -> Daily Target); Elixir omits name. Stripped during normalization for nutrition-type activities."
+    },
+    {
+      "field": "prescription.macros.fat.max",
+      "ts_value": 1,
+      "ex_value": 1.0,
+      "note": "TS emits 1 (integer), Elixir emits 1.0 (float) for the value 1.0. Both are semantically equal. Normalized by coercing whole-number floats to integers."
+    }
+  ]
+}

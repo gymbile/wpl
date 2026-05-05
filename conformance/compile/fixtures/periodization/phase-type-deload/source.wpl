@@ -1,0 +1,10 @@
+PLAN "Deload Phase"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Intensification" intensification (2 weeks):
+    WEEK 1:
+    WEEK 2 deload:

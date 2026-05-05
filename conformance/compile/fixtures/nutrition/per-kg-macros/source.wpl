@@ -1,0 +1,15 @@
+PLAN "Nutrition Per KG"
+TYPE nutrition
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "Bulk" (1 weeks):
+    WEEK 1:
+      DAY Monday training "Daily Macros":
+        nutrition:
+          nutrition daily_target:
+            protein 1.6..2.2 g_per_kg
+            carbs 4..6 g_per_kg
+            fat 0.7..1.0 g_per_kg

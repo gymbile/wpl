@@ -1,0 +1,19 @@
+{
+  "since": "1.0.0",
+  "description": "One DAY with a straight_sets main block containing a push_up exercise: 3 sets of 8-12 reps, RPE 7, 60-second rest. Covers reps range, RPE, and rest slots.",
+  "category": "exercise",
+  "known_divergence": [
+    {
+      "field": "metadata.language",
+      "ts_value": "en",
+      "ex_value": null,
+      "note": "TS compiler always emits language:en; Elixir compiler omits it. Stripped during normalization."
+    },
+    {
+      "field": "activities[].name",
+      "ts_value": "Push Up",
+      "ex_value": null,
+      "note": "TS auto-derives display names from exercise_ref (push_up -> Push Up); Elixir omits name. Stripped during normalization for exercise-type activities."
+    }
+  ]
+}

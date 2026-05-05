@@ -1,0 +1,19 @@
+{
+  "since": "1.0.0",
+  "description": "DAY with a cardio block: continuous running for 30 minutes targeting heart-rate zone 3. Covers cardio modality, continuous prescription, and heart_rate_zone intensity.",
+  "category": "cardio",
+  "known_divergence": [
+    {
+      "field": "metadata.language",
+      "ts_value": "en",
+      "ex_value": null,
+      "note": "TS compiler always emits language:en; Elixir compiler omits it. Stripped during normalization."
+    },
+    {
+      "field": "activities[].name",
+      "ts_value": "Running",
+      "ex_value": null,
+      "note": "TS auto-derives display names from cardio modality (running -> Running); Elixir omits name. Stripped during normalization for cardio-type activities."
+    }
+  ]
+}

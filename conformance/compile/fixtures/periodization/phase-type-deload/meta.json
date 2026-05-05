@@ -1,0 +1,13 @@
+{
+  "since": "1.5.0",
+  "description": "PHASE with type 'intensification' spanning two weeks; the second week is marked as a deload. Covers phase.type and week.is_deload introduced in schema v1.5.0.",
+  "category": "periodization",
+  "known_divergence": [
+    {
+      "field": "metadata.language",
+      "ts_value": "en",
+      "ex_value": null,
+      "note": "TS compiler always emits language:en; Elixir compiler omits it. Stripped during normalization."
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "since": "1.0.0",
+  "description": "Smallest valid plan: PLAN header, TYPE, VISIBILITY, empty GOALS, one PHASE with one empty WEEK. Validates header parsing and minimal document structure.",
+  "category": "basic",
+  "known_divergence": [
+    {
+      "field": "metadata.language",
+      "ts_value": "en",
+      "ex_value": null,
+      "note": "TS compiler always emits language:en; Elixir compiler omits it. Stripped during normalization."
+    }
+  ]
+}
