@@ -1,0 +1,12 @@
+PLAN "Cooldown Cardio Modality"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+PHASES
+  PHASE "P1" (1 weeks):
+    WEEK 1:
+      DAY Monday training:
+        cooldown:
+          jogging 10m

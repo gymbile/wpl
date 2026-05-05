@@ -1,0 +1,6 @@
+PLAN "Unknown Phase Type"
+TYPE workout
+
+PHASES
+  PHASE "P1" rehabilitation (1 weeks):
+    WEEK 1:

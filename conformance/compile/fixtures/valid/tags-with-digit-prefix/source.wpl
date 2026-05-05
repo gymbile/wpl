@@ -1,0 +1,10 @@
+PLAN "Tags Digit Prefix"
+TYPE workout
+VISIBILITY public
+TAGS 531, strength
+
+GOALS
+
+PHASES
+  PHASE "P1" (1 weeks):
+    WEEK 1:

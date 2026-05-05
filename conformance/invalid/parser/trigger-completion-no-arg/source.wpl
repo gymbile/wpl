@@ -1,0 +1,13 @@
+PLAN "Trigger Completion No Arg"
+TYPE workout
+
+PROGRESS
+  checkpoints:
+    checkpoint "Week 1 review":
+      trigger completion
+      measure:
+        - weight kg
+
+PHASES
+  PHASE "P1" (1 weeks):
+    WEEK 1:

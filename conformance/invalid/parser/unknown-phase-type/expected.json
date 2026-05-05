@@ -1,0 +1,8 @@
+[
+  {
+    "kind": "parse",
+    "type": "invalid_structure",
+    "severity": "error",
+    "message": "Unknown phase type 'rehabilitation'. Allowed: accumulation, intensification, realization, deload, base, build, peak, recovery, transition."
+  }
+]

@@ -145,9 +145,9 @@ An activity's `type` is not permitted inside the parent block's `type`. JSON Sch
 
 | Block type  | Allowed activity types |
 |-------------|------------------------|
-| `warmup`    | `cardio`, `recovery`, `simple`, `sub_plan` |
+| `warmup`    | `exercise`, `cardio`, `recovery`, `simple`, `sub_plan` |
 | `main`      | `exercise`, `cardio`, `nutrition`, `meditation`, `recovery`, `habit`, `simple`, `sub_plan` |
-| `cooldown`  | `cardio`, `recovery`, `meditation`, `simple`, `sub_plan` |
+| `cooldown`  | `exercise`, `cardio`, `recovery`, `meditation`, `simple`, `sub_plan` |
 | `nutrition` | `nutrition`, `simple`, `sub_plan` |
 | `meditation`| `meditation`, `simple`, `sub_plan` |
 | `education` | `simple`, `habit`, `sub_plan` |

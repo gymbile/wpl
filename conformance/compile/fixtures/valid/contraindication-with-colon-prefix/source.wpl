@@ -1,0 +1,12 @@
+PLAN "Contraindication Colon Prefix"
+TYPE workout
+VISIBILITY public
+
+GOALS
+
+REQUIRES
+  contraindication acsm:cardiac_rehab_phase_2
+
+PHASES
+  PHASE "P1" (1 weeks):
+    WEEK 1:
