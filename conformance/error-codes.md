@@ -67,6 +67,16 @@ A `*_ref` value (e.g. `exercise_ref`, `meal_ref`) does not exist in the provided
   - `ref_kind` (string) — `exercise` | `meal` | `meditation` | etc.
   - `ref_value` (string) — the unresolvable id
 
+### `CATALOG_REQUIRED`
+
+Emitted once when validation runs in strict catalog mode (`requireCatalog: true`) and no catalog was supplied while the plan contains at least one `exercise_ref` / `meal_ref` / `meditation_ref`. Strict mode is the production posture for safety-governed deployments: entity resolution must not silently no-op. **Skipped entirely when `requireCatalog` is absent or `false` (backward-compatible default).**
+
+- **severity**: `error`
+- **path**: `/plan`
+- **meta**:
+  - `ref_kind` (string) — the kind of the first unresolvable ref found (`exercise` | `meal` | `meditation` | etc.)
+  - `ref_value` (string) — the id value of the first unresolvable ref found
+
 ### `CYCLIC_SUBPLAN`
 
 Sub-plan references form a cycle. Active as of schema v1.5.0 (`SubPlanActivity`).

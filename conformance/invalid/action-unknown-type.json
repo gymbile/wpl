@@ -1,0 +1,63 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "version": "1.7.0",
+  "plan": {
+    "id": "plan_unknown_action_type",
+    "name": "Unknown action type",
+    "type": "workout",
+    "visibility": "private",
+    "metadata": {},
+    "goals": [],
+    "requirements": {},
+    "personalization": {
+      "inputs": [
+        {
+          "id": "age",
+          "type": "number",
+          "source": "user.age"
+        }
+      ],
+      "rules": [
+        {
+          "id": "rule_1",
+          "condition": {
+            "field": "age",
+            "op": "gt",
+            "value": 60
+          },
+          "actions": [
+            {
+              "type": "frobnicate_exercise"
+            }
+          ]
+        }
+      ]
+    },
+    "phases": [
+      {
+        "id": "phase_1",
+        "name": "P1",
+        "order": 1,
+        "duration": {
+          "value": 1,
+          "unit": "weeks"
+        },
+        "weeks": [
+          {
+            "id": "week_1",
+            "name": "Week 1",
+            "order": 1,
+            "days": [
+              {
+                "id": "day_1",
+                "day_of_week": 1,
+                "name": "D1",
+                "type": "rest"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
