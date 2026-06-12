@@ -5,13 +5,26 @@ All notable changes to the WPL specification, schema, and conformance suite.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [1.7.0] — 2026-06-12
 
-### Added (conformance only — no schema change)
+### Added
+- `in` / `not_in` operators on `SimpleCondition` (membership predicates, e.g. cycle-day windows).
+- Nested `CompoundCondition` (conditions may now contain compounds, not just simple conditions).
+- Closed enum for `Action.type` including `forbid_exercise`; typed payloads for `forbid_exercise` (`exercise`), `replace_exercise` (`from`/`to`), `modify_intensity` (`factor`).
+- `CATALOG_REQUIRED` error code for strict catalog mode (see conformance/error-codes.md).
 - Pass-2 semantic rule `ACTIVITY_BLOCK_MISMATCH` documented in `conformance/error-codes.md`: rejects activities whose `type` is not permitted in the parent block's `type`. See error-codes.md for the full allowed-activity table.
 - `SPECIFICATION.md` notes that `Block.type` constrains allowed `Activity.type` values (references error-codes.md).
-- New conformance fixtures: `valid/exercise-in-main-block.json`, `invalid/activity-block-mismatch-exercise-in-cooldown.json`, `invalid/activity-block-mismatch-nutrition-in-warmup.json`, `invalid/activity-block-mismatch-exercise-in-nutrition-block.json`.
-- Updated `valid/simple-workout.json`: warmup activity changed from `exercise` (arm circles) to `recovery` (mobility) to comply with the new constraint.
+- New conformance fixtures: `valid/exercise-in-main-block.json`, `invalid/activity-block-mismatch-exercise-in-cooldown.json`, `invalid/activity-block-mismatch-nutrition-in-warmup.json`, `invalid/activity-block-mismatch-exercise-in-nutrition-block.json`, `valid/personalization-forbid-exercise.json`, `valid/personalization-nested-compound.json`, `invalid/action-unknown-type.json` (+ `.expected.json`).
+- Updated `valid/simple-workout.json`: warmup activity changed from `exercise` (arm circles) to `recovery` (mobility) to comply with the ACTIVITY_BLOCK_MISMATCH constraint.
+
+### Changed
+- `version` field accepts any `1.x.y` (was `const "1.6.0"`), honoring the additive-only v1 compatibility promise.
+
+### Fixed
+- Schema/runtime vocabulary drift: the schema now accepts the personalization payloads the reference rule evaluator executes.
+
+### Notes
+All changes are additive; every plan that validated under 1.6.0 continues to validate under 1.7.0. The `version` field now accepts any `1.x.y` string, so plans authored against an earlier 1.x schema validate unchanged.
 
 ## [1.6.0] — 2026-05-04
 
