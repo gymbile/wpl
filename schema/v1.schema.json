@@ -13,7 +13,8 @@
     },
     "version": {
       "type": "string",
-      "const": "1.6.0"
+      "pattern": "^1\\.[0-9]+\\.[0-9]+$",
+      "description": "WPL schema version the plan was authored against. Any 1.x is accepted (additive-only policy); consumers may warn on versions newer than they know."
     },
     "plan": { "$ref": "#/$defs/Plan" }
   },
@@ -387,7 +388,7 @@
         "field": { "type": "string" },
         "op": {
           "type": "string",
-          "enum": ["eq", "neq", "gt", "gte", "lt", "lte", "contains", "not_contains"]
+          "enum": ["eq", "neq", "gt", "gte", "lt", "lte", "contains", "not_contains", "in", "not_in"]
         },
         "value": {}
       }
@@ -404,7 +405,7 @@
         },
         "conditions": {
           "type": "array",
-          "items": { "$ref": "#/$defs/SimpleCondition" },
+          "items": { "$ref": "#/$defs/Condition" },
           "minItems": 1
         }
       }
@@ -415,13 +416,45 @@
       "required": ["type"],
       "properties": {
         "type": {
-          "type": "string"
+          "type": "string",
+          "enum": [
+            "forbid_exercise", "exclude_exercise", "replace_exercise", "modify_exercise",
+            "modify_intensity", "add_warmup_time", "increase_rest",
+            "reduce_sets", "reduce_reps", "use_schedule", "add_activity"
+          ]
         },
         "scope": {
-          "type": "string"
+          "type": "string",
+          "enum": ["activity", "block", "day", "week", "phase", "plan"]
         }
       },
-      "additionalProperties": true
+      "additionalProperties": true,
+      "allOf": [
+        {
+          "if": { "required": ["type"], "properties": { "type": { "const": "forbid_exercise" } } },
+          "then": {
+            "required": ["exercise"],
+            "properties": { "exercise": { "type": "string", "minLength": 1 } }
+          }
+        },
+        {
+          "if": { "required": ["type"], "properties": { "type": { "const": "replace_exercise" } } },
+          "then": {
+            "required": ["from", "to"],
+            "properties": {
+              "from": { "type": "string", "minLength": 1 },
+              "to": { "type": "string", "minLength": 1 }
+            }
+          }
+        },
+        {
+          "if": { "required": ["type"], "properties": { "type": { "const": "modify_intensity" } } },
+          "then": {
+            "required": ["factor"],
+            "properties": { "factor": { "type": "number", "exclusiveMinimum": 0, "maximum": 2 } }
+          }
+        }
+      ]
     },
 
     "Phase": {
