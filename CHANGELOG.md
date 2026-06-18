@@ -5,6 +5,14 @@ All notable changes to the WPL specification, schema, and conformance suite.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.8.0] — 2026-06-18
+
+### Added
+- **Canonical exercise catalog + matcher vocabulary single source of truth.** Adds `data/exercises.json` (152-name catalog by category), `data/matcher-vocab.json` (qualifier tokens + short-plurals), their JSON Schemas, CI validation incl. flat-set uniqueness invariant. Consumers vendor + codegen from these files.
+
+### Notes
+All changes are additive; the new `data/` catalog does not alter the schema or the validation behavior of any plan. Every plan that validated under 1.7.0 continues to validate under 1.8.0.
+
 ## [1.7.0] — 2026-06-12
 
 ### Added
