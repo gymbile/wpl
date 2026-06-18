@@ -63,3 +63,22 @@ jobs:
             --spec=draft2020 --strict=false --all-errors
           ajv validate -s data/matcher-vocab.schema.json -d data/matcher-vocab.json \
             --spec=draft2020 --strict=false --all-errors
+
+      - name: Assert exercise catalog flat-set invariant (unique across categories)
+        run: |
+          node -e '
+            const c = require("./data/exercises.json").categories;
+            const all = Object.values(c).flat();
+            const uniq = new Set(all);
+            if (all.length !== uniq.size) {
+              const seen = new Set(), dups = [];
+              for (const n of all) { if (seen.has(n)) dups.push(n); else seen.add(n); }
+              console.error("Duplicate exercise names across categories:", dups);
+              process.exit(1);
+            }
+            if (all.length !== 152) {
+              console.error("Expected 152 exercises, got", all.length, "- if this is an intentional catalog change, bump data/exercises.json version and update this count.");
+              process.exit(1);
+            }
+            console.log("exercise catalog flat-set invariant OK:", all.length, "unique");
+          '
