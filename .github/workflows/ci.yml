@@ -27,7 +27,7 @@ jobs:
               echo "::error file=$f::Invalid JSON"
               fail=1
             fi
-          done < <(find schema examples conformance -name '*.json' -type f)
+          done < <(find schema examples conformance data -name '*.json' -type f)
           exit $fail
 
       - name: Compile schema
@@ -51,3 +51,15 @@ jobs:
           else
             echo "No conformance/valid fixtures yet — skipping"
           fi
+
+      - name: Compile data schemas
+        run: |
+          ajv compile -s data/exercises.schema.json --spec=draft2020 --strict=false
+          ajv compile -s data/matcher-vocab.schema.json --spec=draft2020 --strict=false
+
+      - name: Validate data files against their schemas
+        run: |
+          ajv validate -s data/exercises.schema.json -d data/exercises.json \
+            --spec=draft2020 --strict=false --all-errors
+          ajv validate -s data/matcher-vocab.schema.json -d data/matcher-vocab.json \
+            --spec=draft2020 --strict=false --all-errors
