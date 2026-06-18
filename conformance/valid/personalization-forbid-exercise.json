@@ -1,0 +1,99 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "version": "1.7.0",
+  "plan": {
+    "id": "plan_forbid_exercise_17",
+    "name": "Forbid Exercise Personalization Plan",
+    "description": "Exercises the forbid_exercise action type and the in operator introduced in schema 1.7.0.",
+    "type": "workout",
+    "visibility": "template",
+    "metadata": {
+      "tags": [
+        "personalization",
+        "safety"
+      ],
+      "difficulty": "adaptive",
+      "estimated_duration_days": 28,
+      "language": "en"
+    },
+    "goals": [
+      {
+        "id": "goal_safe_strength",
+        "type": "primary",
+        "category": "strength",
+        "name": "Build strength safely around injuries"
+      }
+    ],
+    "personalization": {
+      "inputs": [
+        {
+          "id": "injuries",
+          "type": "array",
+          "source": "user.injuries"
+        },
+        {
+          "id": "cycle_day",
+          "type": "number",
+          "source": "wellness.menstrual_phase"
+        }
+      ],
+      "rules": [
+        {
+          "id": "forbid_knee_dominant",
+          "condition": {
+            "field": "injuries",
+            "op": "contains",
+            "value": "torn_meniscus"
+          },
+          "actions": [
+            {
+              "type": "forbid_exercise",
+              "exercise": "barbell_back_squat",
+              "scope": "plan"
+            }
+          ]
+        },
+        {
+          "id": "flow_window_forbid",
+          "condition": {
+            "field": "cycle_day",
+            "op": "in",
+            "value": [1, 2, 3]
+          },
+          "actions": [
+            {
+              "type": "forbid_exercise",
+              "exercise": "heavy_deadlift"
+            }
+          ]
+        }
+      ]
+    },
+    "phases": [
+      {
+        "id": "phase_1",
+        "name": "Block 1",
+        "order": 1,
+        "duration": {
+          "value": 1,
+          "unit": "weeks"
+        },
+        "weeks": [
+          {
+            "id": "wk_1",
+            "name": "Week 1",
+            "order": 1,
+            "days": [
+              {
+                "id": "d_1",
+                "day_of_week": 1,
+                "name": "Day 1",
+                "type": "training"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "version": "1.0.0",
+  "qualifier_tokens": [
+    "below", "above", "deep", "heavy", "light", "weighted", "loaded",
+    "max", "maximal", "parallel", "bodyweight", "kg", "lbs", "rom",
+    "anything", "any"
+  ],
+  "short_plurals": { "ups": "up" }
+}

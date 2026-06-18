@@ -1,8 +1,12 @@
 # WPL - Wellness Plan Language Specification
 
-**Version:** 1.1.0  
-**Status:** Draft  
-**Last Updated:** 2024-11-24
+**Version:** 1.7.0  
+**Status:** Living document (schema/v1.schema.json is normative)  
+**Last Updated:** 2026-06-12
+
+> **Normative source:** `schema/v1.schema.json` plus `conformance/` fixtures are
+> the contract. Where this prose document and the schema disagree, the schema
+> wins. Known prose sections pending rewrite are marked **[STALE]**.
 
 ## Overview
 
@@ -464,6 +468,8 @@ Each day contains multiple activity blocks.
 
 ### 5.1 Exercise Activity
 
+**[STALE — see schema $defs.ExerciseActivity]** Fields `category`, `muscle_groups`, `progression`, `alternatives`, `media`, and `tracking` shown in the example below are not present in the schema's `ExerciseActivity` definition. Do not rely on this prose for the authoritative field list.
+
 ```json
 {
   "id": "exercise_1",
@@ -703,6 +709,10 @@ These activity types are produced by the WPL-AI compiler as intermediate forms w
 
 ## 6. Progress Tracking
 
+**[STALE — see schema $defs.Checkpoint]** The checkpoint example below uses `trigger` (object with `type`/`value`) and `questionnaire` (array). The schema uses `at` (integer week number) and `questions` (array of strings). The `trigger`/`questionnaire` field names are not accepted by the schema.
+
+**[STALE — see schema $defs.Progress]** The `progress.achievements` array shown below is not present in the schema's `Progress` definition, which only has `checkpoints`, `points_system`, and `streaks`.
+
 ```json
 {
   "progress": {
@@ -769,6 +779,8 @@ These activity types are produced by the WPL-AI compiler as intermediate forms w
 ---
 
 ## 7. Notifications & Reminders
+
+**[STALE — see schema $defs.Notification]** The example below shows `notifications` as a keyed object. The schema defines `notifications` as an array of `Notification` items (each with `id`, `enabled`, `message`, `timing_offset`, `timing_reference`). The object shape shown here is not accepted by the schema.
 
 ```json
 {
@@ -1009,6 +1021,10 @@ See `examples/weight_loss_4_week.wpl.json` for a full implementation.
 ---
 
 ## Changelog
+
+### v1.7.0 (2026-06-12)
+
+- in/not_in, nested compounds, typed actions, version range; prose sections marked STALE pending rewrite.
 
 ### v1.1.0 (2024-11-24)
 
