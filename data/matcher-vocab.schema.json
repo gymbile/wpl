@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wpl.dev/data/matcher-vocab.schema.json",
+  "title": "WPL Matcher Vocabulary",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "qualifier_tokens", "short_plurals"],
+  "properties": {
+    "version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" },
+    "qualifier_tokens": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "type": "string", "pattern": "^[a-z]+$" }
+    },
+    "short_plurals": {
+      "type": "object",
+      "additionalProperties": { "type": "string" }
+    }
+  }
+}
