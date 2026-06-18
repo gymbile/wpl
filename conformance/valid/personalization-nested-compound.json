@@ -1,0 +1,109 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "version": "1.7.0",
+  "plan": {
+    "id": "plan_nested_compound_17",
+    "name": "Nested Compound Condition Plan",
+    "description": "Exercises nested CompoundCondition (and wrapping or) introduced in schema 1.7.0.",
+    "type": "workout",
+    "visibility": "template",
+    "metadata": {
+      "tags": [
+        "personalization",
+        "adaptive"
+      ],
+      "difficulty": "adaptive",
+      "estimated_duration_days": 28,
+      "language": "en"
+    },
+    "goals": [
+      {
+        "id": "goal_adapt_age",
+        "type": "primary",
+        "category": "strength",
+        "name": "Adapt intensity for older or injury-prone beginners"
+      }
+    ],
+    "personalization": {
+      "inputs": [
+        {
+          "id": "age",
+          "type": "number",
+          "source": "user.age"
+        },
+        {
+          "id": "injuries",
+          "type": "array",
+          "source": "user.injuries"
+        },
+        {
+          "id": "experience",
+          "type": "string",
+          "source": "user.experience_level"
+        }
+      ],
+      "rules": [
+        {
+          "id": "nested_compound",
+          "condition": {
+            "operator": "and",
+            "conditions": [
+              {
+                "field": "age",
+                "op": "gte",
+                "value": 40
+              },
+              {
+                "operator": "or",
+                "conditions": [
+                  {
+                    "field": "injuries",
+                    "op": "contains",
+                    "value": "lumbar_disc"
+                  },
+                  {
+                    "field": "experience",
+                    "op": "eq",
+                    "value": "beginner"
+                  }
+                ]
+              }
+            ]
+          },
+          "actions": [
+            {
+              "type": "modify_intensity",
+              "factor": 0.8
+            }
+          ]
+        }
+      ]
+    },
+    "phases": [
+      {
+        "id": "phase_1",
+        "name": "Block 1",
+        "order": 1,
+        "duration": {
+          "value": 1,
+          "unit": "weeks"
+        },
+        "weeks": [
+          {
+            "id": "wk_1",
+            "name": "Week 1",
+            "order": 1,
+            "days": [
+              {
+                "id": "d_1",
+                "day_of_week": 1,
+                "name": "Day 1",
+                "type": "training"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
