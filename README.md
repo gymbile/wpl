@@ -4,6 +4,10 @@
 
 WPL is a JSON-based language for describing comprehensive wellness programs that include workouts, nutrition, meditation, recovery, and habits. It enables platforms, trainers, and AI systems to create, validate, personalize, and track wellness plans consistently.
 
+## Why it matters
+
+A wellness plan isn't a chat reply — if it's wrong, a client gets hurt. WPL lets an AI author plans through a validated grammar with a rule engine that removes exercises contraindicated for the individual client *before* a human ever sees them. The effect is measured, not asserted: in a public 560-trial benchmark across 7 OpenAI and Anthropic models, raw LLMs put a contraindicated exercise into **32–51%** of plans; the same models speaking through WPL drop to **8–17%** — a **3–5× reduction**, on every corpus and in both single-turn and multi-turn conversations. In multi-turn chats, raw models drift off a contraindication the user already stated **42%** of the time; through WPL, **6%** (and **0%** on the Anthropic set). Full data + methodology: [wpl-eval](https://github.com/gymbile/wpl-eval).
+
 This repository is the **source of truth** for the WPL specification, JSON Schema, and conformance test suite.
 
 - 📖 [Specification](spec/SPECIFICATION.md)
