@@ -1,0 +1,9 @@
+{
+  "version": "1.0.0",
+  "tags": [
+    { "id": "vegetarian",  "label": "Vegetarian" },
+    { "id": "vegan",       "label": "Vegan" },
+    { "id": "gluten_free", "label": "Gluten-free" },
+    { "id": "dairy_free",  "label": "Dairy-free" }
+  ]
+}

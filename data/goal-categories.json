@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "categories": [
+    { "id": "weight_loss",     "label": "Weight loss" },
+    { "id": "muscle_gain",     "label": "Muscle gain" },
+    { "id": "endurance",       "label": "Endurance" },
+    { "id": "strength",        "label": "Strength" },
+    { "id": "flexibility",     "label": "Flexibility / mobility" },
+    { "id": "mental_wellness", "label": "Mental wellness" },
+    { "id": "nutrition",       "label": "Nutrition / dietary" },
+    { "id": "habit",           "label": "Habit formation" },
+    { "id": "general_fitness", "label": "General fitness" },
+    { "id": "custom",          "label": "Custom (off-list escape hatch)" }
+  ]
+}
