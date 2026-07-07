@@ -5,6 +5,11 @@ All notable changes to the WPL specification, schema, and conformance suite.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.9.1] — 2026-07-07
+
+### Added
+- `recovery` added to the recommended goal-category vocabulary (`data/goal-categories.json`, bumped to 1.1.0) — a legitimate wellness goal (rehab / deload / active recovery). Additive; `Goal.category` remains free-form.
+
 ## [1.9.0] — 2026-07-07
 
 ### Added
