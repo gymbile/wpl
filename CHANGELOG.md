@@ -5,6 +5,15 @@ All notable changes to the WPL specification, schema, and conformance suite.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.9.0] — 2026-07-07
+
+### Added
+- Recommended goal-category vocabulary (`data/goal-categories.json`) incl. `general_fitness`; `Goal.category` stays free-form, validators SHOULD warn on off-list values.
+- Dietary-tag vocabulary (`data/dietary-tags.json`) and optional `NutritionActivity.dietary_tags` field.
+
+### Notes
+All changes are additive; every plan that validated under 1.8.0 continues to validate under 1.9.0.
+
 ## [1.8.0] — 2026-06-18
 
 ### Added

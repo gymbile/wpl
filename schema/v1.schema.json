@@ -190,7 +190,10 @@
           "type": "string",
           "enum": ["primary", "secondary"]
         },
-        "category": { "type": "string" },
+        "category": {
+          "type": "string",
+          "description": "Free-form goal category. Recommended values in data/goal-categories.json; unknown values are allowed (validators SHOULD warn, not reject)."
+        },
         "name": { "type": "string" },
         "description": { "type": "string" },
         "target": { "$ref": "#/$defs/GoalTarget" },
@@ -828,6 +831,11 @@
         "type": { "const": "nutrition" },
         "name": { "type": "string" },
         "category": { "type": "string" },
+        "dietary_tags": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Recommended values in data/dietary-tags.json; unknown values allowed (validators SHOULD warn)."
+        },
         "prescription": { "$ref": "#/$defs/NutritionPrescription" },
         "timing": { "$ref": "#/$defs/NutritionTiming" }
       }
