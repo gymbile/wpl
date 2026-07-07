@@ -7,6 +7,12 @@ vocabulary and the fuzzy-matcher vocabulary used across the WPL ecosystem.
   catalog is the concatenation of all category arrays (consumers derive it).
 - `matcher-vocab.json` — qualifier tokens + short-plural overrides used by the
   enforcement matchers.
+- `goal-categories.json` — recommended vocabulary for `Goal.category` (incl.
+  `general_fitness` and a `custom` escape hatch). **Soft-validated:**
+  `Goal.category` stays free-form; validators SHOULD warn (not reject) on
+  off-list values.
+- `dietary-tags.json` — recommended vocabulary for the optional
+  `NutritionActivity.dietary_tags` field. Soft-validated the same way.
 - `*.schema.json` — JSON Schemas validating the above; CI enforces them.
 
 **Edit here only.** Every consumer repo (`wpl-ai`, `wpl-ai-ex`,

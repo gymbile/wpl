@@ -1,0 +1,64 @@
+{
+  "$schema": "https://wpl.dev/schemas/wpl/v1.schema.json",
+  "version": "1.9.0",
+  "plan": {
+    "id": "plan_general_fitness_dietary",
+    "name": "General Fitness with Vegan Nutrition",
+    "type": "nutrition",
+    "visibility": "template",
+    "metadata": {
+      "tags": ["nutrition", "general_fitness"],
+      "language": "en"
+    },
+    "goals": [
+      {
+        "id": "goal_general",
+        "type": "primary",
+        "category": "general_fitness",
+        "name": "Stay generally fit"
+      }
+    ],
+    "phases": [
+      {
+        "id": "phase_1",
+        "name": "Week 1",
+        "order": 1,
+        "duration": {
+          "value": 1,
+          "unit": "weeks"
+        },
+        "weeks": [
+          {
+            "id": "week_1",
+            "name": "Week 1",
+            "order": 1,
+            "days": [
+              {
+                "id": "day_1",
+                "day_of_week": 1,
+                "name": "Mon",
+                "type": "rest",
+                "blocks": [
+                  {
+                    "id": "nutrition",
+                    "type": "nutrition",
+                    "order": 1,
+                    "activities": [
+                      {
+                        "id": "n_1",
+                        "type": "nutrition",
+                        "category": "meal",
+                        "name": "Breakfast",
+                        "dietary_tags": ["vegan"]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
