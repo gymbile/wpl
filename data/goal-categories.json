@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "categories": [
     { "id": "weight_loss",     "label": "Weight loss" },
     { "id": "muscle_gain",     "label": "Muscle gain" },
@@ -9,6 +9,7 @@
     { "id": "mental_wellness", "label": "Mental wellness" },
     { "id": "nutrition",       "label": "Nutrition / dietary" },
     { "id": "habit",           "label": "Habit formation" },
+    { "id": "recovery",        "label": "Recovery / rehabilitation" },
     { "id": "general_fitness", "label": "General fitness" },
     { "id": "custom",          "label": "Custom (off-list escape hatch)" }
   ]
