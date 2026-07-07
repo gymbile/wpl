@@ -199,6 +199,21 @@ Goals define what the plan aims to achieve and how success is measured.
 | `habit` | Behavioral changes |
 | `custom` | Trainer-defined goals |
 
+#### Recommended vocabularies (soft-validated)
+
+As of WPL v1.9.0, the recommended goal categories are published as a data
+vocabulary in [`data/goal-categories.json`](../data/goal-categories.json)
+(union of the categories above plus `general_fitness`). `Goal.category` remains
+a **free-form string** — unknown values are allowed. Validators SHOULD **warn**
+(not reject) when a `category` is not in the recommended vocabulary; use
+`custom` as the explicit off-list escape hatch.
+
+Nutrition activities may likewise carry an optional `dietary_tags` array
+(see [§5.3](#53-nutrition-activity)). Its recommended values are published in
+[`data/dietary-tags.json`](../data/dietary-tags.json) (`vegetarian`, `vegan`,
+`gluten_free`, `dairy_free`). The field is optional and free-form; validators
+SHOULD warn (not reject) on off-list tags.
+
 ---
 
 ## 2. Client Requirements & Personalization
@@ -580,6 +595,7 @@ Each day contains multiple activity blocks.
   "type": "nutrition",
   "category": "meal|snack|supplement|hydration",
   "name": "Post-Workout Protein",
+  "dietary_tags": ["vegan"],
   "timing": {
     "type": "relative|absolute",
     "reference": "workout_end",
