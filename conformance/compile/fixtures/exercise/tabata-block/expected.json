@@ -41,11 +41,6 @@
                         "type": "exercise"
                       },
                       {
-                        "id": "<AUTO_ID>",
-                        "name": "S",
-                        "type": "simple"
-                      },
-                      {
                         "exercise_ref": "squat",
                         "id": "<AUTO_ID>",
                         "name": "Squat",
@@ -57,11 +52,6 @@
                           "type": "sets_reps"
                         },
                         "type": "exercise"
-                      },
-                      {
-                        "id": "<AUTO_ID>",
-                        "name": "S",
-                        "type": "simple"
                       }
                     ],
                     "id": "<AUTO_ID>",
